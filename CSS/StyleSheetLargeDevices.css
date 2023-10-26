@@ -1,0 +1,60 @@
+@media only screen and (min-width: 992px) {
+    *{
+        background-color: transparent;
+   }
+    :root {
+       /* Estilos */
+        --PaddingElementos:4%;
+       /*Menu Lateral*/
+        --MenuAncho: 26vw;
+        --MenuSeparacionElementos: 5%;
+        --MenuPadding:3.2%;
+        --MenuLateralEsconderAnimacion: translateX(0);
+        --MenuOcultarHamburguesa: none;
+       /*Fuentes*/
+        --TamanoFuenteTitulosH1: 22px;
+        --TamanoFuenteTitulosH2: 22px;
+        --TamanoFuenteParrafos: 14px;
+       /* Página Home */
+        --OcultarHeaderMovil: none;
+         /*Buscador*/
+         --BuscadorDisplayBoton: block;
+   }
+   /* Animaciones Menú */
+    .slide-in {
+        transition: transform var(--MenuTiempoAnimacion) linear;
+        transform: translateX(0%);
+        filter: drop-shadow(2px 0px 12px #00000033);
+   }
+    .slide-out {
+        transition: transform var(--MenuTiempoAnimacion) linear;
+        transform: translateX(0);
+        filter: drop-shadow(0px 0px 0px #00000033);
+   }
+    .slide-up {
+        transition: transform var(--MenuTiempoAnimacion) linear;
+        transform: translateY(0%);
+   }
+    .slide-down {
+        transition: transform var(--MenuTiempoAnimacion) linear;
+        transform: translateY(115%);
+   }
+    .z-index-up {
+        z-index:99 !important;
+   }
+    .z-index-down {
+        z-index:0 !important;
+   }
+    .overlay-in{
+        visibility: visible !important;
+        opacity: 1;
+        transition: visibility 1s, opacity 0.5s, z-index 0.5s linear;
+        z-index: 98;
+   }
+    .overlay-out{
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 1s, opacity 0.5s, z-index 0.5s linear;
+        z-index:-1 !important;
+   }
+}
