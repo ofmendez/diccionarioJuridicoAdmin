@@ -1,3 +1,5 @@
+import React from 'react';
+
 const NoPage = () => {
 	return (
 		<div>
@@ -5,5 +7,5 @@ const NoPage = () => {
 			<p>Page not found</p>
 		</div>
 	);
-}
+};
 export default NoPage;

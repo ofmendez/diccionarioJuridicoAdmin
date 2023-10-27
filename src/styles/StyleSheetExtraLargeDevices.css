@@ -33,7 +33,7 @@
          --MenuAncho: 22vw;
          --MenuAnchoMaxWidth: 280px;
          --MenuPadding:30px;    }
-     body{
+     :is(body) {
          background: linear-gradient(90deg, var(--ColorAcento) 0%, var(--ColorAcento) 50%, var(--ColorFondos) 50%, var(--ColorFondos) 100%);
     }
      .ContenedorAplicativo{/*Horizontal Tablet Lenovo*/
@@ -72,7 +72,7 @@
                  --MenuAncho: 22vw;
                  --MenuAnchoMaxWidth: 280px;
                  --MenuPadding:30px;    }
-             body{
+             :is(body){
                  background: linear-gradient(90deg, var(--ColorAcento) 0%, var(--ColorAcento) 50%, var(--ColorFondos) 50%, var(--ColorFondos) 100%);
             }
              .ContenedorAplicativo{

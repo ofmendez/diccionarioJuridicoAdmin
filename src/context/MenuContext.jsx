@@ -1,5 +1,5 @@
-import React, {useEffect, createContext, useState} from 'react';
-import reziseContent, { abrirMenu, cerrarMenu }	from "../menuCtrl.js";
+import React, {useEffect, createContext} from 'react';
+import reziseContent, { abrirMenu, cerrarMenu }	from "@src/js/menuCtrl.js";
 
 export const MenuContext = createContext();
 

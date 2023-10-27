@@ -1,5 +1,6 @@
 import React from 'react';
-import BarraSuperiorMovil from '../components/BarraSuperiorMovil.jsx';
+import BarraSuperiorMovil from '@src/components/BarraSuperiorMovil.jsx';
+import { IconoAgUsuario, IconoEditar, IconoVer, IconoLupa } from '@src/components/icons';
 
 const Users = () =>{
 	
@@ -13,7 +14,7 @@ const Users = () =>{
 					<div className="SeccionBuscador">
 						<form className="FormaBuscador" action="/action_page.php">
 							<div className="SeccionInputBuscador">
-								<img className="IconoLupa" src="/Images/Icons/Lupa.svg"/>
+								<img className="IconoLupa" src={IconoLupa}/>
 								<input className="InputBuscador" type="text" placeholder="Buscar" name="buscar"/>
 							</div>
 							<input className="SubmitBusqueda" type="submit" value="BUSCAR"/>
@@ -31,7 +32,7 @@ const Users = () =>{
 					</form>
 				</div>
 				<div>
-					<div className="BotonAgregar"><img className="IconoMenu" src="/Images/Icons/AgregarUsuario.svg"/>Agregar Usuario</div>
+					<div className="BotonAgregar"><img className="IconoMenu" src={IconoAgUsuario}/>Agregar Usuario</div>
 				</div>
 			</div>
 			<div className="SeccionContenidoHome" id="SeccionContenidoHome">
@@ -53,175 +54,175 @@ const Users = () =>{
 								<td>Admin</td>
 								<td>19/05/2023</td>
 								<td>Activo</td>
-								<td className="TablaTextoCentrado"><img className="IconosTabla" src="/Images/Icons/Ver.svg"/> <img className="IconosTabla" src="/Images/Icons/Editar.svg"/></td>
+								<td className="TablaTextoCentrado"><img className="IconosTabla" src={IconoVer}/> <img className="IconosTabla" src={IconoEditar}/></td>
 							</tr>
 							<tr>
 								<td>Nombre Ejemplo</td>
 								<td>Admin</td>
 								<td>19/05/2023</td>
 								<td>Activo</td>
-								<td className="TablaTextoCentrado"><img className="IconosTabla" src="/Images/Icons/Ver.svg"/> <img className="IconosTabla" src="/Images/Icons/Editar.svg"/></td>
+								<td className="TablaTextoCentrado"><img className="IconosTabla" src={IconoVer}/> <img className="IconosTabla" src={IconoEditar}/></td>
 							</tr>
 							<tr>
 								<td>Nombre Ejemplo</td>
 								<td>Admin</td>
 								<td>19/05/2023</td>
 								<td>Activo</td>
-								<td className="TablaTextoCentrado"><img className="IconosTabla" src="/Images/Icons/Ver.svg"/> <img className="IconosTabla" src="/Images/Icons/Editar.svg"/></td>
+								<td className="TablaTextoCentrado"><img className="IconosTabla" src={IconoVer}/> <img className="IconosTabla" src={IconoEditar}/></td>
 							</tr>
 							<tr>
 								<td>Nombre Ejemplo</td>
 								<td>Admin</td>
 								<td>19/05/2023</td>
 								<td>Activo</td>
-								<td className="TablaTextoCentrado"><img className="IconosTabla" src="/Images/Icons/Ver.svg"/> <img className="IconosTabla" src="/Images/Icons/Editar.svg"/></td>
+								<td className="TablaTextoCentrado"><img className="IconosTabla" src={IconoVer}/> <img className="IconosTabla" src={IconoEditar}/></td>
 							</tr>
 							<tr>
 								<td>Nombre Ejemplo</td>
 								<td>Admin</td>
 								<td>19/05/2023</td>
 								<td>Activo</td>
-								<td className="TablaTextoCentrado"><img className="IconosTabla" src="/Images/Icons/Ver.svg"/> <img className="IconosTabla" src="/Images/Icons/Editar.svg"/></td>
+								<td className="TablaTextoCentrado"><img className="IconosTabla" src={IconoVer}/> <img className="IconosTabla" src={IconoEditar}/></td>
 							</tr>
 							<tr>
 								<td>Nombre Ejemplo</td>
 								<td>Admin</td>
 								<td>19/05/2023</td>
 								<td>Activo</td>
-								<td className="TablaTextoCentrado"><img className="IconosTabla" src="/Images/Icons/Ver.svg"/> <img className="IconosTabla" src="/Images/Icons/Editar.svg"/></td>
+								<td className="TablaTextoCentrado"><img className="IconosTabla" src={IconoVer}/> <img className="IconosTabla" src={IconoEditar}/></td>
 							</tr>
 							<tr>
 								<td>Nombre Ejemplo</td>
 								<td>Admin</td>
 								<td>19/05/2023</td>
 								<td>Activo</td>
-								<td className="TablaTextoCentrado"><img className="IconosTabla" src="/Images/Icons/Ver.svg"/> <img className="IconosTabla" src="/Images/Icons/Editar.svg"/></td>
+								<td className="TablaTextoCentrado"><img className="IconosTabla" src={IconoVer}/> <img className="IconosTabla" src={IconoEditar}/></td>
 							</tr>
 							<tr>
 								<td>Nombre Ejemplo</td>
 								<td>Admin</td>
 								<td>19/05/2023</td>
 								<td>Activo</td>
-								<td className="TablaTextoCentrado"><img className="IconosTabla" src="/Images/Icons/Ver.svg"/> <img className="IconosTabla" src="/Images/Icons/Editar.svg"/></td>
+								<td className="TablaTextoCentrado"><img className="IconosTabla" src={IconoVer}/> <img className="IconosTabla" src={IconoEditar}/></td>
 							</tr>
 							<tr>
 								<td>Nombre Ejemplo</td>
 								<td>Admin</td>
 								<td>19/05/2023</td>
 								<td>Activo</td>
-								<td className="TablaTextoCentrado"><img className="IconosTabla" src="/Images/Icons/Ver.svg"/> <img className="IconosTabla" src="/Images/Icons/Editar.svg"/></td>
+								<td className="TablaTextoCentrado"><img className="IconosTabla" src={IconoVer}/> <img className="IconosTabla" src={IconoEditar}/></td>
 							</tr>
 							<tr>
 								<td>Nombre Ejemplo</td>
 								<td>Admin</td>
 								<td>19/05/2023</td>
 								<td>Activo</td>
-								<td className="TablaTextoCentrado"><img className="IconosTabla" src="/Images/Icons/Ver.svg"/> <img className="IconosTabla" src="/Images/Icons/Editar.svg"/></td>
+								<td className="TablaTextoCentrado"><img className="IconosTabla" src={IconoVer}/> <img className="IconosTabla" src={IconoEditar}/></td>
 							</tr>
 							<tr>
 								<td>Nombre Ejemplo</td>
 								<td>Admin</td>
 								<td>19/05/2023</td>
 								<td>Activo</td>
-								<td className="TablaTextoCentrado"><img className="IconosTabla" src="/Images/Icons/Ver.svg"/> <img className="IconosTabla" src="/Images/Icons/Editar.svg"/></td>
+								<td className="TablaTextoCentrado"><img className="IconosTabla" src={IconoVer}/> <img className="IconosTabla" src={IconoEditar}/></td>
 							</tr>
 							<tr>
 								<td>Nombre Ejemplo</td>
 								<td>Admin</td>
 								<td>19/05/2023</td>
 								<td>Activo</td>
-								<td className="TablaTextoCentrado"><img className="IconosTabla" src="/Images/Icons/Ver.svg"/> <img className="IconosTabla" src="/Images/Icons/Editar.svg"/></td>
+								<td className="TablaTextoCentrado"><img className="IconosTabla" src={IconoVer}/> <img className="IconosTabla" src={IconoEditar}/></td>
 							</tr>
 							<tr>
 								<td>Nombre Ejemplo</td>
 								<td>Admin</td>
 								<td>19/05/2023</td>
 								<td>Activo</td>
-								<td className="TablaTextoCentrado"><img className="IconosTabla" src="/Images/Icons/Ver.svg"/> <img className="IconosTabla" src="/Images/Icons/Editar.svg"/></td>
+								<td className="TablaTextoCentrado"><img className="IconosTabla" src={IconoVer}/> <img className="IconosTabla" src={IconoEditar}/></td>
 							</tr>
 							<tr>
 								<td>Nombre Ejemplo</td>
 								<td>Admin</td>
 								<td>19/05/2023</td>
 								<td>Activo</td>
-								<td className="TablaTextoCentrado"><img className="IconosTabla" src="/Images/Icons/Ver.svg"/> <img className="IconosTabla" src="/Images/Icons/Editar.svg"/></td>
+								<td className="TablaTextoCentrado"><img className="IconosTabla" src={IconoVer}/> <img className="IconosTabla" src={IconoEditar}/></td>
 							</tr>
 							<tr>
 								<td>Nombre Ejemplo</td>
 								<td>Admin</td>
 								<td>19/05/2023</td>
 								<td>Activo</td>
-								<td className="TablaTextoCentrado"><img className="IconosTabla" src="/Images/Icons/Ver.svg"/> <img className="IconosTabla" src="/Images/Icons/Editar.svg"/></td>
+								<td className="TablaTextoCentrado"><img className="IconosTabla" src={IconoVer}/> <img className="IconosTabla" src={IconoEditar}/></td>
 							</tr>
 							<tr>
 								<td>Nombre Ejemplo</td>
 								<td>Admin</td>
 								<td>19/05/2023</td>
 								<td>Activo</td>
-								<td className="TablaTextoCentrado"><img className="IconosTabla" src="/Images/Icons/Ver.svg"/> <img className="IconosTabla" src="/Images/Icons/Editar.svg"/></td>
+								<td className="TablaTextoCentrado"><img className="IconosTabla" src={IconoVer}/> <img className="IconosTabla" src={IconoEditar}/></td>
 							</tr>
 							<tr>
 								<td>Nombre Ejemplo</td>
 								<td>Admin</td>
 								<td>19/05/2023</td>
 								<td>Activo</td>
-								<td className="TablaTextoCentrado"><img className="IconosTabla" src="/Images/Icons/Ver.svg"/> <img className="IconosTabla" src="/Images/Icons/Editar.svg"/></td>
+								<td className="TablaTextoCentrado"><img className="IconosTabla" src={IconoVer}/> <img className="IconosTabla" src={IconoEditar}/></td>
 							</tr>
 												<tr>
 													<td>Nombre Ejemplo</td>
 													<td>Admin</td>
 													<td>19/05/2023</td>
 													<td>Activo</td>
-													<td className="TablaTextoCentrado"><img className="IconosTabla" src="/Images/Icons/Ver.svg"/> <img className="IconosTabla" src="/Images/Icons/Editar.svg"/></td>
+													<td className="TablaTextoCentrado"><img className="IconosTabla" src={IconoVer}/> <img className="IconosTabla" src={IconoEditar}/></td>
 												</tr>
 							<tr>
 								<td>Nombre Ejemplo</td>
 								<td>Admin</td>
 								<td>19/05/2023</td>
 								<td>Activo</td>
-								<td className="TablaTextoCentrado"><img className="IconosTabla" src="/Images/Icons/Ver.svg"/> <img className="IconosTabla" src="/Images/Icons/Editar.svg"/></td>
+								<td className="TablaTextoCentrado"><img className="IconosTabla" src={IconoVer}/> <img className="IconosTabla" src={IconoEditar}/></td>
 							</tr>
 							<tr>
 								<td>Nombre Ejemplo</td>
 								<td>Admin</td>
 								<td>19/05/2023</td>
 								<td>Activo</td>
-								<td className="TablaTextoCentrado"><img className="IconosTabla" src="/Images/Icons/Ver.svg"/> <img className="IconosTabla" src="/Images/Icons/Editar.svg"/></td>
+								<td className="TablaTextoCentrado"><img className="IconosTabla" src={IconoVer}/> <img className="IconosTabla" src={IconoEditar}/></td>
 							</tr>
 							<tr>
 								<td>Nombre Ejemplo</td>
 								<td>Admin</td>
 								<td>19/05/2023</td>
 								<td>Activo</td>
-								<td className="TablaTextoCentrado"><img className="IconosTabla" src="/Images/Icons/Ver.svg"/> <img className="IconosTabla" src="/Images/Icons/Editar.svg"/></td>
+								<td className="TablaTextoCentrado"><img className="IconosTabla" src={IconoVer}/> <img className="IconosTabla" src={IconoEditar}/></td>
 							</tr>
 							<tr>
 								<td>Nombre Ejemplo</td>
 								<td>Admin</td>
 								<td>19/05/2023</td>
 								<td>Activo</td>
-								<td className="TablaTextoCentrado"><img className="IconosTabla" src="/Images/Icons/Ver.svg"/> <img className="IconosTabla" src="/Images/Icons/Editar.svg"/></td>
+								<td className="TablaTextoCentrado"><img className="IconosTabla" src={IconoVer}/> <img className="IconosTabla" src={IconoEditar}/></td>
 							</tr>
 							<tr>
 								<td>Nombre Ejemplo</td>
 								<td>Admin</td>
 								<td>19/05/2023</td>
 								<td>Activo</td>
-								<td className="TablaTextoCentrado"><img className="IconosTabla" src="/Images/Icons/Ver.svg"/> <img className="IconosTabla" src="/Images/Icons/Editar.svg"/></td>
+								<td className="TablaTextoCentrado"><img className="IconosTabla" src={IconoVer}/> <img className="IconosTabla" src={IconoEditar}/></td>
 							</tr>
 							<tr>
 								<td>Nombre Ejemplo</td>
 								<td>Admin</td>
 								<td>19/05/2023</td>
 								<td>Activo</td>
-								<td className="TablaTextoCentrado"><img className="IconosTabla" src="/Images/Icons/Ver.svg"/> <img className="IconosTabla" src="/Images/Icons/Editar.svg"/></td>
+								<td className="TablaTextoCentrado"><img className="IconosTabla" src={IconoVer}/> <img className="IconosTabla" src={IconoEditar}/></td>
 							</tr>
 							<tr>
 								<td>Nombre Ejemplo</td>
 								<td>Admin</td>
 								<td>19/05/2023</td>
 								<td>Activo</td>
-								<td className="TablaTextoCentrado"><img className="IconosTabla" src="/Images/Icons/Ver.svg"/> <img className="IconosTabla" src="/Images/Icons/Editar.svg"/></td>
+								<td className="TablaTextoCentrado"><img className="IconosTabla" src={IconoVer}/> <img className="IconosTabla" src={IconoEditar}/></td>
 							</tr>
 							</tbody>
 						</table>

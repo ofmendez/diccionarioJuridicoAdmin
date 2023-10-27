@@ -38,13 +38,13 @@ export function cerrarMenu() {
 
 // Definición Altura Contenido Home
 export function definirAlturaMensajeEstadisticas() {
-	const alturaMensajeEstadisticas = document.getElementById('SeccionMensajeEstadisticas').clientHeight;
+	const alturaMensajeEstadisticas = document.getElementById('SeccionMensajeEstadisticas')?.clientHeight;
 	const valorPadding = getComputedStyle(document.documentElement).getPropertyValue('--PaddingElementos').replace("px", "");
 	document.getElementById('SeccionContenidoHome').style.height = (window.innerHeight - (alturaMensajeEstadisticas + (valorPadding * 2))) + 'px';
 }
 
 export default function reziseContent() {
-	definirAlturaMensajeEstadisticas();
+	definirAlturaMensajeEstadisticas(); 
 	definirMedidaMenuLateral();
 }
 //definirAlturaMensajeEstadisticas();
