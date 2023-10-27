@@ -168,13 +168,13 @@ const Users = () =>{
 								<td>Activo</td>
 								<td className="TablaTextoCentrado"><img className="IconosTabla" src={IconoVer}/> <img className="IconosTabla" src={IconoEditar}/></td>
 							</tr>
-												<tr>
-													<td>Nombre Ejemplo</td>
-													<td>Admin</td>
-													<td>19/05/2023</td>
-													<td>Activo</td>
-													<td className="TablaTextoCentrado"><img className="IconosTabla" src={IconoVer}/> <img className="IconosTabla" src={IconoEditar}/></td>
-												</tr>
+							<tr>
+								<td>Nombre Ejemplo</td>
+								<td>Admin</td>
+								<td>19/05/2023</td>
+								<td>Activo</td>
+								<td className="TablaTextoCentrado"><img className="IconosTabla" src={IconoVer}/> <img className="IconosTabla" src={IconoEditar}/></td>
+							</tr>
 							<tr>
 								<td>Nombre Ejemplo</td>
 								<td>Admin</td>

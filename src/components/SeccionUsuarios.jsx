@@ -113,13 +113,13 @@ const SeccionUsuarios = ({users}) => {
 							<td className="TablaTextoCentrado"><img className="IconosTabla" src={IconoVer}/> <img className="IconosTabla" 
 								src={IconoEditar}/></td>
 						</tr>
-										<tr>
-											<td>Nombre Ejemplo</td>
-											<td>Admin</td>
-											<td>19/05/2023</td>
-											<td className="TablaTextoCentrado"><img className="IconosTabla" src={IconoVer}/> <img className="IconosTabla" 
-												src={IconoEditar}/></td>
-										</tr>
+						<tr>
+							<td>Nombre Ejemplo</td>
+							<td>Admin</td>
+							<td>19/05/2023</td>
+							<td className="TablaTextoCentrado"><img className="IconosTabla" src={IconoVer}/> <img className="IconosTabla" 
+								src={IconoEditar}/></td>
+						</tr>
 						<tr>
 							<td>Nombre Ejemplo</td>
 							<td>Admin</td>
