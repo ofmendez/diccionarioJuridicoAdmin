@@ -1,7 +1,7 @@
-import LogoBlanco from "@img/LogoBlanco.svg";
-import LogoPositivo from "@img/LogoPositivo.svg";
+import LogoBlanco from '@img/LogoBlanco.svg';
+import LogoPositivo from '@img/LogoPositivo.svg';
 
 export {
-    LogoBlanco,
-    LogoPositivo,
+	LogoBlanco,
+	LogoPositivo
 };
