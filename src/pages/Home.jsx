@@ -6,6 +6,7 @@ import SeccionTerminos from '@src/components/SeccionTerminos.jsx';
 import SeccionPalabraDelDia from '@src/components/SeccionPalabraDelDia.jsx';
 import { Skeletons } from '@src/components/Skeletons.jsx';
 import { loadUsers, loadTerms } from '@src/hooks/LoaderData.jsx';
+import Menu from '@src/components/Menu';
 
 const Home = ({ children }) => {
 	const [users, setUsers] = useState([]);
@@ -17,6 +18,7 @@ const Home = ({ children }) => {
 
 	return (
 		<>
+			<Menu />
 			<div className='ContenidoPagina' id='ContenidoPagina'>
 				<BarraSuperiorMovil />
 				<SeccionEstadisticas />

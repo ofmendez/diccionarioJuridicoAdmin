@@ -1,11 +1,19 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { IcoInicio, IcoUsuarios, IcoTerminos } from '@src/components/icons.js';
 import { LogoBlanco } from '@src/components/img.js';
 import { MenuContext } from '@src/context/MenuContext.jsx';
 import MenuItem from '@src/components/MenuItem.jsx';
+import reziseContent	from '@src/js/menuCtrl.js';
 
 const Menu = () => {
 	const { switchMenu } = useContext(MenuContext);
+
+	useEffect(() => {
+		window.addEventListener('resize', reziseContent);
+		reziseContent();
+		return () => window.removeEventListener('resize', reziseContent);
+	}, [window.innerWidth]);
+
 	return (
 		<>
 			<div id='ContenedorMenuLateral'>
