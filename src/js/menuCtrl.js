@@ -40,7 +40,8 @@ export function definirAlturaMensajeEstadisticas () {
 	const alturaMensajeEstadisticas = document.getElementById('SeccionMensajeEstadisticas')?.clientHeight;
 	// eslint-disable-next-line no-undef
 	const valorPadding = getComputedStyle(document.documentElement).getPropertyValue('--PaddingElementos').replace('px', '');
-	document.getElementById('SeccionContenidoHome').style.height = (window.innerHeight - (alturaMensajeEstadisticas + (valorPadding * 2))) + 'px';
+	if (document.getElementById('SeccionContenidoHome'))
+		document.getElementById('SeccionContenidoHome').style.height = (window.innerHeight - (alturaMensajeEstadisticas + (valorPadding * 2))) + 'px';
 }
 
 export default function reziseContent () {

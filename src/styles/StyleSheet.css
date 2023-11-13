@@ -637,6 +637,7 @@
      min-width:200px;
      padding: var(--PaddingBotonAgregar);
      cursor: pointer;
+	  border-width: 0px;
 }
  .BotonAgregar:hover, .BotonEliminar:hover{
      background-color: var(--ColorAcentoHover);
@@ -656,6 +657,7 @@
      align-items: center;
      padding: var(--PaddingBotonAgregar);
      cursor: pointer;
+	  border-width: 0px;
 }
 /* Usuarios */
 /* Configuración Buscador */
@@ -760,6 +762,7 @@
      justify-content: center;
      cursor: pointer;
      display: flex;
+	  border-width: 0px;
 }
  .BotonEliminarSubtermino:hover{
      background-color: var(--ColorFondosHover);
@@ -812,9 +815,14 @@
      padding: calc(var(--PaddingContenidosHome)/2);
      display: flex;
      justify-content: center;
+	  cursor: pointer;
+	  border-width: 0px;
 }
  .IconoAgregarDefinicion{
      height: var(--AlturaIconoAgregarDefinicion);
      text-align: center;
      display:block;
+}
+a:visited{
+	color: var(--ColorTextoAcento);
 }

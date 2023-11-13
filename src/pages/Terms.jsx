@@ -2,6 +2,7 @@ import React from 'react';
 import BarraSuperiorMovil from '@src/components/BarraSuperiorMovil.jsx';
 import { IconoAgTermino, IconoEditar, IconoVer, IconoLupa } from '@src/components/icons';
 import Menu from '@src/components/Menu';
+import { Link } from 'react-router-dom';
 
 const Terms = () => {
 	return (
@@ -13,7 +14,7 @@ const Terms = () => {
 					<div className='SeccionSuperiorHerramientas' id='SeccionMensajeEstadisticas'>
 						<div>
 							<div className='SeccionBuscador'>
-								<form className='FormaBuscador' action='/action_page.php'>
+								<form className='FormaBuscador' action='#'>
 									<div className='SeccionInputBuscador'>
 										<img className='IconoLupa' src={IconoLupa} />
 										<input className='InputBuscador' type='text' placeholder='Buscar' name='buscar' />
@@ -23,10 +24,10 @@ const Terms = () => {
 							</div>
 						</div>
 						<div>
-							<div className='BotonAgregar'>
+							<Link to='./new' className='BotonAgregar'>
 								<img className='IconoMenu' src={IconoAgTermino} />
 								Agregar Término
-							</div>
+							</Link>
 						</div>
 					</div>
 					<div className='SeccionContenidoHome' id='SeccionContenidoHome'>
@@ -49,222 +50,12 @@ const Terms = () => {
 											<td>19/05/2023</td>
 											<td>Nombre usuario</td>
 											<td className='TablaTextoCentrado'>
-												<a href='ViewTerm.html'>
+												<a href='#'>
 													<img className='IconosTabla' src={IconoVer} />
 												</a>
-												<a href='EditTerm.html'>
+												<a href='#'>
 													<img className='IconosTabla' src={IconoEditar} />
 												</a>
-											</td>
-										</tr>
-										<tr>
-											<td>Regalías</td>
-											<td>02/05/2023</td>
-											<td>19/05/2023</td>
-											<td>Nombre usuario</td>
-											<td className='TablaTextoCentrado'>
-												<img className='IconosTabla' src={IconoVer} />{' '}
-												<img className='IconosTabla' src={IconoEditar} />
-											</td>
-										</tr>
-										<tr>
-											<td>Regalías</td>
-											<td>02/05/2023</td>
-											<td>19/05/2023</td>
-											<td>Nombre usuario</td>
-											<td className='TablaTextoCentrado'>
-												<img className='IconosTabla' src={IconoVer} />{' '}
-												<img className='IconosTabla' src={IconoEditar} />
-											</td>
-										</tr>
-										<tr>
-											<td>Regalías</td>
-											<td>02/05/2023</td>
-											<td>19/05/2023</td>
-											<td>Nombre usuario</td>
-											<td className='TablaTextoCentrado'>
-												<img className='IconosTabla' src={IconoVer} />{' '}
-												<img className='IconosTabla' src={IconoEditar} />
-											</td>
-										</tr>
-										<tr>
-											<td>Regalías</td>
-											<td>02/05/2023</td>
-											<td>19/05/2023</td>
-											<td>Nombre usuario</td>
-											<td className='TablaTextoCentrado'>
-												<img className='IconosTabla' src={IconoVer} />{' '}
-												<img className='IconosTabla' src={IconoEditar} />
-											</td>
-										</tr>
-										<tr>
-											<td>Regalías</td>
-											<td>02/05/2023</td>
-											<td>19/05/2023</td>
-											<td>Nombre usuario</td>
-											<td className='TablaTextoCentrado'>
-												<img className='IconosTabla' src={IconoVer} />{' '}
-												<img className='IconosTabla' src={IconoEditar} />
-											</td>
-										</tr>
-										<tr>
-											<td>Regalías</td>
-											<td>02/05/2023</td>
-											<td>19/05/2023</td>
-											<td>Nombre usuario</td>
-											<td className='TablaTextoCentrado'>
-												<img className='IconosTabla' src={IconoVer} />{' '}
-												<img className='IconosTabla' src={IconoEditar} />
-											</td>
-										</tr>
-										<tr>
-											<td>Regalías</td>
-											<td>02/05/2023</td>
-											<td>19/05/2023</td>
-											<td>Nombre usuario</td>
-											<td className='TablaTextoCentrado'>
-												<img className='IconosTabla' src={IconoVer} />{' '}
-												<img className='IconosTabla' src={IconoEditar} />
-											</td>
-										</tr>
-										<tr>
-											<td>Regalías</td>
-											<td>02/05/2023</td>
-											<td>19/05/2023</td>
-											<td>Nombre usuario</td>
-											<td className='TablaTextoCentrado'>
-												<img className='IconosTabla' src={IconoVer} />{' '}
-												<img className='IconosTabla' src={IconoEditar} />
-											</td>
-										</tr>
-										<tr>
-											<td>Regalías</td>
-											<td>02/05/2023</td>
-											<td>19/05/2023</td>
-											<td>Nombre usuario</td>
-											<td className='TablaTextoCentrado'>
-												<img className='IconosTabla' src={IconoVer} />{' '}
-												<img className='IconosTabla' src={IconoEditar} />
-											</td>
-										</tr>
-										<tr>
-											<td>Regalías</td>
-											<td>02/05/2023</td>
-											<td>19/05/2023</td>
-											<td>Nombre usuario</td>
-											<td className='TablaTextoCentrado'>
-												<img className='IconosTabla' src={IconoVer} />{' '}
-												<img className='IconosTabla' src={IconoEditar} />
-											</td>
-										</tr>
-										<tr>
-											<td>Regalías</td>
-											<td>02/05/2023</td>
-											<td>19/05/2023</td>
-											<td>Nombre usuario</td>
-											<td className='TablaTextoCentrado'>
-												<img className='IconosTabla' src={IconoVer} />{' '}
-												<img className='IconosTabla' src={IconoEditar} />
-											</td>
-										</tr>
-										<tr>
-											<td>Regalías</td>
-											<td>02/05/2023</td>
-											<td>19/05/2023</td>
-											<td>Nombre usuario</td>
-											<td className='TablaTextoCentrado'>
-												<img className='IconosTabla' src={IconoVer} />{' '}
-												<img className='IconosTabla' src={IconoEditar} />
-											</td>
-										</tr>
-										<tr>
-											<td>Regalías</td>
-											<td>02/05/2023</td>
-											<td>19/05/2023</td>
-											<td>Nombre usuario</td>
-											<td className='TablaTextoCentrado'>
-												<img className='IconosTabla' src={IconoVer} />{' '}
-												<img className='IconosTabla' src={IconoEditar} />
-											</td>
-										</tr>
-										<tr>
-											<td>Regalías</td>
-											<td>02/05/2023</td>
-											<td>19/05/2023</td>
-											<td>Nombre usuario</td>
-											<td className='TablaTextoCentrado'>
-												<img className='IconosTabla' src={IconoVer} />{' '}
-												<img className='IconosTabla' src={IconoEditar} />
-											</td>
-										</tr>
-										<tr>
-											<td>Regalías</td>
-											<td>02/05/2023</td>
-											<td>19/05/2023</td>
-											<td>Nombre usuario</td>
-											<td className='TablaTextoCentrado'>
-												<img className='IconosTabla' src={IconoVer} />{' '}
-												<img className='IconosTabla' src={IconoEditar} />
-											</td>
-										</tr>
-										<tr>
-											<td>Regalías</td>
-											<td>02/05/2023</td>
-											<td>19/05/2023</td>
-											<td>Nombre usuario</td>
-											<td className='TablaTextoCentrado'>
-												<img className='IconosTabla' src={IconoVer} />{' '}
-												<img className='IconosTabla' src={IconoEditar} />
-											</td>
-										</tr>
-										<tr>
-											<td>Regalías</td>
-											<td>02/05/2023</td>
-											<td>19/05/2023</td>
-											<td>Nombre usuario</td>
-											<td className='TablaTextoCentrado'>
-												<img className='IconosTabla' src={IconoVer} />{' '}
-												<img className='IconosTabla' src={IconoEditar} />
-											</td>
-										</tr>
-										<tr>
-											<td>Regalías</td>
-											<td>02/05/2023</td>
-											<td>19/05/2023</td>
-											<td>Nombre usuario</td>
-											<td className='TablaTextoCentrado'>
-												<img className='IconosTabla' src={IconoVer} />{' '}
-												<img className='IconosTabla' src={IconoEditar} />
-											</td>
-										</tr>
-										<tr>
-											<td>Regalías</td>
-											<td>02/05/2023</td>
-											<td>19/05/2023</td>
-											<td>Nombre usuario</td>
-											<td className='TablaTextoCentrado'>
-												<img className='IconosTabla' src={IconoVer} />{' '}
-												<img className='IconosTabla' src={IconoEditar} />
-											</td>
-										</tr>
-										<tr>
-											<td>Regalías</td>
-											<td>02/05/2023</td>
-											<td>19/05/2023</td>
-											<td>Nombre usuario</td>
-											<td className='TablaTextoCentrado'>
-												<img className='IconosTabla' src={IconoVer} />{' '}
-												<img className='IconosTabla' src={IconoEditar} />
-											</td>
-										</tr>
-										<tr>
-											<td>Regalías</td>
-											<td>02/05/2023</td>
-											<td>19/05/2023</td>
-											<td>Nombre usuario</td>
-											<td className='TablaTextoCentrado'>
-												<img className='IconosTabla' src={IconoVer} />{' '}
-												<img className='IconosTabla' src={IconoEditar} />
 											</td>
 										</tr>
 									</tbody>

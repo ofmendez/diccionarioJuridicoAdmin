@@ -13,6 +13,7 @@ import '@styles/StyleSheetSmallDevices.css';
 import '@styles/StyleSheetMediumDevices.css';
 import '@styles/StyleSheetLargeDevices.css';
 import '@styles/StyleSheetExtraLargeDevices.css';
+import EditTerm from './pages/EditTerm.jsx';
 
 const App = () => {
 	return (
@@ -23,7 +24,7 @@ const App = () => {
 					<Route path='Terms' element={<Outlet />}>
 						<Route path='' element={<Terms />} />
 						<Route path='new' element={<NewTerm />} />
-						<Route path='edit/:id' element={<NewTerm />} />
+						<Route path='edit/:id' element={<EditTerm />} />
 						<Route path=':id' element={<h1>SOY ID!!</h1>} />
 					</Route>
 					<Route path='Users' element={<Users />} />

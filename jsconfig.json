@@ -3,24 +3,23 @@
 		"baseUrl": ".",
 		"paths": {
 			"@src/*": [
-					"./src/*"
+				"./src/*"
 			],
 			"@styles/*": [
-					"./src/styles/*"
+				"./src/styles/*"
 			],
 			"@components/*": [
-					"./src/components/*"
+				"./src/components/*"
 			],
 			"@assets/*": [
-					"./src/assets/*"
+				"./src/assets/*"
 			],
 			"@ico/*": [
-					"./src/assets/icons/*"
+				"./src/assets/icons/*"
 			],
 			"@img/*": [
-					"./src/assets/images/*"
+				"./src/assets/images/*"
 			],
-
 		}
 	}
 }

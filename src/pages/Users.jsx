@@ -14,7 +14,7 @@ const Users = () => {
 				<div className='SeccionSuperiorHerramientas' id='SeccionMensajeEstadisticas'>
 					<div>
 						<div className='SeccionBuscador'>
-							<form className='FormaBuscador' action='/action_page.php'>
+							<form className='FormaBuscador' action='#'>
 								<div className='SeccionInputBuscador'>
 									<img className='IconoLupa' src={IconoLupa} />
 									<input className='InputBuscador' type='text' placeholder='Buscar' name='buscar' />

@@ -10,6 +10,12 @@ import IconoVer from '@ico/Ver.svg';
 import IconoEditar from '@ico/Editar.svg';
 import IcoCronologia from '@ico/Cronologia.svg';
 import IconoNoPerfil from '@ico/NoProfile.svg';
+import IconoAgregar from '@ico/Agregar.svg';
+import IconoEliminar from '@ico/Eliminar.svg';
+import IconoPositivo from '@ico/LogoPositivo.svg';
+import IconoGuardar from '@ico/Guardar.svg';
+import IconoCerrar from '@ico/Cerrar.svg';
+import IconoCancelar from '@ico/Cancelar.svg';
 
 export {
 	IcoInicio,
@@ -23,5 +29,11 @@ export {
 	IconoAgUsuario,
 	IcoUsrRegistrados,
 	IcoCronologia,
-	IconoNoPerfil
+	IconoNoPerfil,
+	IconoAgregar,
+	IconoPositivo,
+	IconoGuardar,
+	IconoEliminar,
+	IconoCerrar,
+	IconoCancelar
 };
