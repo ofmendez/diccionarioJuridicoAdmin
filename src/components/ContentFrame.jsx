@@ -1,5 +1,3 @@
-import { Outlet } from 'react-router-dom';
-
 import BarraSuperiorMovil from '@components/BarraSuperiorMovil.jsx';
 import Menu from '@components/Menu.jsx';
 
