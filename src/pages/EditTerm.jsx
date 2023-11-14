@@ -1,14 +1,16 @@
-import BarraSuperiorMovil from '@src/components/BarraSuperiorMovil';
-import Menu from '@src/components/Menu.jsx';
-import { IconoAgregar, IconoEliminar, IconoGuardar } from '@src/components/icons';
+// import { IconoAgregar, IconoEliminar, IconoGuardar } from '@components/icons.js';
+// import BarraSuperiorMovil from '@components/BarraSuperiorMovil.jsx';
+// import Menu from '@components/Menu.jsx';
+import ContentFrame from '@components/ContentFrame.jsx';
 
 const EditTerm = () => {
-	const options = ['MATERIA', 'Jurisprudencia', 'Sentencia', 'Norma'];
+	// const options = ['MATERIA', 'Jurisprudencia', 'Sentencia', 'Norma'];
 
 	return (
-		<>
-			<Menu />
-			<div className='ContenidoPagina' id='ContenidoPagina'>
+		<ContentFrame>
+
+			<h2> Edición de término en construccion...</h2>
+			{/*
 				<BarraSuperiorMovil />
 				<div className='SeccionSuperiorHerramientas'>
 					<div className='SeccionInputTitulo'>
@@ -32,7 +34,7 @@ const EditTerm = () => {
 							<div><input className='InputAno' type='number' placeholder='AÑO' name='ano' /></div>
 							<div className='SeparadorSecciones' />
 							<div>
-								<select name='select' className='FiltrosBusqueda' defaultValue={options[0]}>
+								<select name='select'>
 									{
 										options.map((el, id) => <option disabled={id === 0} key={el} value={el}>{el}</option>)
 									}
@@ -46,9 +48,8 @@ const EditTerm = () => {
 					<div className='ContenidoDefinicion AgregarDefinicion'>
 						<img className='IconoAgregarDefinicion' src={IconoAgregar} />
 					</div>
-				</div>
-			</div>
-		</>
+			</div> */}
+		</ContentFrame>
 	);
 };
 

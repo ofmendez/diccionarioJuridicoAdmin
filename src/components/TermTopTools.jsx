@@ -1,4 +1,5 @@
-import { IconoGuardar, IconoCancelar } from '@src/components/icons';
+import { IconoGuardar, IconoCancelar } from '@components/icons.js';
+import { Link } from 'react-router-dom';
 const TermTopTools = ({ term, onTermChange, saveTerm }) => {
 	return (
 		<div className='SeccionSuperiorHerramientas'>
@@ -9,9 +10,9 @@ const TermTopTools = ({ term, onTermChange, saveTerm }) => {
 				/>
 			</div>
 			<div className='SeccionDerechaBotones'>
-				<button className='BotonEliminar'>
+				<Link className='BotonEliminar' to={-1}>
 					<img className='IconoMenu' src={IconoCancelar} />
-				</button>
+				</Link>
 				<button className='BotonAgregar' onClick={saveTerm}>
 					<img className='IconoMenu' src={IconoGuardar} /> Guardar
 				</button>

@@ -12,10 +12,11 @@ import IcoCronologia from '@ico/Cronologia.svg';
 import IconoNoPerfil from '@ico/NoProfile.svg';
 import IconoAgregar from '@ico/Agregar.svg';
 import IconoEliminar from '@ico/Eliminar.svg';
-import IconoPositivo from '@ico/LogoPositivo.svg';
 import IconoGuardar from '@ico/Guardar.svg';
 import IconoCerrar from '@ico/Cerrar.svg';
 import IconoCancelar from '@ico/Cancelar.svg';
+import IconoPassword from '@ico/Contrasena.svg';
+import IconoEmail from '@ico/Email.svg';
 
 export {
 	IcoInicio,
@@ -31,9 +32,10 @@ export {
 	IcoCronologia,
 	IconoNoPerfil,
 	IconoAgregar,
-	IconoPositivo,
 	IconoGuardar,
 	IconoEliminar,
 	IconoCerrar,
+	IconoPassword,
+	IconoEmail,
 	IconoCancelar
 };

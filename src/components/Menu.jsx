@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from 'react';
-import { IcoInicio, IcoUsuarios, IcoTerminos } from '@src/components/icons.js';
-import { LogoBlanco } from '@src/components/img.js';
+import { IcoInicio, IcoUsuarios, IcoTerminos } from '@components/icons.js';
+import { LogoBlanco } from '@components/img.js';
 import { MenuContext } from '@src/context/MenuContext.jsx';
-import MenuItem from '@src/components/MenuItem.jsx';
+import MenuItem from '@components/MenuItem.jsx';
 import reziseContent	from '@src/js/menuCtrl.js';
 
 const Menu = () => {

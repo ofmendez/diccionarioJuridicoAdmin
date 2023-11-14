@@ -1,11 +1,12 @@
 /* eslint-disable operator-linebreak */
 import '@styles/Skeleton.css';
+import '@styles/Loading.css';
 
-export function Skeletons ({ children, on }) {
+export function Skeletons ({ children, on, msg }) {
 	return on === 'loading' ?
 	// Componente a mostrar mientras se cargan los datos
 		<div className='SeccionSuperiorColumnaIzquierdaHome skeleton'>
-			<h3>Loading...</h3>
+			<h3 className='loading'>{msg}</h3>
 		</div>
 	// -----------------------------------------------
 		: (on === 'ok' ?

@@ -1,44 +1,29 @@
-import React from 'react';
-import { IconoEditar, IconoVer } from '@src/components/icons.js';
-import UserRow from '@src/components/UserRow.jsx';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
-const SeccionUsuarios = ({ users }) => {
+import MainsSeparator from '@components/MainSeparator.jsx';
+import UsersTable from '@components/UsersTable.jsx';
+import { Skeletons } from '@components/Skeletons.jsx';
+import { loadUsers } from '@src/hooks/LoaderData.jsx';
+
+const SeccionUsuarios = () => {
+	const [users, setUsers] = useState([]);
+	const [loadingUsrs, setLoadingUsrs] = useState('init');
+	useEffect(() => loadUsers({ loadingUsrs, setLoadingUsrs, setUsers }), []);
+
 	return (
-		<div className='SeccionSuperiorColumnaIzquierdaHome'>
-			<div className='SeccionTituloLink'>
-				<h3>Usuarios Recientes</h3>
-				<a href='Users.html'>
-					<p>Ver todos</p>
-				</a>
+		<Skeletons on={loadingUsrs} msg='Cargando'>
+			<div className='SeccionSuperiorColumnaIzquierdaHome'>
+				<div className='SeccionTituloLink'>
+					<h3>Usuarios Recientes</h3>
+					<Link to='/users'><p>Ver todos</p></Link>
+				</div>
+				<MainsSeparator />
+				<div className='ContenedorTablaRecientes ScrollVerde'>
+					<UsersTable tableClass='TablaRecientes' users={users} />
+				</div>
 			</div>
-			<div className='SeparadorSeccionPrincipal' />
-			<div className='ContenedorTablaRecientes ScrollVerde'>
-				<table className='TablaRecientes'>
-					<tbody>
-						<tr className='TablaSeparadorTitulos'>
-							<th>Usuario</th>
-							<th>Rol</th>
-							<th>Últ. ingreso</th>
-							<th className='TablaTextoCentrado'>Acción</th>
-						</tr>
-						<tr>
-							<td>Nombre Ejemplo</td>
-							<td>Admin</td>
-							<td>19/05/2023</td>
-							<td className='TablaTextoCentrado'>
-								<a href='ViewTerm.html'>
-									<img className='IconosTabla' src={IconoVer} />
-								</a>
-								<a href='EditTerm.html'><img className='IconosTabla' src={IconoEditar} /></a>
-							</td>
-						</tr>
-						{users.map((user) => (
-							<UserRow key={user._id} user={user} />
-						))}
-					</tbody>
-				</table>
-			</div>
-		</div>
+		</Skeletons>
 	);
 };
 

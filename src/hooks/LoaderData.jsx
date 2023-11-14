@@ -14,17 +14,34 @@ const loadTerms = ({ loadingTerms, setLoadingTerms, setTerms }) => {
 		});
 };
 
+const loadTerm = ({ loadingTerm, setLoadingTerm, setTerm, id }) => {
+	if (loadingTerm === 'ok') return;
+	fetchData({ setLoadinng: setLoadingTerm, path: `/terms/${id}` }).then((d) => setTerm(d))
+		.catch((err) => {
+			console.log(err);
+		});
+};
+
 const fetchData = ({ setLoadinng, path }) => {
 	return new Promise((resolve, reject) => {
+		const myHeaders = new Headers();
+		myHeaders.append('Authorization', `Bearer ${window.localStorage.token}`);
+
+		const requestOptions = {
+			method: 'GET',
+			headers: myHeaders,
+			redirect: 'follow'
+		};
+
 		setLoadinng('loading');
 		const uri = import.meta.env.VITE_API_URI;
-		fetch(`${uri}${path}`)
+		fetch(`${uri}${path}`, requestOptions)
 			.then(res => {
 				if (res.ok) return res.json();
 				throw new Error('Error al cargar los datos');
 			})
 			.then(data => {
-				console.log('fetch: ', data);
+				// console.log('fetch: ', data);
 				setLoadinng('ok');
 				resolve(data);
 			})
@@ -36,4 +53,4 @@ const fetchData = ({ setLoadinng, path }) => {
 	});
 };
 
-export { loadUsers, loadTerms };
+export { loadUsers, loadTerms, loadTerm };

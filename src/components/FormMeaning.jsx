@@ -1,5 +1,5 @@
-import { IconoEliminar } from '@src/components/icons';
 import React from 'react';
+import { IconoEliminar } from '@components/icons.js';
 
 const FormMeaning = ({ ...props }) => {
 	const options = ['MATERIA', 'Jurisprudencia', 'Sentencia', 'Norma'];
@@ -13,7 +13,6 @@ const FormMeaning = ({ ...props }) => {
 		props.setMeanings(prev => prev.filter((el, i) => i !== props.index));
 	};
 
-	console.log('index:', props.index);
 	return (
 		<div className='ContenidoDefinicion'>
 			<form className='FormaEditarTerminos'>
@@ -29,43 +28,29 @@ const FormMeaning = ({ ...props }) => {
 					</button>
 				</div>
 				<div className='SeparadorSecciones' />
-
-				<div>
-					{/* ------------------- YEAR ------------------------- */}
-					<input
-						className='InputAno' type='number' placeholder='AÑO' name='year'
-						value={props.meaning.inputs.year || ''} onChange={handleChange}
-					/>
-				</div>
+				{/* ------------------- YEAR ------------------------- */}
+				<input
+					className='InputAno' type='number' placeholder='AÑO' name='year'
+					value={props.meaning.inputs.year || ''} onChange={handleChange}
+				/>
 				<div className='SeparadorSecciones' />
-
-				<div>
-					{/* ------------------- SUBJECT ------------------------- */}
-					<select
-						name='subject' className='FiltrosBusqueda'
-						value={props.meaning.inputs.subject || ''} onChange={handleChange}
-					>
-						{
-							options.map((el, id) => <option disabled={id === 0} key={el} value={el}>{el}</option>)
-						}
-					</select>
-				</div>
+				{/* ------------------- SUBJECT ------------------------- */}
+				<select name='subject' value={props.meaning.inputs.subject || ''} onChange={handleChange}>
+					{
+						options.map((el, idd) => <option disabled={idd === 0} key={el} value={el}>{el}</option>)
+					}
+				</select>
 				<div className='SeparadorSecciones' />
-
-				<div>
-					{/* ------------------- DEFINITION ------------------------- */}
-					<textarea
-						className='InputDefinicion ScrollVerde' type='text' placeholder='DEFINICIÓN' name='definition'
-						value={props.meaning.inputs.definition || ''} onChange={handleChange}
-					/>
-				</div>
-				<div>
-					{/* ------------------- SOURCE ------------------------- */}
-					<input
-						className='InputFuente' type='text' placeholder='FUENTE' name='source'
-						value={props.meaning.inputs.source || ''} onChange={handleChange}
-					/>
-				</div>
+				{/* ------------------- DEFINITION ------------------------- */}
+				<textarea
+					className='InputDefinicion ScrollVerde' type='text' placeholder='DEFINICIÓN' name='definition'
+					value={props.meaning.inputs.definition || ''} onChange={handleChange}
+				/>
+				{/* ------------------- SOURCE ------------------------- */}
+				<input
+					className='InputFuente' type='text' placeholder='FUENTE' name='source'
+					value={props.meaning.inputs.source || ''} onChange={handleChange}
+				/>
 			</form>
 		</div>
 	);

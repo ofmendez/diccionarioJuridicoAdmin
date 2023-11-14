@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+
 import { MenuContext } from '@src/context/MenuContext.jsx';
 
 const MenuItem = (props) => {

@@ -1,25 +1,34 @@
 import { useState } from 'react';
-import { IconoAgregar } from '@src/components/icons';
-import BarraSuperiorMovil from '@src/components/BarraSuperiorMovil';
-import TermTopTools from '@src/components/TermTopTools';
-import FormMeaning from '@src/components/FormMeaning';
-import Meaning from '@src/components/Meaning.jsx';
-import Menu from '@src/components/Menu.jsx';
+
+import { IconoAgregar } from '@components/icons.js';
+import TermTopTools from '@components/TermTopTools.jsx';
+import FormMeaning from '@components/FormMeaning.jsx';
+import Meaning from '@components/Meaning.jsx';
+import ContentFrame from '@components/ContentFrame.jsx';
+import { createTerm } from '@src/hooks/PostData.jsx';
+import OverlayLoading from '@src/components/OverlayLoading';
+import { useNavigate } from 'react-router-dom';
 
 const NewTerm = () => {
 	const [meanings, setMeanings] = useState([new Meaning()]);
 	const [term, setTerm] = useState('');
+	const [loadingTerm, setLoadingTerm] = useState('init');
+	const navigate = useNavigate();
+
+	const handleDonePost = (d) => {
+		navigate(`/Terms/${d.id}`);
+		console.log(d);
+	};
 
 	const saveTerm = () => {
-		meanings.forEach((el) => {
-			console.log(el);
-		});
+		const result = Object.entries(meanings).map(([name, value]) => value.inputs);
+		const body = { term, meanings: result, created_by: 'Admin' };
+		createTerm({ loadingTerm, setLoadingTerm, body, handleDonePost });
 	};
+
 	return (
 		<>
-			<Menu />
-			<div className='ContenidoPagina' id='ContenidoPagina'>
-				<BarraSuperiorMovil />
+			<ContentFrame>
 				<TermTopTools term={term} onTermChange={(e) => setTerm(e.target.value)} saveTerm={saveTerm} />
 				<div className='SeccionContenidoDefiniciones'>
 					{
@@ -31,8 +40,10 @@ const NewTerm = () => {
 						<img className='IconoAgregarDefinicion' src={IconoAgregar} />
 					</button>
 				</div>
-			</div>
+			</ContentFrame>
+			{loadingTerm === 'loading' ? <OverlayLoading /> : null}
 		</>
+
 	);
 };
 

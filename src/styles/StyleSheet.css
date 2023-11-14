@@ -826,3 +826,39 @@
 a:visited{
 	color: var(--ColorTextoAcento);
 }
+.disabledCursor { 
+	cursor: default;
+}
+.ButtonDisabled{
+	background-color: var(--ColorPlaceholder);
+	border-radius: var(--RadioEsquinas);
+	color:var(--ColorSecundario);
+	padding: var(--MarginElementos);
+	font-size: var(--TamanoFuenteParrafos);
+	justify-content: center;
+	column-gap: 10px;
+	display: flex;
+	align-items: center;
+	min-width:200px;
+	padding: var(--PaddingBotonAgregar);
+	cursor: not-allowed;
+	border-width: 0px;
+}
+.ButtonDisabled img{
+	cursor: not-allowed;
+	filter: brightness(100);
+}
+.overlayLoading{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: #00000077;
+	z-index: 110;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var(--ColorTextoAcento);
+	/* opacity: 0.5; */
+}

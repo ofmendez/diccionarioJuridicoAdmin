@@ -1,5 +1,5 @@
 import React from 'react';
-import { IcoCronologia, IcoTerminos, IcoUsrRegistrados, IconoNoPerfil } from '@src/components/icons.js';
+import { IcoCronologia, IcoTerminos, IcoUsrRegistrados, IconoNoPerfil } from '@components/icons.js';
 
 const SeccionEstadisticas = () => {
 	return (

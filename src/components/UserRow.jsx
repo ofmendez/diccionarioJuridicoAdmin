@@ -1,4 +1,6 @@
-import { IconoEditar, IconoVer } from '@src/components/icons.js';
+import { Link } from 'react-router-dom';
+
+import { IconoEditar, IconoVer } from '@components/icons.js';
 
 const UserRow = ({ user }) => {
 	return (
@@ -7,10 +9,13 @@ const UserRow = ({ user }) => {
 			<td>{user.role}</td>
 			<td>{user.lastLogin}</td>
 			<td className='TablaTextoCentrado'>
-				<a href='ViewTerm.html'>
+				{/* <Link to={`/users/${user._id}`}> */}
+				<Link to='#'>
 					<img className='IconosTabla' src={IconoVer} />
-				</a>
-				<a href='EditTerm.html'><img className='IconosTabla' src={IconoEditar} /></a>
+				</Link>
+				{/* <Link to={`/users/edit/${user._id}`}>
+					<img className='IconosTabla' src={IconoEditar} />
+				</Link> */}
 			</td>
 		</tr>
 	);
