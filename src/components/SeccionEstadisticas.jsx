@@ -18,21 +18,21 @@ const SeccionEstadisticas = () => {
 				<div className='ModuloEstadistica'>
 					<div><img className='ImagenIconoEstadisticas' src={IcoUsrRegistrados} /></div>
 					<div className='ContenidosEstadisticas'>
-						<p className='IndicadorEstadisticas'>150</p>
+						<p className='IndicadorEstadisticas'>---</p>
 						<p>Usuarios registrados</p>
 					</div>
 				</div>
 				<div className='ModuloEstadistica'>
 					<div><img className='ImagenIconoEstadisticas' src={IcoTerminos} /></div>
 					<div className='ContenidosEstadisticas'>
-						<p className='IndicadorEstadisticas'>85</p>
+						<p className='IndicadorEstadisticas'>---</p>
 						<p>Términos publicados</p>
 					</div>
 				</div>
 				<div className='ModuloEstadistica ModuloEstadisticaLargeScreen'>
 					<div><img className='ImagenIconoEstadisticas' src={IcoCronologia} /></div>
 					<div className='ContenidosEstadisticas'>
-						<p className='IndicadorEstadisticas'>25/07/2023</p>
+						<p className='IndicadorEstadisticas'>--/--/----</p>
 						<p>Última modificación</p>
 					</div>
 				</div>
