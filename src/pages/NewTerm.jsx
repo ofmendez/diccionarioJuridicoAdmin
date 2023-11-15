@@ -1,13 +1,13 @@
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
+import { createTerm } from '@src/hooks/PostData.jsx';
 import { IconoAgregar } from '@components/icons.js';
+import OverlayLoading from '@components/OverlayLoading.jsx';
+import ContentFrame from '@components/ContentFrame.jsx';
 import TermTopTools from '@components/TermTopTools.jsx';
 import FormMeaning from '@components/FormMeaning.jsx';
 import Meaning from '@components/Meaning.jsx';
-import ContentFrame from '@components/ContentFrame.jsx';
-import { createTerm } from '@src/hooks/PostData.jsx';
-import OverlayLoading from '@src/components/OverlayLoading';
-import { useNavigate } from 'react-router-dom';
 
 const NewTerm = () => {
 	const [meanings, setMeanings] = useState([new Meaning()]);

@@ -9,7 +9,7 @@ const SeccionEstadisticas = () => {
 					<img className='ImagenMiniaturaPerfil' src={IconoNoPerfil} />
 				</div>
 				<div className='MensajeBienvenida'>
-					<span>Hola Margarita</span>
+					<span>Hola Margarita</span> {/* TODO: Cambiar por el nombre del usuario	*/}
 					<br />
 					<span>¡Bienvenida!</span>
 				</div>
@@ -18,7 +18,7 @@ const SeccionEstadisticas = () => {
 				<div className='ModuloEstadistica'>
 					<div><img className='ImagenIconoEstadisticas' src={IcoUsrRegistrados} /></div>
 					<div className='ContenidosEstadisticas'>
-						<p className='IndicadorEstadisticas'>---</p>
+						<p className='IndicadorEstadisticas'>---</p> {/* TODO: cambiar por estadisticas	*/}
 						<p>Usuarios registrados</p>
 					</div>
 				</div>

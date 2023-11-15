@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 
 export const AuthContext = createContext({
 	isAuthenticated: false
-	// login: () => {}
 });
 
 export const AuthProvider = ({ children }) => {

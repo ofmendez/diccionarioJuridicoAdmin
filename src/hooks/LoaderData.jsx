@@ -36,19 +36,23 @@ const fetchData = ({ setLoadinng, path }) => {
 		setLoadinng('loading');
 		const uri = import.meta.env.VITE_API_URI;
 		fetch(`${uri}${path}`, requestOptions)
-			.then(res => {
+			.then(async res => {
 				if (res.ok) return res.json();
-				throw new Error('Error al cargar los datos');
+				const text = await res.text();
+				console.log(text);
+				const error = new Error();
+				error.data = res;
+				throw error;
 			})
 			.then(data => {
-				// console.log('fetch: ', data);
 				setLoadinng('ok');
 				resolve(data);
 			})
 			.catch(err => {
-				setLoadinng(err.message);
 				console.log(err);
-				reject(err);
+				const msg = err.data && err.data.status === 404 ? 'No existe el elemento' : 'Ha ocurrido un error, por favor intenta nuevamente.';
+				setLoadinng(msg);
+				reject(new Error(msg));
 			});
 	});
 };
