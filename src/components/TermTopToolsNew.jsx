@@ -1,6 +1,6 @@
 import { IconoGuardar, IconoCancelar } from '@components/icons.js';
 import { Link } from 'react-router-dom';
-const TermTopTools = ({ term, onTermChange, saveTerm }) => {
+const TermTopToolsNew = ({ term, onTermChange, saveTerm }) => {
 	return (
 		<div className='SeccionSuperiorHerramientas'>
 			<div className='SeccionInputTitulo'>
@@ -21,4 +21,4 @@ const TermTopTools = ({ term, onTermChange, saveTerm }) => {
 	);
 };
 
-export default TermTopTools;
+export default TermTopToolsNew;

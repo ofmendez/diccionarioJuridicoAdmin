@@ -5,7 +5,7 @@ import { createTerm } from '@src/hooks/PostData.jsx';
 import { IconoAgregar } from '@components/icons.js';
 import OverlayLoading from '@components/OverlayLoading.jsx';
 import ContentFrame from '@components/ContentFrame.jsx';
-import TermTopTools from '@components/TermTopTools.jsx';
+import TermTopToolsNew from '@components/TermTopToolsNew.jsx';
 import FormMeaning from '@components/FormMeaning.jsx';
 import Meaning from '@components/Meaning.jsx';
 
@@ -29,7 +29,7 @@ const NewTerm = () => {
 	return (
 		<>
 			<ContentFrame>
-				<TermTopTools term={term} onTermChange={(e) => setTerm(e.target.value)} saveTerm={saveTerm} />
+				<TermTopToolsNew term={term} onTermChange={(e) => setTerm(e.target.value)} saveTerm={saveTerm} />
 				<div className='SeccionContenidoDefiniciones'>
 					{
 						meanings.map((el, i) =>

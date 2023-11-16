@@ -22,12 +22,9 @@ const ViewTerm = () => {
 						<h1>{term.term}</h1>
 					</div>
 					<div className='SeccionDerechaBotones'>
-						<Link to='./edit' disabled onClick={(event) => event.preventDefault()}>
-							{/* <button className='BotonAgregar'> */}
-							<button className='ButtonDisabled'>
-								<img className='IconoMenu' src={IconoEditar} />
-								Editar Término
-							</button>
+						<Link className='BotonAgregar' to={'../edit/' + id}>
+							<img className='IconoMenu' src={IconoEditar} />
+							Editar Término
 						</Link>
 					</div>
 				</Skeletons>

@@ -13,9 +13,9 @@ const TermRow = ({ term, showBy }) => {
 				<Link to={`/terms/${term._id}`}>
 					<img className='IconosTabla' src={IconoVer} />
 				</Link>
-				{/* <Link to={`/terms/edit/${term._id}`}>
+				<Link to={`/terms/edit/${term._id}`}>
 					<img className='IconosTabla' src={IconoEditar} />
-				</Link> */}
+				</Link>
 			</td>
 		</tr>
 	);

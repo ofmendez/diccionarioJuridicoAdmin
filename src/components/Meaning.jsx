@@ -5,6 +5,12 @@ class Meaning {
 		this.handleChange = this.handleChange.bind(this);
 	}
 
+	createFromData (data) {
+		this.inputs = data;
+		this.handleChange = this.handleChange.bind(this);
+		return this;
+	}
+
 	handleChange (event) {
 		const name = event.target.name;
 		const value = name === 'year' ? event.target.valueAsNumber : event.target.value;

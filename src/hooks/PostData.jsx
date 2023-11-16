@@ -1,12 +1,22 @@
+// Post and patch data to the API
+
 const createTerm = ({ loadingTerm, setLoadingTerm, body, handleDonePost }) => {
 	if (loadingTerm === 'ok') return;
-	postData({ setLoadinng: setLoadingTerm, path: '/terms', body }).then((d) => handleDonePost(d))
+	postData({ setLoadinng: setLoadingTerm, path: '/terms', body, method: 'POST' }).then((d) => handleDonePost(d))
 		.catch((err) => {
 			window.alert(err);
 		});
 };
 
-const postData = ({ setLoadinng, path, body }) => {
+const updateTerm = ({ id, setLoadingTerm, body, handleDonePost }) => {
+	postData({ setLoadinng: setLoadingTerm, path: `/terms/${id}`, body, method: 'PATCH' }).then((d) => handleDonePost(d))
+		.catch((err) => {
+			setLoadingTerm('ok');
+			window.alert(err);
+		});
+};
+
+const postData = ({ setLoadinng, path, body, method }) => {
 	return new Promise((resolve, reject) => {
 		setLoadinng('loading');
 		const uri = import.meta.env.VITE_API_URI;
@@ -15,7 +25,7 @@ const postData = ({ setLoadinng, path, body }) => {
 		myHeaders.append('Content-Type', 'application/json; charset=utf-8');
 
 		const requestOptions = {
-			method: 'POST',
+			method,
 			headers: myHeaders,
 			body: JSON.stringify(body)
 		};
@@ -39,4 +49,4 @@ const postData = ({ setLoadinng, path, body }) => {
 	});
 };
 
-export { createTerm };
+export { createTerm, updateTerm };

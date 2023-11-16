@@ -11,7 +11,9 @@ const ViewMeaning = ({ meaning }) => {
 			</div>
 			<div className='SeparadorSecciones' />
 			<div className='DefinicionTermino ScrollVerde'>
-				<p>{meaning.definition}</p>
+				<p style={{ whiteSpace: 'pre-wrap' }}>
+					{meaning.definition}
+				</p>
 			</div>
 			<div className='SeparadorSecciones' />
 			<p className='InformacionDefinicion'>FUENTE: {meaning.source}</p>
