@@ -2,7 +2,7 @@ import React from 'react';
 import { IconoEliminar } from '@components/icons.js';
 
 const FormMeaning = ({ ...props }) => {
-	const options = ['MATERIA', 'Jurisprudencia', 'Sentencia', 'Norma'];
+	const options = ['MATERIA', 'Jurisprudencia', 'Doctrina', 'Norma'];
 
 	const handleChange = (event) => {
 		props.meaning.handleChange(event);
