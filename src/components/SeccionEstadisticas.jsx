@@ -9,7 +9,7 @@ const SeccionEstadisticas = () => {
 					<img className='ImagenMiniaturaPerfil' src={IconoNoPerfil} />
 				</div>
 				<div className='MensajeBienvenida'>
-					<span>Hola Margarita</span> {/* TODO: Cambiar por el nombre del usuario	*/}
+					<span>Hola {JSON.parse(window.localStorage.user).name.split(' ')[0]}</span> {/* TODO: Cambiar por el nombre del usuario	*/}
 					<br />
 					<span>¡Bienvenida!</span>
 				</div>

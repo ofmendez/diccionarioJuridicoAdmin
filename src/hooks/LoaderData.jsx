@@ -36,25 +36,31 @@ const fetchData = ({ setLoadinng, path }) => {
 		setLoadinng('loading');
 		const uri = import.meta.env.VITE_API_URI;
 		fetch(`${uri}${path}`, requestOptions)
-			.then(async res => {
+			.then(res => {
 				if (res.ok) return res.json();
-				const text = await res.text();
-				console.log(text);
-				const error = new Error();
-				error.data = res;
-				throw error;
+				throw res;
 			})
 			.then(data => {
 				setLoadinng('ok');
 				resolve(data);
 			})
-			.catch(err => {
-				console.log(err);
-				const msg = err.data && err.data.status === 404 ? 'No existe el elemento' : 'Ha ocurrido un error, por favor intenta nuevamente.';
-				setLoadinng(msg);
-				reject(new Error(msg));
+			.catch(async err => {
+				const text = await err.text();
+				console.log('[GET txt]: ', text);
+				console.log('[GET err]: ', err);
+				setLoadinng(processError(err));
+				reject(processError(err));
 			});
 	});
+};
+
+const processError = (err) => {
+	if (err.status === 401) {
+		window.localStorage.clear();
+		window.location.href = '/login';
+	}
+	err = err.statusText && err.status === 404 ? 'No existe el elemento' : 'Ha ocurrido un error, por favor intenta nuevamente.';
+	return err;
 };
 
 export { loadUsers, loadTerms, loadTerm };

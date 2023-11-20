@@ -22,7 +22,7 @@ const NewTerm = () => {
 
 	const saveTerm = () => {
 		const result = Object.entries(meanings).map(([name, value]) => value.inputs);
-		const body = { term, meanings: result, created_by: 'Admin' };
+		const body = { term, meanings: result, created_by: JSON.parse(window.localStorage.user).name, updated_by: JSON.parse(window.localStorage.user).name };
 		createTerm({ loadingTerm, setLoadingTerm, body, handleDonePost });
 	};
 
@@ -41,7 +41,7 @@ const NewTerm = () => {
 					</button>
 				</div>
 			</ContentFrame>
-			{loadingTerm === 'loading' ? <OverlayLoading /> : null}
+			{loadingTerm === 'loading' ? <OverlayLoading word='Creando' /> : null}
 		</>
 
 	);

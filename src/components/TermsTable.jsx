@@ -9,6 +9,7 @@ const TermsTable = ({ tableClass, terms, showBy }) => {
 					<th>Término</th>
 					<th>Publicación</th>
 					<th>Modificación</th>
+					{showBy && <th>Creado por</th>}
 					{showBy && <th>Modificado por</th>}
 					<th className='TablaTextoCentrado'>Acción</th>
 				</tr>

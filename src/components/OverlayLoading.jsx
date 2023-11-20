@@ -1,9 +1,9 @@
 import '@styles/Loading.css';
 
-const OverlayLoading = ({ children }) => {
+const OverlayLoading = ({ children, word }) => {
 	return (
 		<div className='overlayLoading'>
-			<h3 className='loading'>Guardando</h3>
+			<h3 className='loading'>{word || 'Cargando'}</h3>
 		</div>
 	);
 };

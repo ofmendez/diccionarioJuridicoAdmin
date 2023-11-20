@@ -8,12 +8,14 @@ import LoginForm from '@components/LoginForm.jsx';
 
 const Login = () => {
 	const navigate = useNavigate();
-
 	const [loadingFetch, setLoadingFetch] = useState('init');
 	const { isAuthenticated, login } = useContext(AuthContext);
+
 	const handleDoneFetch = (d) => {
 		window.localStorage.setItem('token', d.token);
-		window.localStorage.setItem('user', d.user);
+		window.localStorage.setItem('user', JSON.stringify(d.user));
+		window.localStorage.setItem('expire', Date.now() + 6 * 24 * 60 * 60 * 1000);
+		console.log('today: ', Date.now(), 'name: ', JSON.parse(window.localStorage.user).name);
 		login();
 	};
 

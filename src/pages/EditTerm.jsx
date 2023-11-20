@@ -30,8 +30,14 @@ const EditTerm = () => {
 
 	const handleUpdate = () => {
 		setLoadingTerm('loading');
-		const result = Object.entries(term.meanings).map(([name, value]) => value.inputs);
-		const body = { term: term.term, meanings: result, created_by: term.created_by };
+		const allowed = ['term', 'meanings', 'created_by'];
+		console.log(term);
+		const newTerm = Object.keys(term).filter(key => allowed.includes(key)).reduce((obj, key) => {
+			obj[key] = term[key];
+			return obj;
+		}, {});
+		const result = Object.entries(newTerm.meanings).map(([name, value]) => value.inputs);
+		const body = { ...newTerm, term: newTerm.term, meanings: result, updated_by: JSON.parse(window.localStorage.user).name };
 		updateTerm({ id, setLoadingTerm, body, handleDonePost });
 	};
 	const handleDelete = () => {
@@ -58,7 +64,7 @@ const EditTerm = () => {
 					</>
 				)
 				: (
-					<OverlayLoading />
+					<OverlayLoading word='Guardando' />
 				)
 		}
 		</ContentFrame>
