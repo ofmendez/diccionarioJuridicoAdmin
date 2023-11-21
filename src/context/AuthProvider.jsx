@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { Suspense, createContext, lazy, useState } from 'react';
 
 export const AuthContext = createContext({
 	isAuthenticated: false
@@ -18,9 +18,13 @@ export const AuthProvider = ({ children }) => {
 	});
 
 	const login = () => setAuthenticated(true);
+	const Theme1 = lazy(() => import('../components/ExtraLargeStyle.jsx'));
 
 	return (
 		<AuthContext.Provider value={{ login, isAuthenticated }}>
+			<Suspense fallback={<></>}>
+				{isAuthenticated ? <Theme1 /> : <></>}
+			</Suspense>
 			{children}
 		</AuthContext.Provider>
 	);
