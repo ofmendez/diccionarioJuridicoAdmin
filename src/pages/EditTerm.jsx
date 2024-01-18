@@ -43,7 +43,6 @@ const EditTerm = () => {
 	const handleDelete = () => {
 		console.log('delete');
 	};
-	// console.log(term);
 
 	return (
 		<ContentFrame> {
@@ -64,7 +63,7 @@ const EditTerm = () => {
 					</>
 				)
 				: (
-					<OverlayLoading word='Guardando' />
+					<OverlayLoading word='Cargando' />
 				)
 		}
 		</ContentFrame>

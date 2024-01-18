@@ -13,7 +13,10 @@ const FormMeaning = ({ ...props }) => {
 	};
 
 	const hadleDeleteMeaning = () => {
-		props.setMeanings(term => ({ ...term, meanings: term.meanings.filter((el, i) => i !== props.index) }));
+		if (props.edit)
+			props.setMeanings(term => ({ ...term, meanings: term.meanings.filter((_, i) => i !== props.index) }));
+		else
+			props.setMeanings(prev => prev.filter((_, i) => i !== props.index));
 	};
 
 	const currMeaning = props.meaning.inputs;
