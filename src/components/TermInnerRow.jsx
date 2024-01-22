@@ -1,9 +1,8 @@
 const TermInnerRow = ({ descriptor }) => {
 	return (
 		<tr>
-			<td>
-				&nbsp;•&nbsp;
-				{descriptor}
+			<td className='descriptor_row'>
+				•&nbsp; {descriptor}
 			</td>
 		</tr>
 	);

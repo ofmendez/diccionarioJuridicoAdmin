@@ -896,6 +896,10 @@ a:visited{
 	color: var(--ColorAcento);
 	font-size: 12px;
 }
+
+.descriptor_row{
+	padding-left:25px;
+}
 /* .table-container {
 	padding-left: 10px;
 }
