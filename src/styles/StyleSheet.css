@@ -609,7 +609,7 @@
      align-items: var(--SeccionSuperiorAlineacion);
      flex-direction: var(--SeccionSuperiorOrden);
      row-gap: 10px;
-     column-gap: 16px;
+     column-gap: 10px;
 }
  .FiltrosBusqueda{
      background-color: var(--ColorSecundario);
@@ -862,3 +862,54 @@ a:visited{
 	color: var(--ColorTextoAcento);
 	/* opacity: 0.5; */
 }
+.dj-link, .dj-link:visited{
+	color: var(--ColorTexto);
+	text-decoration:dotted underline var(--ColorAcento);
+	text-emphasis: none;
+}
+
+.dj_button{
+	border: 0 solid transparent;
+	padding: var(--PaddingBotonAgregar);
+	display: var(--BuscadorDisplayBoton);
+	background-color: var(--ColorAcento);
+	color: var(--ColorTextoAcento);
+	border-radius: var(--RadioEsquinas);
+	width: var(--BuscadorSubmitWidth);
+	/* margin-left: var(--BuscadorSeparacionSubmit); */
+	font-weight: var(--FuenteNegrilla);
+	font-size: var(--TamanoFuenteParrafos);
+	cursor: pointer;
+	min-width: 120px;
+}
+.dj_button:hover{
+	background-color: var(--ColorAcentoHover);
+}
+
+.TablaUsuarios  tr td:first-child{
+	max-width: 700px;
+}
+.table-container tr td {
+	border-bottom: 1px dotted #e4e4e4;
+}
+
+/* .table-container {
+	padding-left: 10px;
+}
+
+.table-container tr td {
+	position: relative;
+}
+
+.table-container tr td:first-child:after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: -15px;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	background: url('/caret.svg') no-repeat center center;
+	background-size: 100% 100%;
+	width: 15px;
+	height: 15px;
+} */

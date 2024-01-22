@@ -1,16 +1,22 @@
 import TermRow from '@components/TermRow.jsx';
 import '@styles/Loading.css';
 
-const printSortedTerms = (terms, showBy) => {
-	const sortedTerms = terms.sort((a, b) => a.term.localeCompare(b.term));
-	return sortedTerms.map((term) =>
-		<TermRow key={term._id} showBy={showBy} term={term} />
-	);
-};
-const TermsTable = ({ tableClass, terms, showBy }) => {
+const TermsTable = ({ tableClass, terms, showBy, rowsState, home }) => {
+	const printSortedTerms = (terms, showBy, rowsState) => {
+		const sortedTerms = terms.sort((a, b) => a.term.localeCompare(b.term));
+		const isExpanded = (id) => rowsState?.expandedRows.includes(id);
+		return sortedTerms.map((term) =>
+			<TermRow
+				key={term._id} showBy={showBy} term={term} home={home}
+				isExpanded={isExpanded(term._id)}
+				onExpand={() => rowsState?.setExpandedRows([...rowsState?.expandedRows, term._id])}
+				onCollapse={() => rowsState?.setExpandedRows(rowsState?.expandedRows.filter((id) => id !== term._id))}
+			/>
+		);
+	};
 	return (
 		<table className={tableClass}>
-			<tbody>
+			<thead>
 				<tr className='TablaSeparadorTitulos'>
 					<th>Término</th>
 					<th>Publicación</th>
@@ -19,7 +25,9 @@ const TermsTable = ({ tableClass, terms, showBy }) => {
 					{showBy && <th>Modificado por</th>}
 					<th className='TablaTextoCentrado'>Acción</th>
 				</tr>
-				{printSortedTerms(terms, showBy)}
+			</thead>
+			<tbody>
+				{printSortedTerms(terms, showBy, rowsState)}
 			</tbody>
 		</table>
 	);

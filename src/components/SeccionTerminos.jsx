@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { forwardRef, useEffect, useImperativeHandle, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Skeletons } from '@components/Skeletons.jsx';
@@ -7,13 +7,13 @@ import MainsSeparator from '@components/MainSeparator.jsx';
 import TermsTable from '@components/TermsTable.jsx';
 import { loadTerms } from '@src/hooks/LoaderData.jsx';
 
-const SeccionTerminos = ({ home, dayTerm }) => {
+const SeccionTerminos = (props, ref) => {
 	const [terms, setTerms] = useState([]);
 	const [loadingTerms, setLoadingTerms] = useState('init');
 	useEffect(() => loadTerms({ loadingTerms, setLoadingTerms, setTerms }), []);
-
+	useImperativeHandle(ref, () => ({ getTerms: () => terms }));
 	return (
-		home
+		props.home
 			? (
 				<Skeletons on={loadingTerms} msg='Cargando'>
 					<div className='SeccionInferiorColumnaIzquierdaHome'>
@@ -23,12 +23,12 @@ const SeccionTerminos = ({ home, dayTerm }) => {
 						</div>
 						<MainsSeparator />
 						<div className='ContenedorTablaRecientes ScrollVerde'>
-							<TermsTable tableClass='TablaRecientes' terms={terms} />
+							<TermsTable tableClass='TablaRecientes' terms={terms} home />
 						</div>
 					</div>
 				</Skeletons>
 			)
-			: dayTerm
+			: props.dayTerm
 				? (
 					<Skeletons on={loadingTerms} msg='Cargando'>
 						<SeccionPalabraDelDia terms={terms} />
@@ -40,8 +40,8 @@ const SeccionTerminos = ({ home, dayTerm }) => {
 							<div className='SeccionContenidoSubpagina'>
 								<h3>Términos</h3>
 								<MainsSeparator />
-								<div className='ContenedorTablaUsuarios ScrollVerde'>
-									<TermsTable tableClass='TablaUsuarios' showBy terms={terms} />
+								<div className='ContenedorTablaUsuarios ScrollVerde table-container'>
+									<TermsTable tableClass='TablaUsuarios' showBy terms={terms} rowsState={props.rowsState} />
 								</div>
 							</div>
 						</Skeletons>
@@ -50,4 +50,4 @@ const SeccionTerminos = ({ home, dayTerm }) => {
 	);
 };
 
-export default SeccionTerminos;
+export default forwardRef(SeccionTerminos);
