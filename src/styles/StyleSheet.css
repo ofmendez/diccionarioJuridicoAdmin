@@ -864,7 +864,7 @@ a:visited{
 }
 .dj-link, .dj-link:visited{
 	color: var(--ColorTexto);
-	text-decoration:dotted underline var(--ColorAcento);
+	/* text-decoration:dotted underline var(--ColorAcento); */
 	text-emphasis: none;
 }
 
@@ -890,9 +890,12 @@ a:visited{
 	max-width: 700px;
 }
 .table-container tr td {
-	border-bottom: 1px dotted #e4e4e4;
+	border-bottom: 1px solid #e4e4e4;
 }
-
+::marker {
+	color: var(--ColorAcento);
+	font-size: 12px;
+}
 /* .table-container {
 	padding-left: 10px;
 }
