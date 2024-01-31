@@ -16,6 +16,14 @@ const updateTerm = ({ id, setLoadingTerm, body, handleDonePost }) => {
 		});
 };
 
+const deleteTerm = ({ id, setLoadingTerm, handleDonePost }) => {
+	postData({ setLoading: setLoadingTerm, path: `/terms/${id}`, method: 'DELETE' }).then(() => handleDonePost())
+		.catch((err) => {
+			setLoadingTerm('ok');
+			window.alert(err);
+		});
+};
+
 const postData = ({ setLoading, path, body, method }) => {
 	return new Promise((resolve, reject) => {
 		setLoading('loading');
@@ -47,4 +55,4 @@ const postData = ({ setLoading, path, body, method }) => {
 	});
 };
 
-export { createTerm, updateTerm };
+export { createTerm, updateTerm, deleteTerm };

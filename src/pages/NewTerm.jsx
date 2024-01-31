@@ -19,6 +19,13 @@ const NewTerm = () => {
 		navigate(`/Terms/${d.id}`);
 		console.log(d);
 	};
+	const validations = () => {
+		if (term === '') {
+			window.alert('El término no puede estar vacío');
+			return false;
+		}
+		return true;
+	};
 
 	const saveTerm = () => {
 		const result = Object.entries(meanings).map(([name, value]) => value.inputs);
@@ -26,10 +33,14 @@ const NewTerm = () => {
 		createTerm({ loadingTerm, setLoadingTerm, body, handleDonePost });
 	};
 
+	const trySave = () => {
+		validations() && saveTerm();
+	};
+
 	return (
 		<>
 			<ContentFrame>
-				<TermTopToolsNew term={term} onTermChange={(e) => setTerm(e.target.value)} saveTerm={saveTerm} />
+				<TermTopToolsNew term={term} onTermChange={(e) => setTerm(e.target.value)} saveTerm={trySave} />
 				<div className='SeccionContenidoDefiniciones'>
 					{
 						meanings.map((el, i) =>

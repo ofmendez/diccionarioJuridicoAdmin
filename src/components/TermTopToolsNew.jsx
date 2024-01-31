@@ -1,6 +1,11 @@
 import { IconoGuardar, IconoCancelar } from '@components/icons.js';
-import { Link } from 'react-router-dom';
+import ButtonRound from '@src/components/ButtonRound';
+
 const TermTopToolsNew = ({ term, onTermChange, saveTerm }) => {
+	const handleCancel = () => {
+		window.confirm('¿Estás seguro de cancelar?') && window.history.back();
+	};
+
 	return (
 		<div className='SeccionSuperiorHerramientas'>
 			<div className='SeccionInputTitulo'>
@@ -10,9 +15,7 @@ const TermTopToolsNew = ({ term, onTermChange, saveTerm }) => {
 				/>
 			</div>
 			<div className='SeccionDerechaBotones'>
-				<Link className='BotonEliminar' to={-1}>
-					<img className='IconoMenu' src={IconoCancelar} />
-				</Link>
+				<ButtonRound ico={IconoCancelar} onClick={handleCancel} />
 				<button className='BotonAgregar' onClick={saveTerm}>
 					<img className='IconoMenu' src={IconoGuardar} /> Guardar
 				</button>

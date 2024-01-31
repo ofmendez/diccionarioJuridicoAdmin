@@ -1,4 +1,5 @@
 import { IconoGuardar, IconoEliminar } from '@components/icons.js';
+import ButtonRound from './ButtonRound';
 
 const TermTopToolsEdit = ({ term, onTermChange, handleUpdate, handleDelete }) => {
 	return (
@@ -10,9 +11,7 @@ const TermTopToolsEdit = ({ term, onTermChange, handleUpdate, handleDelete }) =>
 				/>
 			</div>
 			<div className='SeccionDerechaBotones'>
-				{/* <button className='BotonEliminar' onClick={handleDelete}>
-					<img className='IconoMenu' src={IconoEliminar} />
-				</button> */}
+				<ButtonRound ico={IconoEliminar} onClick={handleDelete} />
 				<button className='BotonAgregar' onClick={handleUpdate}>
 					<img className='IconoMenu' src={IconoGuardar} /> Guardar
 				</button>

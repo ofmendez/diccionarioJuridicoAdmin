@@ -2,7 +2,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 import { loadTerm } from '@src/hooks/LoaderData.jsx';
-import { updateTerm } from '@src/hooks/PostData.jsx';
+import { updateTerm, deleteTerm } from '@src/hooks/PostData.jsx';
 
 import { IconoAgregar } from '@components/icons.js';
 import ContentFrame from '@components/ContentFrame.jsx';
@@ -24,7 +24,7 @@ const EditTerm = () => {
 
 	useEffect(() => { loadTerm({ id, loadingTerm, setLoadingTerm, setTerm: homologateTerm }); }, []);
 
-	const handleDonePost = (d) => {
+	const handleDonePost = (_) => {
 		navigate(`/Terms/${id}`);
 	};
 
@@ -36,12 +36,14 @@ const EditTerm = () => {
 			obj[key] = term[key];
 			return obj;
 		}, {});
-		const result = Object.entries(newTerm.meanings).map(([name, value]) => value.inputs);
+		const result = Object.entries(newTerm.meanings).map(([_, value]) => value.inputs);
 		const body = { ...newTerm, term: newTerm.term, meanings: result, updated_by: JSON.parse(window.localStorage.user).name };
 		updateTerm({ id, setLoadingTerm, body, handleDonePost });
 	};
+
 	const handleDelete = () => {
-		console.log('delete');
+		window.confirm('¿Estás seguro de eliminar este término?') &&
+		deleteTerm({ id, setLoadingTerm, handleDonePost: () => navigate('/terms') });
 	};
 
 	return (
