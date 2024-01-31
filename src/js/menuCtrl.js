@@ -1,10 +1,10 @@
 // Definición Medida Ancho Menu Lateral
 export function definirMedidaMenuLateral () {
 	const anchoMenuLateral = document.getElementById('MenuLateral').clientWidth;
-	if (window.innerWidth > 1250) {
-		document.documentElement.style.setProperty('--SeccionDerechaTamanoAutomatico', window.innerWidth - anchoMenuLateral + 'px');
+	if (window.innerWidth > 1250)
+		// document.documentElement.style.setProperty('--SeccionDerechaTamanoAutomatico', window.innerWidth - anchoMenuLateral + 'px');
 		document.documentElement.style.setProperty('--SeccionesDerechaMenuAncho', anchoMenuLateral + 'px');
-	} else if (window.innerWidth > 991)
+	else if (window.innerWidth > 991)
 		document.documentElement.style.setProperty('--SeccionesDerechaMenuAncho', anchoMenuLateral + 'px');
 	else if (window.innerWidth < 990)
 		document.documentElement.style.setProperty('--SeccionesDerechaMenuAncho', '0px');

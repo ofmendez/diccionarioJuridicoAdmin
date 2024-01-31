@@ -10,7 +10,8 @@ const Menu = () => {
 
 	useEffect(() => {
 		window.addEventListener('resize', reziseContent);
-		reziseContent();
+		setTimeout(() => reziseContent(), 0);
+		// reziseContent();
 		return () => window.removeEventListener('resize', reziseContent);
 	}, [window.innerWidth]);
 
