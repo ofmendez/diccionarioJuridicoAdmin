@@ -17,6 +17,7 @@ import IconoCerrar from '@ico/Cerrar.svg';
 import IconoCancelar from '@ico/Cancelar.svg';
 import IconoPassword from '@ico/Contrasena.svg';
 import IconoEmail from '@ico/Email.svg';
+import IconoFiltrar from '@ico/Filtrar.svg';
 
 export {
 	IcoInicio,
@@ -37,5 +38,6 @@ export {
 	IconoCerrar,
 	IconoPassword,
 	IconoEmail,
-	IconoCancelar
+	IconoCancelar,
+	IconoFiltrar
 };

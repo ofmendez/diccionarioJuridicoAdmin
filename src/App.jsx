@@ -5,7 +5,7 @@ import { MenuProvider } from '@src/context/MenuContext.jsx';
 import { AuthProvider } from '@src/context/AuthProvider.jsx';
 import PrivateRoute from '@src/context/PrivateRoute.jsx';
 
-import { Terms, Users, NoPage, Home, NewTerm, EditTerm, ViewTerm, Login } from '@src/pages/PagesImport.jsx';
+import { Terms, Users, NoPage, Home, NewTerm, EditTerm, ViewTerm, Login, Search } from '@src/pages/PagesImport.jsx';
 import '@styles/main-styles.css';
 
 const App = () => {
@@ -20,6 +20,7 @@ const App = () => {
 							<Route path='terms' element={<Outlet />}>
 								<Route index element={<Terms />} />
 								<Route path='new' element={<NewTerm />} />
+								<Route path='search' element={<Search />} />
 								<Route path='edit/:id' element={<EditTerm />} />
 								<Route path=':id' element={<ViewTerm />} />
 							</Route>

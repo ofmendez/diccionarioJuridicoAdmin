@@ -18,7 +18,7 @@
        /* Página Home */
         --OcultarHeaderMovil: none;
          /*Buscador*/
-         --BuscadorDisplayBoton: block;
+         --BuscadorDisplayBoton: flex;
    }
    /* Animaciones Menú */
     .slide-in {
@@ -57,4 +57,20 @@
         transition: visibility 1s, opacity 0.5s, z-index 0.5s linear;
         z-index:-1 !important;
    }
+
+
+	:root {
+		/*Buscador página*/
+		 --AnchoSeccionFiltros:32%;
+		 --AnchoSeccionResultados: calc(100% - var(--AnchoSeccionFiltros));
+		 --OrientacionBusqueda: row;
+		 --DisplaySeccionFiltros: flex;
+		 --DisplayBotonSeccionFiltros: none;
+		 --DireccionFlexCategoriasBuscador: column;
+		 --AnchoCategoriaBuscadorFiltros:100%;
+  }
+  
+  #SeccionFiltros{
+		display: block !important;
+  }
 }

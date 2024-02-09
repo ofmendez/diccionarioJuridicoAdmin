@@ -19,6 +19,22 @@
     /* Subpaginas*/
     --FiltrosBusquedaOscultar: block;
     }
+		/*  --------------- INICIO ESTILO PÁGINA BUSCADOR --------------- */
+		:root {
+			/*Buscador página*/
+			--AnchoSeccionFiltros:25%; 
+			--AnchoSeccionResultados: calc(100% - var(--AnchoSeccionFiltros));
+		}
+		
+		}
+		
+		@media only screen and (min-width: 1500px) {
+		
+			:root {
+					/*Buscador página*/
+					--AnchoSeccionFiltros:20%; 
+					--AnchoSeccionResultados: calc(100% - var(--AnchoSeccionFiltros));
+			}
 }
 /* ------------------------- MAX MENU SIZE ------------------------- */
  @media only screen and (min-width: 1250px) {

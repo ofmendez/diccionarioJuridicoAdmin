@@ -27,9 +27,9 @@ const Terms = () => {
 							<img className='IconoLupa' src={IconoLupa} />
 							<input className='InputBuscador' type='text' placeholder='Buscar' name='buscar' />
 						</div>
-						<button className='SubmitBusqueda' type='submit' value='BUSCAR'>
+						<Link to='./search' className='SubmitBusqueda'>
 							BUSCAR
-						</button>
+						</Link>
 					</form>
 				</div>
 				<div className='SeccionSuperiorHerramientas'>

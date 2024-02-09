@@ -688,18 +688,20 @@
      margin-right: 20px;
 }
  .SubmitBusqueda{
-     border: 0 solid transparent;
-     padding: var(--PaddingBotonAgregar);
-     display: var(--BuscadorDisplayBoton);
-     background-color: var(--ColorAcento);
-     color: var(--ColorTextoAcento);
-     border-radius: var(--RadioEsquinas);
-     width: var(--BuscadorSubmitWidth);
-     margin-left: var(--BuscadorSeparacionSubmit);
-     font-weight: var(--FuenteNegrilla);
-     font-size: var(--TamanoFuenteParrafos);
-     cursor: pointer;
-     min-width: 120px;
+	justify-content: center;
+	align-items: center;
+	border: 0 solid transparent;
+	padding: var(--PaddingBotonAgregar);
+	display: var(--BuscadorDisplayBoton);
+	background-color: var(--ColorAcento);
+	color: var(--ColorTextoAcento);
+	border-radius: var(--RadioEsquinas);
+	width: var(--BuscadorSubmitWidth);
+	margin-left: var(--BuscadorSeparacionSubmit);
+	font-weight: var(--FuenteNegrilla);
+	font-size: var(--TamanoFuenteParrafos);
+	cursor: pointer;
+	min-width: 120px;
 }
  .SubmitBusqueda:hover{
      background-color: var(--ColorAcentoHover);
@@ -920,3 +922,139 @@ a:visited{
 	width: 15px;
 	height: 15px;
 } */
+
+
+:root {
+	/*Buscador página*/
+	 --BuscadorPaddingLupaCompleto:2.5%;
+	 --AnchoSeccionFiltros:100%;
+	 --AnchoSeccionResultados: 100%;
+	 --PaddingResultadosBusqueda:2vh;
+	 --ColorResaltado: #17C64F22;
+	 --OrientacionBusqueda: column;
+	 --OrientacionFiltros: row;
+	 --AnchoSeccionFiltros:100%;
+	 --DireccionFlexCategoriasBuscador: row;
+	 --DisplaySeccionFiltros: none;
+	 --DisplayBotonSeccionFiltros: block;
+	 --AnchoCategoriaBuscadorFiltros:50%;
+	 /*Fuentes*/
+	 --TamanoFuenteTitulosH4: 14px;
+}
+
+h4{
+	font-size: var(--TamanoFuenteTitulosH4) !important;
+	font-weight: var(--FuenteNegrilla);
+	line-height: 1em;
+}
+
+mark{
+	background-color: var(--ColorResaltado) ;
+	
+}
+.SeccionContenedorBuscador{
+	width:100%;
+}
+
+.SeccionInputBuscadorCompleto{
+		 display: flex;
+		 flex-direction: row;
+		 background-color: var(--ColorSecundario);
+		 padding: var(--PaddingBotonAgregar);
+		 border-radius: var(--RadioEsquinas);
+		 width: 100%;
+}
+
+.InputBuscadorCompleto{
+	flex-grow: 2;
+	border:0 solid transparent;
+	outline:0;
+	background-color: transparent;
+	padding-left: var(--BuscadorPaddingLupaCompleto);
+	font-size: var(--TamanoFuenteParrafos);
+	margin-right: 20px;
+}
+
+.SeccionContenidoPaginaBuscador{
+	display:flex;
+	gap:2vw;
+	flex-direction: var(--OrientacionBusqueda);
+}
+
+.SeccionBotonFiltros{
+	display: var(--DisplayBotonSeccionFiltros);
+}
+
+#BotonCerrarFiltros{
+	display:none;
+}
+
+.SeccionContenidoBuscadorFiltros{
+	width: var(--AnchoSeccionFiltros);
+	background-color: var(--ColorSecundario);
+	padding: var(--PaddingContenidosHome);
+	border-radius: var(--RadioEsquinas);
+	display: var(--DisplaySeccionFiltros);
+	flex-direction: column;
+	height: -webkit-fill-available;
+	min-height: 0;
+}
+
+.SeccionContenidoBuscadorResultados{
+	width: var(--AnchoSeccionResultados);
+	background-color: var(--ColorSecundario);
+	padding: var(--PaddingContenidosHome);
+	border-radius: var(--RadioEsquinas);
+	display: flex;
+	flex-direction: column;
+	height: -webkit-fill-available;
+	min-height: 0;
+}
+
+.LabelBuscadorFiltros{
+	font-size: var(--TamanoFuenteParrafos);
+	color: var(--ColorTexto);
+	font-weight: var(--FuenteRegular);
+	text-align: justify;
+	line-height: 1.2em;
+}
+
+.CategoriasBuscador{
+	display:flex;
+	flex-direction: var(--DireccionFlexCategoriasBuscador);
+	width:100%;
+}
+
+.CategoriasBuscador div{
+	width: var(--AnchoCategoriaBuscadorFiltros);
+}
+
+.SubmitBusquedaFiltros{
+	width: 100%;
+	 border: 0 solid transparent;
+	 background-color: var(--ColorAcento);
+	 color: var(--ColorSecundario);
+	 border-radius: var(--RadioEsquinas);
+	 padding: var(--PaddingBotonAgregar);
+	 font-size: var(--TamanoFuenteParrafos);
+	 cursor:pointer;
+}
+
+.ResultadoBusqueda{
+	padding-top: var(--PaddingResultadosBusqueda);
+	padding-bottom: var(--PaddingResultadosBusqueda);
+}
+
+.ResultadoBusquedaTermino, .ResultadoBusquedaDescriptor{
+	font-weight: var(--FuenteNegrilla);
+}
+
+.ResultadoBusquedaSeparador{
+	display:block;
+	border: 0 solid transparent;
+	border-bottom: 1px solid #e4e4e4;
+}
+
+.hidden{
+	display:none;
+}
