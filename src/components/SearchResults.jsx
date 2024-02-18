@@ -1,46 +1,37 @@
-const SearchResults = () => {
+import { Link } from 'react-router-dom';
+
+const SearchResults = ({ results }) => {
+	console.log('SearchResults', results);
 	return (
 		<div className='SeccionContenidoBuscadorResultados'>
 			<h3>Resultados</h3>
+			{results.length === 0 && <><br /><p>No se encontraron resultados</p></>}
 			<br />
-			<div className='ResultadoBusqueda'>
-				<p className='ResultadoBusquedaTermino'>
-					<mark>Acciones judiciales</mark>
-					de asuntos mineros y ambientales
-				</p>
-			</div>
-			<hr className='ResultadoBusquedaSeparador' /> {/* ---- SEPARADOR ------ */}
-			<div className='ResultadoBusqueda'>
-				<p className='ResultadoBusquedaDescriptor'>
-					Conciliación extrajudicial no obligatoria frente a pretensiones no económicas.
-				</p>
-				<p className='ResultadoBusquedaAno'>
-					2016
-				</p>
-				<p className='ResultadoBusquedaDefinicion'>
-					...demandante radica solamente en continuar con el trámite de legalización de explotaciones mineras iniciado ante la <mark>entidad demandada</mark>, a fin de seguir desarrollando la actividad de minería tradicional. Bajo ese entendido, considera...
-				</p>
-				<p className='ResultadoBusquedaFuente'>
-					Sentencia del 22 de abril de 2016. Exp.54489, Consejo de Estado, Sala de lo Contencioso Administrativo, Sección Tercera, C. P.: RAMIRO DE JESÚS PAZOS GUERRERO.
-				</p>
-			</div>
-			<hr className='ResultadoBusquedaSeparador' /> {/* ---- SEPARADOR ------ */}
-			<div className='ResultadoBusqueda'>
-				<p className='ResultadoBusquedaDescriptor'>
-					Conciliación extrajudicial no obligatoria frente a pretensiones no económicas.
-				</p>
-				<p className='ResultadoBusquedaAno'>
-					2016
-				</p>
-				<p className='ResultadoBusquedaDefinicion'>
-					...demandante radica solamente en continuar con el trámite de legalización de
-					<mark>explotaciones mineras</mark>
-					iniciado ante la entidad demandada, a fin de seguir desarrollando la actividad de minería tradicional. Bajo ese entendido, considera...
-				</p>
-				<p className='ResultadoBusquedaFuente'>
-					Sentencia del 22 de abril de 2016. Exp.54489, Consejo de Estado, Sala de lo Contencioso Administrativo, Sección Tercera, C. P.: RAMIRO DE JESÚS PAZOS GUERRERO.
-				</p>
-			</div>
+			{results.map((r, i) =>
+				<div key={i}>
+
+					<Link to={`/terms/${r._id}`} className='ResultadoBusqueda'>
+						<div className='ResultadoBusqueda hovered'>
+							<p className='ResultadoBusquedaTermino'>
+								{r.term}
+							</p>
+							<p className='ResultadoBusquedaFuentemongodb+srv://ofmendez:nQz8yrKytGPYQEOw@cluster0.bss36fz.mongodb.net/?retryWrites=true&w=majority&authMechanism=DEFAULT'>
+								{
+									r.highlights.reduce((max, tmp) => max.score > tmp.score ? max : tmp).texts.map((t, i) => {
+										if (t.type === 'text')
+											return <span key={i}> {t.value}</span>;
+										else
+											return <mark key={i}> {t.value} </mark>;
+									})
+								}
+							</p>
+						</div>
+
+					</Link>
+					<hr className='ResultadoBusquedaSeparador' />
+				</div>
+
+			)}
 		</div>
 	);
 };
