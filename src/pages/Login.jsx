@@ -26,7 +26,28 @@ const Login = () => {
 			return window.alert('La contraseña debe tener al menos 8 caracteres');
 		tryLogin({ loadingFetch, setLoadingFetch, query, handleDoneFetch });
 	};
+
 	useEffect(() => { if (isAuthenticated) navigate('/'); }, [isAuthenticated]);
+
+	useEffect(() => {
+		const listener = (event) => {
+			console.log('MESSAGE ARRIVE!! : ', event);
+			console.log('M origin : ', event.origin);
+			console.log('M data   : ', event.data);
+			if (event.origin === 'https://consulta.diccionarioexplore.com' && event.data === 'requestToken') {
+				const token = window.localStorage.getItem('token');
+				if (token)
+					event.source.postMessage({ authToken: token }, event.origin);
+			}
+		};
+
+		window.addEventListener('message', listener);
+
+		// Cleanup function (in case you need it)
+		return () => {
+			window.removeEventListener('message', listener);
+		};
+	}, []);
 
 	return (
 		<>
