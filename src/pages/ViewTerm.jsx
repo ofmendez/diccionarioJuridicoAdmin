@@ -6,7 +6,7 @@ import { IconoEditar, IconoEliminar } from '@components/icons.js';
 import { loadTerm } from '@src/hooks/LoaderData.jsx';
 import ViewMeaning from '@components/ViewMeaning.jsx';
 import { Skeletons } from '@components/Skeletons.jsx';
-import ButtonRound from '@src/components/ButtonRound';
+import ButtonRound from '@src/components/ButtonRound.jsx';
 import { deleteTerm } from '@src/hooks/PostData.jsx';
 
 const ViewTerm = () => {
