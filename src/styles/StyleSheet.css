@@ -133,7 +133,7 @@
 }
 /* Configuración Scroll */
  .ScrollVerde::-webkit-scrollbar {
-     width: 6px;
+     width: 9px;
      height: 6px;
     /* width */
 }
@@ -184,12 +184,12 @@
      width:100%;
      margin: var(--MarginElementos);
 }
- .FilaLoginInput{
-     background-color: var(--ColorSecundario);
-     border-radius: var(--RadioEsquinas);
-     padding: var(--PaddingElementos);
-     display: flex;
-     align-items: center;
+.FilaLoginInput {
+	background-color: var(--ColorSecundario);
+	border-radius: var(--RadioEsquinas);
+	padding: 14px;
+	display: flex;
+	align-items: center;
 }
  .SubmitLogin{
      width: 100%;

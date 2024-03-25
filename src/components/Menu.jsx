@@ -28,7 +28,7 @@ const Menu = () => {
 						</ul>
 					</div>
 					<div className='MenuLateralSeccion InformacionPropiedadAplicativo'>
-						© 2023 Explore Diccionario Jurídico Minero-Energético.
+						© 2024 Explore Diccionario Jurídico Minero-Energético.
 					</div>
 				</div>
 			</div>
