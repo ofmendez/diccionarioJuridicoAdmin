@@ -36,7 +36,7 @@ const ViewUser = () => {
 						<h1>{user.name}</h1>
 					</div>
 					<div className='SeccionDerechaBotones'>
-						<ButtonRound onClick={handleDelete} ico={IconoEliminar} />
+						{/* <ButtonRound onClick={handleDelete} ico={IconoEliminar} /> */}
 						<Link className='BotonAgregar' to={'../edit/' + id}>
 							<img className='IconoMenu' src={IconoEditar} />
 							Editar Usuario
