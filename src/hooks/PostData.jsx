@@ -8,6 +8,14 @@ const createTerm = ({ loadingTerm, setLoadingTerm, body, handleDonePost }) => {
 		});
 };
 
+const createUser = ({ loadingUser, setLoadingUser, body, handleDonePost }) => {
+	if (loadingUser === 'ok') return;
+	postData({ setLoading: setLoadingUser, path: '/users', body, method: 'POST' }).then((d) => handleDonePost(d))
+		.catch((err) => {
+			window.alert(err);
+		});
+};
+
 const updateTerm = ({ id, setLoadingTerm, body, handleDonePost }) => {
 	postData({ setLoading: setLoadingTerm, path: `/terms/${id}`, body, method: 'PATCH' }).then((d) => handleDonePost(d))
 		.catch((err) => {
@@ -16,10 +24,26 @@ const updateTerm = ({ id, setLoadingTerm, body, handleDonePost }) => {
 		});
 };
 
+const updateUser = ({ id, setLoadingUser, body, handleDonePost }) => {
+	postData({ setLoading: setLoadingUser, path: `/users/${id}`, body, method: 'PATCH' }).then((d) => handleDonePost(d))
+		.catch((err) => {
+			setLoadingUser('ok');
+			window.alert(err);
+		});
+};
+
 const deleteTerm = ({ id, setLoadingTerm, handleDonePost }) => {
 	postData({ setLoading: setLoadingTerm, path: `/terms/${id}`, method: 'DELETE' }).then(() => handleDonePost())
 		.catch((err) => {
 			setLoadingTerm('ok');
+			window.alert(err);
+		});
+};
+
+const deleteUser = ({ id, setLoadingUser, handleDonePost }) => {
+	postData({ setLoading: setLoadingUser, path: `/users/${id}`, method: 'DELETE' }).then(() => handleDonePost())
+		.catch((err) => {
+			setLoadingUser('ok');
 			window.alert(err);
 		});
 };
@@ -55,4 +79,4 @@ const postData = ({ setLoading, path, body, method }) => {
 	});
 };
 
-export { createTerm, updateTerm, deleteTerm };
+export { createTerm, updateTerm, deleteTerm, createUser, updateUser, deleteUser };

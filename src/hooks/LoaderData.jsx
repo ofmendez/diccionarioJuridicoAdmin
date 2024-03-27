@@ -1,11 +1,3 @@
-const loadUsers = ({ loadingUsrs, setLoadingUsrs, setUsers }) => {
-	if (loadingUsrs === 'ok') return;
-	fetchData({ setLoadinng: setLoadingUsrs, path: '/users' }).then((d) => setUsers(d))
-		.catch((err) => {
-			console.log(err);
-		});
-};
-
 const loadTerms = ({ loadingTerms, setLoadingTerms, setTerms }) => {
 	if (loadingTerms === 'ok') return;
 	fetchData({ setLoadinng: setLoadingTerms, path: '/terms' }).then((d) => setTerms(d))
@@ -14,9 +6,25 @@ const loadTerms = ({ loadingTerms, setLoadingTerms, setTerms }) => {
 		});
 };
 
+const loadUsers = ({ loadingUsrs, setLoadingUsrs, setUsers }) => {
+	if (loadingUsrs === 'ok') return;
+	fetchData({ setLoadinng: setLoadingUsrs, path: '/users' }).then((d) => setUsers(d))
+		.catch((err) => {
+			console.log(err);
+		});
+};
+
 const loadTerm = ({ loadingTerm, setLoadingTerm, setTerm, id }) => {
 	if (loadingTerm === 'ok') return;
 	fetchData({ setLoadinng: setLoadingTerm, path: `/terms/${id}` }).then((d) => setTerm(d))
+		.catch((err) => {
+			console.log(err);
+		});
+};
+
+const loadUser = ({ loadingUser, setLoadingUser, setUser, id }) => {
+	if (loadingUser === 'ok') return;
+	fetchData({ setLoadinng: setLoadingUser, path: `/users/${id}` }).then((d) => setUser(d))
 		.catch((err) => {
 			console.log(err);
 		});
@@ -53,6 +61,7 @@ const fetchData = ({ setLoadinng, path }) => {
 			});
 	});
 };
+
 const fetchAll = ({ loadingDownload, setLoadingDownload }) => {
 	if (loadingDownload === 'ok') return;
 	setLoadingDownload('loading');
@@ -96,4 +105,4 @@ const processError = (err) => {
 	return err;
 };
 
-export { loadUsers, loadTerms, loadTerm, fetchAll };
+export { loadTerms, loadUsers, loadTerm, loadUser, fetchAll };

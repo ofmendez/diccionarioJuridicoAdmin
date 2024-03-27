@@ -9,13 +9,12 @@ const UserRow = ({ user }) => {
 			<td>{user.role}</td>
 			<td>{user.lastLogin}</td>
 			<td className='TablaTextoCentrado'>
-				{/* <Link to={`/users/${user._id}`}> */}
-				<Link to='#'>
+				<Link to={`/users/${user._id}`}>
 					<img className='IconosTabla' src={IconoVer} />
 				</Link>
-				{/* <Link to={`/users/edit/${user._id}`}>
+				<Link to={`/users/edit/${user._id}`}>
 					<img className='IconosTabla' src={IconoEditar} />
-				</Link> */}
+				</Link>
 			</td>
 		</tr>
 	);

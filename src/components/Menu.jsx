@@ -33,7 +33,10 @@ const Menu = () => {
 						<img className='LogoMenuLateral' src={LogoBlanco} />
 						<ul className='MenuLateralLista'>
 							<MenuItem to='/' icon={IcoInicio} text='Inicio' />
-							<MenuItem to='/Users' icon={IcoUsuarios} text='Usuarios' />
+							{
+								window.localStorage.user && JSON.parse(window.localStorage.user).role === 'Administrador' &&
+								<MenuItem to='/Users' icon={IcoUsuarios} text='Usuarios' />
+							}
 							<MenuItem to='/Terms' icon={IcoTerminos} text='Términos' />
 							{/* Solamente se muestra si el usuario es administrador */}
 							{

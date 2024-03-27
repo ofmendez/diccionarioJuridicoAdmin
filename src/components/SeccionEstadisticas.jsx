@@ -14,29 +14,35 @@ const SeccionEstadisticas = () => {
 					<span>¡Bienvenida!</span>
 				</div>
 			</div>
-			<div className='SeccionEstadisticas'>
-				<div className='ModuloEstadistica'>
-					<div><img className='ImagenIconoEstadisticas' src={IcoUsrRegistrados} /></div>
-					<div className='ContenidosEstadisticas'>
-						<p className='IndicadorEstadisticas'>---</p> {/* TODO: cambiar por estadisticas	*/}
-						<p>Usuarios registrados</p>
+			{
+				window.localStorage.user && JSON.parse(window.localStorage.user).role === 'Administrador' &&
+				<>
+					<div className='SeccionEstadisticas'>
+						<div className='ModuloEstadistica'>
+							<div><img className='ImagenIconoEstadisticas' src={IcoUsrRegistrados} /></div>
+							<div className='ContenidosEstadisticas'>
+								<p className='IndicadorEstadisticas'>---</p> {/* TODO: cambiar por estadisticas	*/}
+								<p>Usuarios registrados</p>
+							</div>
+						</div>
+						<div className='ModuloEstadistica'>
+							<div><img className='ImagenIconoEstadisticas' src={IcoTerminos} /></div>
+							<div className='ContenidosEstadisticas'>
+								<p className='IndicadorEstadisticas'>---</p>
+								<p>Términos publicados</p>
+							</div>
+						</div>
+						<div className='ModuloEstadistica ModuloEstadisticaLargeScreen'>
+							<div><img className='ImagenIconoEstadisticas' src={IcoCronologia} /></div>
+							<div className='ContenidosEstadisticas'>
+								<p className='IndicadorEstadisticas'>--/--/----</p>
+								<p>Última modificación</p>
+							</div>
+						</div>
 					</div>
-				</div>
-				<div className='ModuloEstadistica'>
-					<div><img className='ImagenIconoEstadisticas' src={IcoTerminos} /></div>
-					<div className='ContenidosEstadisticas'>
-						<p className='IndicadorEstadisticas'>---</p>
-						<p>Términos publicados</p>
-					</div>
-				</div>
-				<div className='ModuloEstadistica ModuloEstadisticaLargeScreen'>
-					<div><img className='ImagenIconoEstadisticas' src={IcoCronologia} /></div>
-					<div className='ContenidosEstadisticas'>
-						<p className='IndicadorEstadisticas'>--/--/----</p>
-						<p>Última modificación</p>
-					</div>
-				</div>
-			</div>
+				</>
+			}
+
 		</div>
 	);
 };
