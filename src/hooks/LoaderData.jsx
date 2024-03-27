@@ -53,6 +53,39 @@ const fetchData = ({ setLoadinng, path }) => {
 			});
 	});
 };
+const fetchAll = ({ loadingDownload, setLoadingDownload }) => {
+	if (loadingDownload === 'ok') return;
+	setLoadingDownload('loading');
+	const uri = import.meta.env.VITE_API_URI;
+	return new Promise((resolve, reject) => {
+		const myHeaders = new Headers();
+		myHeaders.append('Authorization', `Bearer ${window.localStorage.token}`);
+
+		const requestOptions = {
+			method: 'GET',
+			headers: myHeaders,
+			redirect: 'follow'
+		};
+		fetch(`${uri}/terms/download`, requestOptions)
+			.then((response) => response.blob())
+			.then((blob) => {
+				// Create a URL representing the blob
+				const url = window.URL.createObjectURL(new Blob([blob]));
+				const link = document.createElement('a');
+				link.href = url;
+				link.setAttribute('download', 'terms.csv');
+				document.body.appendChild(link);
+				link.click();
+				link.parentNode.removeChild(link);
+				setLoadingDownload('ok');
+				resolve();
+			}).catch((err) => {
+				setLoadingDownload(err);
+				console.log(err);
+				reject(err);
+			});
+	});
+};
 
 const processError = (err) => {
 	if (err.status === 401) {
@@ -63,4 +96,4 @@ const processError = (err) => {
 	return err;
 };
 
-export { loadUsers, loadTerms, loadTerm };
+export { loadUsers, loadTerms, loadTerm, fetchAll };
