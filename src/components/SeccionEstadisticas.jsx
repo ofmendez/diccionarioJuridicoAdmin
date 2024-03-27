@@ -1,7 +1,8 @@
 import React from 'react';
 import { IcoCronologia, IcoTerminos, IcoUsrRegistrados, IconoNoPerfil } from '@components/icons.js';
 
-const SeccionEstadisticas = () => {
+const SeccionEstadisticas = ({ numberUsers, numberTerms }) => {
+	console.log(numberUsers);
 	return (
 		<div className='SeccionMensajeEstadisticas' id='SeccionMensajeEstadisticas'>
 			<div className='SeccionMensajeBienvenida'>
@@ -21,14 +22,14 @@ const SeccionEstadisticas = () => {
 						<div className='ModuloEstadistica'>
 							<div><img className='ImagenIconoEstadisticas' src={IcoUsrRegistrados} /></div>
 							<div className='ContenidosEstadisticas'>
-								<p className='IndicadorEstadisticas'>---</p> {/* TODO: cambiar por estadisticas	*/}
+								<p className='IndicadorEstadisticas'>{numberUsers}</p> {/* TODO: cambiar por estadisticas	*/}
 								<p>Usuarios registrados</p>
 							</div>
 						</div>
 						<div className='ModuloEstadistica'>
 							<div><img className='ImagenIconoEstadisticas' src={IcoTerminos} /></div>
 							<div className='ContenidosEstadisticas'>
-								<p className='IndicadorEstadisticas'>---</p>
+								<p className='IndicadorEstadisticas'>{numberTerms}</p>
 								<p>Términos publicados</p>
 							</div>
 						</div>
