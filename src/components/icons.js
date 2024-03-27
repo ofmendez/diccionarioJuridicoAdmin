@@ -20,6 +20,7 @@ import IconoEmail from '@ico/Email.svg';
 import IconoFiltrar from '@ico/Filtrar.svg';
 import IcoDescarga from '@ico/Descarga.svg';
 import IcoSpinner from '@ico/Spinner.svg';
+import IconoLogout from '@ico/Logout.svg';
 
 export {
 	IcoInicio,
@@ -43,5 +44,6 @@ export {
 	IconoCancelar,
 	IconoFiltrar,
 	IcoDescarga,
-	IcoSpinner
+	IcoSpinner,
+	IconoLogout
 };

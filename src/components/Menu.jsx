@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { IcoInicio, IcoUsuarios, IcoTerminos, IcoDescarga, IcoSpinner } from '@components/icons.js';
+import { IcoInicio, IcoUsuarios, IcoTerminos, IcoDescarga, IcoSpinner, IconoLogout } from '@components/icons.js';
 import { LogoBlanco } from '@components/img.js';
 import { MenuContext } from '@src/context/MenuContext.jsx';
 import MenuItem from '@components/MenuItem.jsx';
@@ -25,6 +25,13 @@ const Menu = () => {
 		// const downloadUrl = 'http://localhost:8080/download-terms'; // Replace with your Hono endpoint
 	};
 
+	const logout = () => {
+		window.localStorage.removeItem('token');
+		window.localStorage.removeItem('user');
+		window.localStorage.removeItem('version');
+		window.location.href = '/login';
+	};
+
 	return (
 		<>
 			<div id='ContenedorMenuLateral'>
@@ -38,7 +45,6 @@ const Menu = () => {
 								<MenuItem to='/Users' icon={IcoUsuarios} text='Usuarios' />
 							}
 							<MenuItem to='/Terms' icon={IcoTerminos} text='Términos' />
-							{/* Solamente se muestra si el usuario es administrador */}
 							{
 								window.localStorage.user && JSON.parse(window.localStorage.user).role === 'Administrador' &&
 								<li>
@@ -51,6 +57,15 @@ const Menu = () => {
 									</button>
 								</li>
 							}
+							<li>
+								<button className='ContenedorItemMenuLateral' onClick={logout}>
+									<img
+										className='IconosMenuLateral'
+										src={IconoLogout}
+									/>
+									Cerrar Sesión
+								</button>
+							</li>
 						</ul>
 					</div>
 					<div className='MenuLateralSeccion InformacionPropiedadAplicativo'>
