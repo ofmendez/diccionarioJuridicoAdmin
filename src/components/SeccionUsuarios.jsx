@@ -10,7 +10,10 @@ const SeccionUsuarios = (props) => {
 	const [users, setUsers] = useState([]);
 	const [loadingUsrs, setLoadingUsrs] = useState('init');
 	useEffect(() => loadUsers({ loadingUsrs, setLoadingUsrs, setUsers }), []);
-	useEffect(() => props.setNumberUsers(users.length), [users]);
+	useEffect(() => {
+		if (props.home)
+			props.setNumberUsers(users.length);
+	}, [users]);
 
 	return (
 		props.home

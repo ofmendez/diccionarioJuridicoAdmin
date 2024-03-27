@@ -11,7 +11,10 @@ const SeccionTerminos = (props, ref) => {
 	const [terms, setTerms] = useState([]);
 	const [loadingTerms, setLoadingTerms] = useState('init');
 	useEffect(() => loadTerms({ loadingTerms, setLoadingTerms, setTerms }), []);
-	useEffect(() => props.setNumberTerms(terms.length), [terms]);
+	useEffect(() => {
+		if (props.home)
+			props.setNumberTerms(terms.length);
+	}, [terms]);
 
 	useImperativeHandle(ref, () => ({ getTerms: () => terms }));
 	return (
