@@ -1,66 +1,80 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
-import { loadTerm } from '@src/hooks/LoaderData.jsx';
-import { updateTerm, deleteTerm } from '@src/hooks/PostData.jsx';
+import { loadUser } from '@src/hooks/LoaderData.jsx';
+import { updateUser, deleteUser } from '@src/hooks/PostData.jsx';
 
-import { IconoAgregar } from '@components/icons.js';
+import { IconoCancelar, IconoEliminar, IconoGuardar } from '@components/icons.js';
 import ContentFrame from '@components/ContentFrame.jsx';
-import TermTopToolsEdit from '@components/TermTopToolsEdit.jsx';
 import OverlayLoading from '@components/OverlayLoading.jsx';
-import FormMeaning from '@components/FormMeaning.jsx';
-import Meaning from '@components/Meaning.jsx';
+import ButtonRound from '@src/components/ButtonRound';
+import FormNewUser from '@src/components/FormNewUser';
 
 const EditUser = () => {
-	const [loadingTerm, setLoadingTerm] = useState('init');
-	const [term, setTerm] = useState({});
+	const [loadingUser, setLoadingUser] = useState('init');
+	const [userData, setUserData] = useState({});
 	const navigate = useNavigate();
 	const { id } = useParams();
 
-	const homologateTerm = (term) => {
-		const hMeanings = term.meanings.map((el) => (new Meaning()).createFromData(el));
-		setTerm({ ...term, meanings: hMeanings });
-	};
-
-	useEffect(() => { loadTerm({ id, loadingTerm, setLoadingTerm, setTerm: homologateTerm }); }, []);
+	useEffect(() => { loadUser({ id, loadingUser, setLoadingUser, setUserData }); console.log(userData); }, []);
 
 	const handleDonePost = (_) => {
-		navigate(`/Terms/${id}`);
+		navigate(`/users/${id}`);
 	};
 
-	const handleUpdate = () => {
-		setLoadingTerm('loading');
-		const allowed = ['term', 'meanings', 'created_by'];
-		console.log(term);
-		const newTerm = Object.keys(term).filter(key => allowed.includes(key)).reduce((obj, key) => {
-			obj[key] = term[key];
+	const update = () => {
+		setLoadingUser('loading');
+		const allowed = ['_id', 'email', 'name', 'role'];
+		const newUser = Object.keys(userData).filter(key => allowed.includes(key)).reduce((obj, key) => {
+			obj[key] = userData[key];
 			return obj;
 		}, {});
-		const result = Object.entries(newTerm.meanings).map(([_, value]) => value.inputs);
-		const body = { ...newTerm, term: newTerm.term, meanings: result, updated_by: JSON.parse(window.localStorage.user).name };
-		updateTerm({ id, setLoadingTerm, body, handleDonePost });
+		const body = { ...newUser };
+		updateUser({ id, setLoadingUser, body, handleDonePost });
+	};
+	const validations = () => {
+		if (!userData.name || userData.name === '' || !userData.email || userData.email === '' || !userData.role || userData.role === '') {
+			window.alert('El nombre, el correo y el rol no pueden estar vacíos');
+			return false;
+		}
+		return true;
+	};
+
+	const trySave = () => {
+		validations() && update();
+	};
+
+	const handleCancel = () => {
+		window.confirm('¿Estás seguro de cancelar?') && window.history.back();
 	};
 
 	const handleDelete = () => {
-		window.confirm('¿Estás seguro de eliminar este término?') &&
-		deleteTerm({ id, setLoadingTerm, handleDonePost: () => navigate('/terms') });
+		window.confirm(`¿Estás seguro de eliminar el usuario ${userData.name}?`) &&
+		deleteUser({ id, setLoadingUser, handleDonePost: () => navigate('/users') });
 	};
-
 	return (
 		<ContentFrame> {
-			loadingTerm === 'ok'
+			loadingUser === 'ok'
 				? (
 					<>
-						<TermTopToolsEdit term={term.term} handleUpdate={handleUpdate} handleDelete={handleDelete} onTermChange={(e) => setTerm({ ...term, term: e.target.value })} />
+						<div className='SeccionSuperiorHerramientas'>
+							<div className='SeccionInputTitulo'>
+								<input
+									className='InputTermino' type='text' placeholder='Nombre Usuario' name='term'
+									value={userData.name || ''}
+									onChange={(e) => setUserData((prev) => ({ ...prev, name: e.target.value }))}
+								/>
+							</div>
+							<div className='SeccionDerechaBotones'>
+								<ButtonRound ico={IconoCancelar} onClick={handleCancel} />
+								<ButtonRound ico={IconoEliminar} onClick={handleDelete} />
+								<button className='BotonAgregar' onClick={trySave}>
+									<img className='IconoMenu' src={IconoGuardar} /> Guardar
+								</button>
+							</div>
+						</div>
 						<div className='SeccionContenidoDefiniciones'>
-							{
-								term.meanings.map((el, i) =>
-									<FormMeaning edit index={i} key={i} meaning={el} setMeanings={setTerm} />
-								)
-							}
-							<button className='ContenidoDefinicion AgregarDefinicion' onClick={() => setTerm({ ...term, meanings: [...term.meanings, new Meaning()] })}>
-								<img className='IconoAgregarDefinicion' src={IconoAgregar} />
-							</button>
+							<FormNewUser setUserData={setUserData} userData={userData} />
 						</div>
 					</>
 				)

@@ -15,7 +15,10 @@ const Home = () => {
 			<SeccionEstadisticas numberUsers={numberUsers} numberTerms={numberTerms} />
 			<div className='SeccionContenidoHome' id='SeccionContenidoHome'>
 				<div className='ColumnaIzquierdaHome'>
-					<SeccionUsuarios home setNumberUsers={setNumberUsers} />
+					{
+						window.localStorage.user && JSON.parse(window.localStorage.user).role === 'Administrador' &&
+						<SeccionUsuarios home setNumberUsers={setNumberUsers} />
+					}
 					<SeccionTerminos home setNumberTerms={setNumberTerms} />
 				</div>
 				<div className='ColumnaDerechaHome'>

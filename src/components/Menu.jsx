@@ -22,7 +22,6 @@ const Menu = () => {
 		fetchAll({ loadingDownload, setLoadingDownload }).then((blob) => {
 			console.log(blob);
 		}).finally(() => setLoadingDownload('done'));
-		// const downloadUrl = 'http://localhost:8080/download-terms'; // Replace with your Hono endpoint
 	};
 
 	const logout = () => {

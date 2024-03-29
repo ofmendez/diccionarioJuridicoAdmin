@@ -22,9 +22,9 @@ const loadTerm = ({ loadingTerm, setLoadingTerm, setTerm, id }) => {
 		});
 };
 
-const loadUser = ({ loadingUser, setLoadingUser, setUser, id }) => {
+const loadUser = ({ loadingUser, setLoadingUser, setUserData, id }) => {
 	if (loadingUser === 'ok') return;
-	fetchData({ setLoadinng: setLoadingUser, path: `/users/${id}` }).then((d) => setUser(d))
+	fetchData({ setLoadinng: setLoadingUser, path: `/users/${id}` }).then((d) => setUserData(d))
 		.catch((err) => {
 			console.log(err);
 		});
