@@ -43,17 +43,16 @@ const SeccionTerminos = (props, ref) => {
 				:	(
 					<div className='SeccionContenidoHome' id='SeccionContenidoHome'>
 						<Skeletons on={loadingTerms} msg='Cargando'>
-
+							<div className='SelectOrdenarPor'>
+								<span>Ordenar por:  </span>
+								<select className='SelectOrdenarPor' onChange={(e) => setOrder(e.target.value)}>
+									<option value='asc'> De la A a la Z</option>
+									<option value='desc'> De la Z a la A</option>
+									<option value='recent'> Agregado más reciente</option>
+									<option value='oldest'> Agregado más antiguo</option>
+								</select>
+							</div>
 							<div className='SeccionContenidoSubpagina'>
-								<div className='SelectOrdenarPor'>
-									<span>Ordenar por:  </span>
-									<select className='SelectOrdenarPor' onChange={(e) => setOrder(e.target.value)}>
-										<option value='asc'> De la A a la Z</option>
-										<option value='desc'> De la Z a la A</option>
-										<option value='recent'> Agregado más reciente</option>
-										<option value='oldest'> Agregado más antiguo</option>
-									</select>
-								</div>
 								<MainsSeparator />
 								<h3>Términos</h3>
 								<MainsSeparator />
