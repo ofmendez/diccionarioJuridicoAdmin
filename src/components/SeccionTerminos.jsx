@@ -42,6 +42,7 @@ const SeccionTerminos = (props, ref) => {
 				)
 				:	(
 					<>
+					<MainsSeparator />
 					<div className='SelectOrdenarPor'>
 						<span>Ordenar por:  </span>
 						<select className='SelectOrdenarPor' onChange={(e) => setOrder(e.target.value)}>
