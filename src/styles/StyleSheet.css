@@ -197,7 +197,7 @@
      background-color: var(--ColorAcento);
      color: var(--ColorSecundario);
      border-radius: var(--RadioEsquinas);
-     padding: var(--PaddingElementos);
+     padding: 16px;
      font-size: var(--TamanoFuenteParrafos);
      cursor:pointer;
 }
@@ -1077,4 +1077,12 @@ mark{
 	background: var(--ColorFondosHover);
 	border-radius: var(--RadioEsquinas);
 	cursor: pointer;
+}
+.SelectOrdenarPor{
+	background-color: var(--ColorSecundario);
+	border: 0 solid transparent;
+	font-size: var(--TamanoFuenteParrafos);
+	cursor: pointer;
+	display: flex;
+	gap: 10px;
 }

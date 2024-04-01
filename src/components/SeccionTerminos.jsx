@@ -10,6 +10,7 @@ import { loadTerms } from '@src/hooks/LoaderData.jsx';
 const SeccionTerminos = (props, ref) => {
 	const [terms, setTerms] = useState([]);
 	const [loadingTerms, setLoadingTerms] = useState('init');
+	const [order, setOrder] = useState('asc');
 	useEffect(() => loadTerms({ loadingTerms, setLoadingTerms, setTerms }), []);
 	useEffect(() => {
 		if (props.home)
@@ -42,11 +43,22 @@ const SeccionTerminos = (props, ref) => {
 				:	(
 					<div className='SeccionContenidoHome' id='SeccionContenidoHome'>
 						<Skeletons on={loadingTerms} msg='Cargando'>
+
 							<div className='SeccionContenidoSubpagina'>
+								<div className='SelectOrdenarPor'>
+									<span>Ordenar por:  </span>
+									<select className='SelectOrdenarPor' onChange={(e) => setOrder(e.target.value)}>
+										<option value='asc'> De la A a la Z</option>
+										<option value='desc'> De la Z a la A</option>
+										<option value='recent'> Agregado más reciente</option>
+										<option value='oldest'> Agregado más antiguo</option>
+									</select>
+								</div>
+								<MainsSeparator />
 								<h3>Términos</h3>
 								<MainsSeparator />
 								<div className='ContenedorTablaUsuarios ScrollVerde table-container'>
-									<TermsTable tableClass='TablaUsuarios' showBy terms={terms} rowsState={props.rowsState} />
+									<TermsTable tableClass='TablaUsuarios' showBy terms={terms} rowsState={props.rowsState} order={order} />
 								</div>
 							</div>
 						</Skeletons>

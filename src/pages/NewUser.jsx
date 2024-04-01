@@ -26,10 +26,10 @@ const NewUser = () => {
 			window.alert('El Correo electrónico no puede estar vacío');
 			return false;
 		}
-		// if (userData.password === '') {
-		// 	window.alert('La contraseña del usuario no puede estar vacía');
-		// 	return false;
-		// }
+		if (!userData.password || userData.password === '') {
+			window.alert('La contraseña no puede estar vacía');
+			return false;
+		}
 		// if (userData.password !== userData.password2) {
 		// 	window.alert('Las contraseñas no coinciden');
 		// 	return false;
@@ -42,8 +42,7 @@ const NewUser = () => {
 	};
 
 	const saveTerm = () => {
-		const randomPassword = Math.random().toString(36).slice(-8);
-		const body = { ...userData, password: randomPassword };
+		const body = { ...userData };
 		createUser({ loadingUser, setLoadingUser, body, handleDonePost });
 	};
 

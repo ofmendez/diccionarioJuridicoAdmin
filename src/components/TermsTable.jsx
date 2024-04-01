@@ -1,9 +1,15 @@
 import TermRow from '@components/TermRow.jsx';
 import '@styles/Loading.css';
 
-const TermsTable = ({ tableClass, terms, showBy, rowsState, home }) => {
+const TermsTable = ({ tableClass, terms, showBy, rowsState, home, order }) => {
+	const aviableOrders = {
+		asc: (a, b) => a.term.localeCompare(b.term),
+		desc: (a, b) => b.term.localeCompare(a.term),
+		recent: (a, b) => new Date(b.created_at) - new Date(a.created_at),
+		oldest: (a, b) => new Date(a.created_at) - new Date(b.created_at)
+	};
 	const printSortedTerms = (terms, showBy, rowsState) => {
-		const sortedTerms = terms.sort((a, b) => a.term.localeCompare(b.term));
+		const sortedTerms = terms.sort(aviableOrders[order]);
 		const isExpanded = (id) => rowsState?.expandedRows.includes(id);
 		return sortedTerms.map((term) =>
 			<TermRow

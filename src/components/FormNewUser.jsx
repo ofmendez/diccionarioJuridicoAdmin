@@ -1,3 +1,5 @@
+import ButtonRound from './ButtonRound';
+
 const FormNewUser = ({ ...props }) => {
 	const handleChange = (event) => {
 		const { name, value } = event.target;
@@ -10,6 +12,12 @@ const FormNewUser = ({ ...props }) => {
 	const optionsRole = ['Selecciona un Rol', 'Administrador', 'Editor', 'Lector'];
 	const optionsState = ['Selecciona un Estado', 'Activo', 'Inactivo'];
 	const optionsExpiration = ['Selecciona un Vencimiento', 'Activo', 'Inactivo'];
+	const setRandomPassword = (e) => {
+		e.preventDefault();
+		const randomPassword = Math.random().toString(36).slice(2, 17);
+		window.dePass.value = randomPassword;
+		props.setUserData((prev) => ({ ...prev, password: randomPassword }));
+	};
 
 	return (
 		<div className='ContenidoDefinicion'>
@@ -43,6 +51,15 @@ const FormNewUser = ({ ...props }) => {
 						optionsExpiration.map((el, id) => <option disabled={id === 0} key={el} value={el}>{el}</option>)
 					}
 				</select>
+				<div className='SeparadorSecciones' />
+				<input
+					value={props.userData.password || ''}
+					className='InputPassword ' type='text' disabled placeholder='Contraseña' name='password' id='dePass' onChange={handleChange}
+				/>
+				<div className='SeparadorSecciones' />
+				<ButtonRound onClick={setRandomPassword}>
+					Generar Contraseña
+				</ButtonRound>
 			</form>
 		</div>
 	);
