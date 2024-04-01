@@ -74,7 +74,7 @@ const EditUser = () => {
 							</div>
 						</div>
 						<div className='SeccionContenidoDefiniciones'>
-							<FormNewUser setUserData={setUserData} userData={userData} />
+							<FormNewUser setUserData={setUserData} userData={userData} edit />
 						</div>
 					</>
 				)

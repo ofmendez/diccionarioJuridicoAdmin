@@ -18,7 +18,6 @@ const FormNewUser = ({ ...props }) => {
 		window.dePass.value = randomPassword;
 		props.setUserData((prev) => ({ ...prev, password: randomPassword }));
 	};
-
 	return (
 		<div className='ContenidoDefinicion'>
 			<form className='FormaEditarTerminos'>
@@ -52,14 +51,20 @@ const FormNewUser = ({ ...props }) => {
 					}
 				</select>
 				<div className='SeparadorSecciones' />
-				<input
-					value={props.userData.password || ''}
-					className='InputPassword ' type='text' disabled placeholder='Contraseña' name='password' id='dePass' onChange={handleChange}
-				/>
-				<div className='SeparadorSecciones' />
-				<ButtonRound onClick={setRandomPassword}>
-					Generar Contraseña
-				</ButtonRound>
+				{props.edit
+					? <></>
+					: (
+						<>
+							<input
+								value={props.userData.password || ''}
+								className='InputPassword ' type='text' disabled placeholder='Contraseña' name='password' id='dePass' onChange={handleChange}
+							/>
+							<div className='SeparadorSecciones' />
+							<ButtonRound onClick={setRandomPassword}>
+								Generar Contraseña
+							</ButtonRound>
+						</>
+					)}
 			</form>
 		</div>
 	);
