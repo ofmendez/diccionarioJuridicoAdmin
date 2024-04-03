@@ -10,7 +10,6 @@ const SeccionPalabraDelDia = ({ randomTerm }) => {
 				<h2>
 					{randomTerm.term}
 				</h2>
-				<div className='SeparadorSecciones' />
 				{randomTerm.meanings.map((meaning, i) => (
 					<div key={i}>
 						<p className='InformacionDefinicion'>DESCRIPTOR: {meaning.descriptor}</p>
