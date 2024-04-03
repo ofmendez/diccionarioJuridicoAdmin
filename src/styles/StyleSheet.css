@@ -902,16 +902,14 @@ a:visited{
 
 .dj_button{
 	border: 0 solid transparent;
-	padding: var(--PaddingBotonAgregar);
+	padding: 0 16px;
 	background-color: var(--ColorAcento);
 	color: var(--ColorTextoAcento);
 	border-radius: var(--RadioEsquinas);
 	width: var(--BuscadorSubmitWidth);
-	/* margin-left: var(--BuscadorSeparacionSubmit); */
 	font-weight: var(--FuenteNegrilla);
 	font-size: var(--TamanoFuenteParrafos);
 	cursor: pointer;
-	min-width: 105px;
 }
 .dj_button:hover{
 	background-color: var(--ColorAcentoHover);
