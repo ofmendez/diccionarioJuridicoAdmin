@@ -39,7 +39,7 @@ const Search = () => {
 				<div className='SeccionContenidoPaginaBuscador'>
 					<Skeletons on={loadingTerm} msg='Cargando'>
 						<SearchFilters contents={contents} subjects={subjects} searchParams={searchParams} />
-						<SearchResults results={results} />
+						<SearchResults results={results} query={searchParams.get('q')} />
 					</Skeletons>
 				</div>
 			</div>

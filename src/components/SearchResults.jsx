@@ -1,7 +1,12 @@
 import { Link } from 'react-router-dom';
 
-const SearchResults = ({ results }) => {
+const SearchResults = ({ results, query }) => {
 	console.log('SearchResults', results);
+	const types = {
+		'meanings.definition': '',
+		'meanings.descriptor': 'DESCRIPTOR: ',
+		'meanings.source': 'FUENTE: '
+	};
 	return (
 		<div className='SeccionContenidoBuscadorResultados'>
 			<h3>Resultados</h3>
@@ -10,12 +15,17 @@ const SearchResults = ({ results }) => {
 			{results.map((r, i) =>
 				<div key={i}>
 
-					<Link to={`/terms/${r._id}`} className='ResultadoBusqueda'>
+					<Link to={`/terms/${r._id}?q=${query}`} className='ResultadoBusqueda'>
 						<div className='ResultadoBusqueda hovered'>
 							<p className='ResultadoBusquedaTermino'>
-								{r.term}
+								TERMINO: {r.term}
 							</p>
 							<p className='ResultadoBusqueda'>
+								<span className='ResultadoBusquedaTermino'>
+									{
+										types[r.highlights.reduce((max, tmp) => max.score > tmp.score ? max : tmp).path]
+									}
+								</span>
 								{
 									r.highlights.reduce((max, tmp) => max.score > tmp.score ? max : tmp).texts.map((t, i) => {
 										if (t.type === 'text')

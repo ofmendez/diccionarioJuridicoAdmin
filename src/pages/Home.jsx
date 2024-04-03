@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react';
 const Home = () => {
 	const [numberUsers, setNumberUsers] = useState('---');
 	const [numberTerms, setNumberTerms] = useState('---');
+	const [randomTerm, setRandomTerm] = useState(null);
 	useEffect(() => {}, [numberUsers]);
 
 	return (
@@ -19,10 +20,10 @@ const Home = () => {
 						window.localStorage.user && JSON.parse(window.localStorage.user).role === 'Administrador' &&
 						<SeccionUsuarios home setNumberUsers={setNumberUsers} />
 					}
-					<SeccionTerminos home setNumberTerms={setNumberTerms} />
+					<SeccionTerminos home setNumberTerms={setNumberTerms} setRandomTerm={setRandomTerm} />
 				</div>
 				<div className='ColumnaDerechaHome'>
-					<SeccionPalabraDelDia dayTerm />
+					{randomTerm && <SeccionPalabraDelDia dayTerm randomTerm={randomTerm} />}
 				</div>
 			</div>
 		</ContentFrame>

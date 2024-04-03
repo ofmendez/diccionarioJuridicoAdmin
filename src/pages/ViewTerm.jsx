@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 
 import ContentFrame from '@components/ContentFrame.jsx';
 import { IconoEditar, IconoEliminar } from '@components/icons.js';
@@ -11,10 +11,10 @@ import { deleteTerm } from '@src/hooks/PostData.jsx';
 
 const ViewTerm = () => {
 	const { id } = useParams();
+	const [searchParams, setSearchParams] = useSearchParams();
 	const [term, setTerm] = useState({});
 	const [loadingTerm, setLoadingTerm] = useState('init');
 	const navigate = useNavigate();
-
 	useEffect(() => { loadTerm({ id, loadingTerm, setLoadingTerm, setTerm }); }, []);
 
 	const doneDelete = () => {
@@ -45,7 +45,7 @@ const ViewTerm = () => {
 			<div className='SeccionContenidoDefiniciones'>
 				<Skeletons on={loadingTerm}>
 					{
-						term.meanings?.map((el, i) => (<ViewMeaning meaning={el} key={i} />))
+						term.meanings?.map((el, i) => (<ViewMeaning meaning={el} key={i} query={searchParams.get('q')} />))
 					}
 				</Skeletons>
 			</div>

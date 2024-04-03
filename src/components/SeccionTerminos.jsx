@@ -2,7 +2,6 @@ import React, { forwardRef, useEffect, useImperativeHandle, useState } from 'rea
 import { Link } from 'react-router-dom';
 
 import { Skeletons } from '@components/Skeletons.jsx';
-import SeccionPalabraDelDia from '@components/SeccionPalabraDelDia.jsx';
 import MainsSeparator from '@components/MainSeparator.jsx';
 import TermsTable from '@components/TermsTable.jsx';
 import { loadTerms } from '@src/hooks/LoaderData.jsx';
@@ -13,8 +12,10 @@ const SeccionTerminos = (props, ref) => {
 	const [order, setOrder] = useState('asc');
 	useEffect(() => loadTerms({ loadingTerms, setLoadingTerms, setTerms }), []);
 	useEffect(() => {
-		if (props.home)
+		if (props.home) {
 			props.setNumberTerms(terms.length);
+			props.setRandomTerm(terms[Math.floor(Math.random() * terms.length)]);
+		}
 	}, [terms]);
 
 	useImperativeHandle(ref, () => ({ getTerms: () => terms }));
@@ -34,14 +35,15 @@ const SeccionTerminos = (props, ref) => {
 					</div>
 				</Skeletons>
 			)
-			: props.dayTerm
-				? (
-					<Skeletons on={loadingTerms} msg='Cargando'>
-						<SeccionPalabraDelDia terms={terms} />
-					</Skeletons>
-				)
-				:	(
-					<>
+			// : props.dayTerm
+			// 	? (
+			// 		<></>
+			// 		// <Skeletons on={loadingTerms} msg='Cargando'>
+			// 		// 	<SeccionPalabraDelDia terms={terms} />
+			// 		// </Skeletons>
+			// 	)
+			:	(
+				<>
 					<MainsSeparator />
 					<div className='SelectOrdenarPor'>
 						<span>Ordenar por:  </span>
@@ -54,7 +56,7 @@ const SeccionTerminos = (props, ref) => {
 					</div>
 					<div className='SeccionContenidoHome' id='SeccionContenidoHome'>
 						<Skeletons on={loadingTerms} msg='Cargando'>
-							
+
 							<div className='SeccionContenidoSubpagina'>
 								<MainsSeparator />
 								<h3>Términos</h3>
@@ -65,8 +67,8 @@ const SeccionTerminos = (props, ref) => {
 							</div>
 						</Skeletons>
 					</div>
-					</>
-				)
+				</>
+			)
 	);
 };
 
