@@ -1088,10 +1088,14 @@ mark{
 	cursor: pointer;
 }
 .SelectOrdenarPor{
-	background-color: var(--ColorSecundario);
 	border: 0 solid transparent;
 	font-size: var(--TamanoFuenteParrafos);
-	cursor: pointer;
 	display: flex;
 	gap: 10px;
+}
+.SelectOrdenarPor select{
+	cursor: pointer;
+}
+.SelectOrdenarPor:hover, .SelectOrdenarPor:active, .SelectOrdenarPor:focus{
+    border: 0 solid transparent;
 }

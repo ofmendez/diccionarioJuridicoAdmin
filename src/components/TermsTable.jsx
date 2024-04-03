@@ -27,8 +27,8 @@ const TermsTable = ({ tableClass, terms, showBy, rowsState, home, order }) => {
 					<th>Término</th>
 					<th>Publicación</th>
 					<th>Modificación</th>
-					{showBy && <th>Creado por</th>}
-					{showBy && <th>Modificado por</th>}
+					{showBy && <th>Creado</th>}
+					{showBy && <th>Modificado</th>}
 					<th className='TablaTextoCentrado'>Acción</th>
 				</tr>
 			</thead>
