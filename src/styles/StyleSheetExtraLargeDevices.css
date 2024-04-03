@@ -18,7 +18,9 @@
        /* Subpaginas*/
         --FiltrosBusquedaOscultar: block;
        /* Seccion Términos */
-        --MostrarFechaPublicacionTabla: block;
+       --MostrarFechaPublicacionTablaMaxWidth: none;
+       --MostrarFechaPublicacionTablaTexto: inherit;
+       --MostrarFechaPublicacionTablaVisibilidad:visible;
    }
 
    /* --------------- INICIO ESTILO PÁGINA BUSCADOR --------------- */

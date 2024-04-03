@@ -69,7 +69,9 @@
      --BuscadorSeparacionSubmit:10px;
      --BuscadorInputWidth: 100%;
      /* Seccion Términos */
-     --MostrarFechaPublicacionTabla:none;
+     --MostrarFechaPublicacionTablaMaxWidth: 0;
+     --MostrarFechaPublicacionTablaTexto: 0px;
+     --MostrarFechaPublicacionTablaVisibilidad:hidden;
     /* Editar Terminos */
      --AlturaIconoAgregarDefinicion: 25px;
 }
@@ -749,7 +751,9 @@
 }
 
 .ColumnaFechaPublicacion{
-    display: var(--MostrarFechaPublicacionTabla);
+    max-width: var(--MostrarFechaPublicacionTablaMaxWidth);
+    font-size: var(--MostrarFechaPublicacionTablaTexto);
+    visibility: var(--MostrarFechaPublicacionTablaVisibilidad);
 }
 /* Terminos Definiciones */
  .SeccionContenidoDefiniciones{
