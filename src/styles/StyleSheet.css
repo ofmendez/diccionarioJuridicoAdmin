@@ -807,7 +807,7 @@
 .BotonContraer::after{
     content: var(--TextoContraer);
 }
-.BotonAgregarTermino{
+.BotonAgregarTermino::after{
     content: var(--TextoAgregarTermino);
 }
 /* Editar Terminos */
