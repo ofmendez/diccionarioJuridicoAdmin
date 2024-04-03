@@ -1,15 +1,16 @@
 import React from 'react';
 
 const ViewMeaning = ({ meaning, query }) => {
-	const getHLText = (text, highlight) => {
+	const getHLText = (text) => {
+		if (!query || query === '') return text;
 		let parts = '';
 		let compare = '';
-		if (highlight.startsWith('"') && highlight.endsWith('"')) {
-			highlight = highlight.replace(/['"]+/g, '');
-			parts = text.split(new RegExp(`(${highlight})`, 'gi'));
-			compare = highlight.toLowerCase().trim();
+		if (query.startsWith('"') && query.endsWith('"')) {
+			query = query.replace(/['"]+/g, '');
+			parts = text.split(new RegExp(`(${query})`, 'gi'));
+			compare = query.toLowerCase().trim();
 		} else {
-			compare = highlight.toLowerCase().trim();
+			compare = query.toLowerCase().trim();
 			parts = text.split(' ');
 		}
 		return (
@@ -25,19 +26,19 @@ const ViewMeaning = ({ meaning, query }) => {
 		<div className='ContenidoDefinicion'>
 			<div className='ContenedorSuperiorDefinicion'>
 				<div>
-					<p className='InformacionDefinicion'>DESCRIPTOR: {getHLText(meaning.descriptor, query)}</p>
+					<p className='InformacionDefinicion'>DESCRIPTOR: {getHLText(meaning.descriptor)}</p>
 					<p className='InformacionDefinicion'>AÑO: {meaning.year}</p>
-					<p className='InformacionDefinicion'>MATERIA: {getHLText(meaning.subject, query)}</p>
+					<p className='InformacionDefinicion'>MATERIA: {getHLText(meaning.subject)}</p>
 				</div>
 			</div>
 			<div className='SeparadorSecciones' />
 			<div className='DefinicionTermino ScrollVerde'>
 				<p style={{ whiteSpace: 'pre-wrap' }}>
-					{getHLText(meaning.definition, query)}
+					{getHLText(meaning.definition)}
 				</p>
 			</div>
 			<div className='SeparadorSecciones' />
-			<p className='InformacionDefinicion'>FUENTE: {getHLText(meaning.source, query)}</p>
+			<p className='InformacionDefinicion'>FUENTE: {getHLText(meaning.source)}</p>
 		</div>
 	);
 };
