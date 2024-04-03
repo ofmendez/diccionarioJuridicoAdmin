@@ -802,10 +802,10 @@
      filter: brightness(0);
      height: 20px;
 }
-.BotonExpandir{
+.BotonExpandir::after{
     content: var(--TextoExpandir);
 }
-.BotonContraer{
+.BotonContraer::after{
     content: var(--TextoContraer);
 }
 /* Editar Terminos */
