@@ -1,143 +1,147 @@
 /*Horizontal Tablet Lenovo*/
 @media only screen and (min-width: 1200px) {
-
-     :root {
-        /*Estilos*/
+    :root {
+       /*Estilos*/
         --MargenesContenido:30px;
         --PaddingElementos:30px;
         --PaddingInstrucciones:4%;
         --PaddingUnaColumna:20px;
-        /*Menu Lateral*/
-         --MenuAncho: 22vw;
-         --MenuAnchoMaxWidth: 280px;
-         --MenuPadding:30px;
-             /* Modulo Estadísticas */
-    --ModuloLargeScreen: flex;
-    /* Seccion Izquierda y Derecha */
-    --SeccionIzquierdaWidth: 60%;
-    --SeccionDerechaDisplay: flex;
-    /* Subpaginas*/
-    --FiltrosBusquedaOscultar: block;
-    }
-		/*  --------------- INICIO ESTILO PÁGINA BUSCADOR --------------- */
-		:root {
-			/*Buscador página*/
-			--AnchoSeccionFiltros:25%; 
-			--AnchoSeccionResultados: calc(100% - var(--AnchoSeccionFiltros));
-		}
-		
-		}
-		
-		@media only screen and (min-width: 1500px) {
-		
-			:root {
-					/*Buscador página*/
-					--AnchoSeccionFiltros:20%; 
-					--AnchoSeccionResultados: calc(100% - var(--AnchoSeccionFiltros));
-			}
+       /*Menu Lateral*/
+        --MenuAncho: 22vw;
+        --MenuAnchoMaxWidth: 280px;
+        --MenuPadding:30px;
+       /* Modulo Estadísticas */
+        --ModuloLargeScreen: flex;
+       /* Seccion Izquierda y Derecha */
+        --SeccionIzquierdaWidth: 60%;
+        --SeccionDerechaDisplay: flex;
+       /* Subpaginas*/
+        --FiltrosBusquedaOscultar: block;
+       /* Seccion Términos */
+        --MostrarFechaPublicacionTabla: block;
+   }
+
+   /* --------------- INICIO ESTILO PÁGINA BUSCADOR --------------- */
+    :root {
+       /*Buscador página*/
+        --AnchoSeccionFiltros:25%;
+        --AnchoSeccionResultados: calc(100% - var(--AnchoSeccionFiltros));
+   }
 }
+
+@media only screen and (min-width: 1500px) {
+    :root {
+       /*Buscador página*/
+        --AnchoSeccionFiltros:20%;
+        --AnchoSeccionResultados: calc(100% - var(--AnchoSeccionFiltros));
+   }
+}
+
 /* ------------------------- MAX MENU SIZE ------------------------- */
- @media only screen and (min-width: 1250px) {
-     :root{
-         --SeccionesDerechaAncho: var(--SeccionDerechaTamanoAutomatico);
-    }
+@media only screen and (min-width: 1250px) {
+    :root{
+        --SeccionesDerechaAncho: var(--SeccionDerechaTamanoAutomatico);
+   }
 }
+
 /* ------------------------- MAX CONTENT SIZE ------------------------- */
- @media only screen and (min-width: 1920px) {
-     :root {
-        /*Menu Lateral*/
-         --MenuAncho: 22vw;
-         --MenuAnchoMaxWidth: 280px;
-         --MenuPadding:30px;    }
-     :is(body) {
-         background: linear-gradient(90deg, var(--ColorAcento) 0%, var(--ColorAcento) 50%, var(--ColorFondos) 50%, var(--ColorFondos) 100%);
-    }
-     .ContenedorAplicativo{/*Horizontal Tablet Lenovo*/
+@media only screen and (min-width: 1920px) {
+    :root {
+       /*Menu Lateral*/
+        --MenuAncho: 22vw;
+        --MenuAnchoMaxWidth: 280px;
+        --MenuPadding:30px;
+   }
+    :is(body) {
+        background: linear-gradient(90deg, var(--ColorAcento) 0%, var(--ColorAcento) 50%, var(--ColorFondos) 50%, var(--ColorFondos) 100%);
+   }
+    .ContenedorAplicativo{
+       /*Horizontal Tablet Lenovo*/
         @media only screen and (min-width: 1200px) {
-            /* *{
-                 background-color: #ffff0011;
-            }
+           /* *{
+                background-color: #ffff0011;
+           }
             */
-             :root {
-                /*Estilos*/
+            :root {
+               /*Estilos*/
                 --MargenesContenido:30px;
                 --PaddingElementos:30px;
                 --PaddingInstrucciones:4%;
                 --PaddingUnaColumna:20px;
-                /*Menu Lateral*/
-                 --MenuAncho: 22vw;
-                 --MenuAnchoMaxWidth: 280px;
-                 --MenuPadding:30px;
-                     /* Modulo Estadísticas */
-            --ModuloLargeScreen: flex;
-            /* Seccion Izquierda y Derecha */
-            --SeccionIzquierdaWidth: 60%;
-            --SeccionDerechaDisplay: flex;
-            }
-        }
-        /* ------------------------- MAX MENU SIZE ------------------------- */
-         @media only screen and (min-width: 1250px) {
-             :root{
-                 --SeccionesDerechaAncho: var(--SeccionDerechaTamanoAutomatico);
-            }
-        }
-        /* ------------------------- MAX CONTENT SIZE ------------------------- */
-         @media only screen and (min-width: 1920px) {
-             :root {
-                /*Menu Lateral*/
-                 --MenuAncho: 22vw;
-                 --MenuAnchoMaxWidth: 280px;
-                 --MenuPadding:30px;    }
-             :is(body){
-                 background: linear-gradient(90deg, var(--ColorAcento) 0%, var(--ColorAcento) 50%, var(--ColorFondos) 50%, var(--ColorFondos) 100%);
-            }
-             .ContenedorAplicativo{
-                 background-color: var(--ColorFondos);
-                 position:relative;
-                 width:100%;
-                 max-width: 1920px !important;
-                 display: block;
-                 margin: 0 auto;
-                 min-height:100svh;
-            }
-             .MenuLateral{
-                 position:absolute;
-                 min-height: 100svh;
-                 height: -moz-available;
-                 height: -webkit-fill-available;
-                 height: fill-available;
-            }
-             .OverlayMenu{
-                 width:1920px;
-                 position: absolute;
-                 margin:0 auto;
-            }
-             .ContenidoPagina{
-                 width: calc(1920px - var(--MenuAnchoMaxWidth));
-            }
-        }
-        
-         background-color: var(--ColorFondos);
-         position:relative;
-         width:100%;
-         max-width: 1920px !important;
-         display: block;
-         margin: 0 auto;
-         min-height:100svh;
-    }
-     .MenuLateral{
-         position:absolute;
-         min-height: 100svh;
-         height: -moz-available;
-         height: -webkit-fill-available;
-         height: fill-available;
-    }
-     .OverlayMenu{
-         width:1920px;
-         position: absolute;
-         margin:0 auto;
-    }
-     .ContenidoPagina{
-         width: calc(1920px - var(--MenuAnchoMaxWidth));
-    }
+               /*Menu Lateral*/
+                --MenuAncho: 22vw;
+                --MenuAnchoMaxWidth: 280px;
+                --MenuPadding:30px;
+               /* Modulo Estadísticas */
+                --ModuloLargeScreen: flex;
+               /* Seccion Izquierda y Derecha */
+                --SeccionIzquierdaWidth: 60%;
+                --SeccionDerechaDisplay: flex;
+           }
+       }
+       /* ------------------------- MAX MENU SIZE ------------------------- */
+        @media only screen and (min-width: 1250px) {
+            :root{
+                --SeccionesDerechaAncho: var(--SeccionDerechaTamanoAutomatico);
+           }
+       }
+       /* ------------------------- MAX CONTENT SIZE ------------------------- */
+        @media only screen and (min-width: 1920px) {
+            :root {
+               /*Menu Lateral*/
+                --MenuAncho: 22vw;
+                --MenuAnchoMaxWidth: 280px;
+                --MenuPadding:30px;
+           }
+            :is(body){
+                background: linear-gradient(90deg, var(--ColorAcento) 0%, var(--ColorAcento) 50%, var(--ColorFondos) 50%, var(--ColorFondos) 100%);
+           }
+            .ContenedorAplicativo{
+                background-color: var(--ColorFondos);
+                position:relative;
+                width:100%;
+                max-width: 1920px !important;
+                display: block;
+                margin: 0 auto;
+                min-height:100svh;
+           }
+            .MenuLateral{
+                position:absolute;
+                min-height: 100svh;
+                height: -moz-available;
+                height: -webkit-fill-available;
+                height: fill-available;
+           }
+            .OverlayMenu{
+                width:1920px;
+                position: absolute;
+                margin:0 auto;
+           }
+            .ContenidoPagina{
+                width: calc(1920px - var(--MenuAnchoMaxWidth));
+           }
+       }
+        background-color: var(--ColorFondos);
+        position:relative;
+        width:100%;
+        max-width: 1920px !important;
+        display: block;
+        margin: 0 auto;
+        min-height:100svh;
+   }
+    .MenuLateral{
+        position:absolute;
+        min-height: 100svh;
+        height: -moz-available;
+        height: -webkit-fill-available;
+        height: fill-available;
+   }
+    .OverlayMenu{
+        width:1920px;
+        position: absolute;
+        margin:0 auto;
+   }
+    .ContenidoPagina{
+        width: calc(1920px - var(--MenuAnchoMaxWidth));
+   }
 }

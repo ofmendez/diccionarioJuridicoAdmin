@@ -30,7 +30,7 @@ const TermRow = ({ term, showBy, isExpanded, onExpand, onCollapse, home }) => {
 							</details>
 						</td>
 					)}
-				<td>{new Date(term.created_at).toLocaleDateString('en-US')}</td>
+				<td className='ColumnaFechaPublicacion'>{new Date(term.created_at).toLocaleDateString('en-US')}</td>
 				<td>{new Date(term.updated_at).toLocaleDateString('en-US')}</td>
 				{showBy && <td>{term.created_by}</td>}
 				{showBy && <td>{term.updated_by}</td>}

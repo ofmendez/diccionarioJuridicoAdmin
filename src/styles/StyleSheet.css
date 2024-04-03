@@ -68,6 +68,8 @@
      --BuscadorDisplayBoton: none;
      --BuscadorSeparacionSubmit:10px;
      --BuscadorInputWidth: 100%;
+     /* Seccion Términos */
+     --MostrarFechaPublicacionTabla:none;
     /* Editar Terminos */
      --AlturaIconoAgregarDefinicion: 25px;
 }
@@ -726,7 +728,7 @@
  .ContenedorTablaUsuarios{
      overflow-y: auto;
      padding-right:20px;
-     max-height: 80svh;
+     max-height: 68svh;
      margin-top: 20px;
 }
  .TablaUsuarios{
@@ -744,6 +746,10 @@
 }
  .TablaUsuarios th:first-child, .TablaUsuarios th:nth-child(2), .TablaUsuarios th:nth-child(3), .TablaUsuarios th:nth-child(4), .TablaUsuarios td:first-child, .TablaUsuarios td:nth-child(2), .TablaUsuarios td:nth-child(3), .TablaUsuarios td:nth-child(4){
      padding-right: 20px;
+}
+
+.ColumnaFechaPublicacion{
+    display: var(--MostrarFechaPublicacionTabla);
 }
 /* Terminos Definiciones */
  .SeccionContenidoDefiniciones{

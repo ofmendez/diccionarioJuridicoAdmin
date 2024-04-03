@@ -25,7 +25,7 @@ const TermsTable = ({ tableClass, terms, showBy, rowsState, home, order }) => {
 			<thead>
 				<tr className='TablaSeparadorTitulos'>
 					<th>Término</th>
-					<th>Publicación</th>
+					<th className='ColumnaFechaPublicacion'>Publicación</th>
 					<th>Modificación</th>
 					{showBy && <th>Creado</th>}
 					{showBy && <th>Modificado</th>}
