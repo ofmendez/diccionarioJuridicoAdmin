@@ -6,11 +6,10 @@ const SeccionPalabraDelDia = ({ randomTerm }) => {
 	return (
 		<div className='SeccionPalabraDelDia'>
 			<h3>Palabra del Día</h3>
-			<MainsSeparator />
 			<div className='ContenidoPalabraDelDia ScrollVerde'>
-				<h3>
+				<h2>
 					{randomTerm.term}
-				</h3>
+				</h2>
 				<div className='SeparadorSecciones' />
 				{randomTerm.meanings.map((meaning, i) => (
 					<div key={i}>

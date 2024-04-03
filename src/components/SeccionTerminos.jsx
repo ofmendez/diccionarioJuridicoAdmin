@@ -28,7 +28,6 @@ const SeccionTerminos = (props, ref) => {
 							<h3>Palabras Recientes</h3>
 							<Link to='/terms'><p>Ver todos</p></Link>
 						</div>
-						<MainsSeparator />
 						<div className='ContenedorTablaRecientes ScrollVerde'>
 							<TermsTable tableClass='TablaRecientes' terms={terms} home />
 						</div>

@@ -24,7 +24,6 @@ const SeccionUsuarios = (props) => {
 							<h3>Usuarios Recientes</h3>
 							<Link to='/users'><p>Ver todos</p></Link>
 						</div>
-						<MainsSeparator />
 						<div className='ContenedorTablaRecientes ScrollVerde'>
 							<UsersTable tableClass='TablaRecientes' users={users} />
 						</div>
