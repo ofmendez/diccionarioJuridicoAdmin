@@ -8,7 +8,7 @@ const UserRow = ({ user }) => {
 			<td>{user.name}</td>
 			<td>{user.role}</td>
 			<td>{user.lastLogin}</td>
-			<td className='TablaTextoCentrado'>
+			<td className='TablaTextoCentrado TablaContenidoAcciones'>
 				<Link to={`/users/${user._id}`}>
 					<img className='IconosTabla' src={IconoVer} />
 				</Link>
