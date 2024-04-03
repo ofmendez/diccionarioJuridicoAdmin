@@ -72,6 +72,8 @@
      --MostrarFechaPublicacionTablaMaxWidth: 0;
      --MostrarFechaPublicacionTablaTexto: 0px;
      --MostrarFechaPublicacionTablaVisibilidad:hidden;
+     --TextoExpandir: '';
+     --TextoContraer: '';
     /* Editar Terminos */
      --AlturaIconoAgregarDefinicion: 25px;
 }
@@ -655,7 +657,7 @@
      column-gap: 10px;
      display: flex;
      align-items: center;
-     min-width:200px;
+     min-width:186px;
      padding: var(--PaddingBotonAgregar);
      cursor: pointer;
 	  border-width: 0px;
@@ -730,7 +732,6 @@
  .ContenedorTablaUsuarios{
      overflow-y: auto;
      padding-right:20px;
-     max-height: 68svh;
      margin-top: 20px;
 }
  .TablaUsuarios{
@@ -800,6 +801,12 @@
  .BotonEliminarSubtermino img{
      filter: brightness(0);
      height: 20px;
+}
+.BotonExpandir{
+    content: var(--TextoExpandir);
+}
+.BotonContraer{
+    content: var(--TextoContraer);
 }
 /* Editar Terminos */
  .SeccionInputTitulo{
@@ -904,7 +911,7 @@ a:visited{
 	font-weight: var(--FuenteNegrilla);
 	font-size: var(--TamanoFuenteParrafos);
 	cursor: pointer;
-	min-width: 120px;
+	min-width: 105px;
 }
 .dj_button:hover{
 	background-color: var(--ColorAcentoHover);

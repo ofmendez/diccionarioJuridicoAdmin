@@ -21,6 +21,8 @@
        --MostrarFechaPublicacionTablaMaxWidth: none;
        --MostrarFechaPublicacionTablaTexto: inherit;
        --MostrarFechaPublicacionTablaVisibilidad:visible;
+       --TextoExpandir: ' Expandir';
+       --TextoContraer: ' Contraer';
    }
 
    /* --------------- INICIO ESTILO PÁGINA BUSCADOR --------------- */
