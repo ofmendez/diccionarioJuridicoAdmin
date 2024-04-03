@@ -37,7 +37,7 @@ const ViewTerm = () => {
 						<ButtonRound onClick={handleDelete} ico={IconoEliminar} />
 						<Link className='BotonAgregar' to={'../edit/' + id}>
 							<img className='IconoMenu' src={IconoEditar} />
-							Editar Término
+							Editar
 						</Link>
 					</div>
 				</Skeletons>
