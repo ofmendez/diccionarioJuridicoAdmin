@@ -12,7 +12,7 @@
      --PaddingContenidosHome: 32px;
      /* Subpaginas */
      --SeccionSuperiorOrden: row;
-     --SeccionSuperiorAlineacion: center;
+     --SeccionSuperiorAlineacion: stretch;
      --BuscadorInputWidth: 300px;
   }
 }

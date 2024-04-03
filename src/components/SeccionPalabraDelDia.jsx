@@ -5,7 +5,7 @@ const SeccionPalabraDelDia = ({ randomTerm }) => {
 	console.log('SeccionPalabraDelDia', randomTerm);
 	return (
 		<div className='SeccionPalabraDelDia'>
-			<h3>Palabra del Día</h3>
+			<h3>Palabra al Azar</h3>
 			<div className='ContenidoPalabraDelDia ScrollVerde'>
 				<h2>
 					{randomTerm.term}

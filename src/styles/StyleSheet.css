@@ -84,6 +84,7 @@
      -khtml-user-select: none;
      -webkit-user-select: none;
      -o-user-select: none;
+     word-wrap: break-word;
 }
  body{
      background-color: var(--ColorFondos);
@@ -885,7 +886,6 @@ a:visited{
 .dj_button{
 	border: 0 solid transparent;
 	padding: var(--PaddingBotonAgregar);
-	display: var(--BuscadorDisplayBoton);
 	background-color: var(--ColorAcento);
 	color: var(--ColorTextoAcento);
 	border-radius: var(--RadioEsquinas);
