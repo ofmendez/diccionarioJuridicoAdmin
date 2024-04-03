@@ -47,7 +47,7 @@ const Terms = () => {
 					<Button onClick={collapseAllRows}><span className="BotonContraer">-</span></Button>
 					<Link to='./new' className='BotonAgregar'>
 						<img className='IconoMenu' src={IconoAgTermino} />
-						Agregar Término
+						<span className='BotonAgregarTermino'>Agregar</span>
 					</Link>
 				</div>
 			</div>

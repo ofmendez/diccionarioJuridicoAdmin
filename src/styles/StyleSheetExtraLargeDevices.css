@@ -21,9 +21,10 @@
        --MostrarFechaPublicacionTablaMaxWidth: none;
        --MostrarFechaPublicacionTablaTexto: inherit;
        --MostrarFechaPublicacionTablaVisibilidad:visible;
-       --PaddingBotonesBarraHerramientas:0 25px;
+       --PaddingBotonesBarraHerramientas:12px 20px;
        --TextoExpandir:' Expandir';
        --TextoContraer:' Contraer';
+       --TextoAgregarTermino: ' Término';
    }
 
    /* --------------- INICIO ESTILO PÁGINA BUSCADOR --------------- */

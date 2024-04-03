@@ -72,9 +72,10 @@
      --MostrarFechaPublicacionTablaMaxWidth: 0;
      --MostrarFechaPublicacionTablaTexto: 0px;
      --MostrarFechaPublicacionTablaVisibilidad:hidden;
-     --PaddingBotonesBarraHerramientas:0 16px;
+     --PaddingBotonesBarraHerramientas:12px 16px;
      --TextoExpandir: '';
      --TextoContraer: '';
+     --TextoAgregarTermino: '';
     /* Editar Terminos */
      --AlturaIconoAgregarDefinicion: 25px;
 }
@@ -658,7 +659,6 @@
      column-gap: 10px;
      display: flex;
      align-items: center;
-     padding: var(--PaddingBotonAgregar);
      cursor: pointer;
 	  border-width: 0px;
 }
@@ -806,6 +806,9 @@
 }
 .BotonContraer::after{
     content: var(--TextoContraer);
+}
+.BotonAgregarTermino{
+    content: var(--TextoAgregarTermino);
 }
 /* Editar Terminos */
  .SeccionInputTitulo{
