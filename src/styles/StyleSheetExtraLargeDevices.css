@@ -21,6 +21,7 @@
        --MostrarFechaPublicacionTablaMaxWidth: none;
        --MostrarFechaPublicacionTablaTexto: inherit;
        --MostrarFechaPublicacionTablaVisibilidad:visible;
+       --PaddingBotonesBarraHerramientas:0 25px;
        --TextoExpandir:' Expandir';
        --TextoContraer:' Contraer';
    }
