@@ -34,13 +34,15 @@ const TermRow = ({ term, showBy, isExpanded, onExpand, onCollapse, home }) => {
 				<td>{new Date(term.updated_at).toLocaleDateString('en-US')}</td>
 				{showBy && <td>{term.created_by}</td>}
 				{showBy && <td>{term.updated_by}</td>}
-				<td className='TablaTextoCentrado TablaContenidoAcciones'>
-					<Link to={`/terms/${term._id}`}>
-						<img className='IconosTabla' src={IconoVer} />
-					</Link>
-					<Link to={`/terms/edit/${term._id}`}>
-						<img className='IconosTabla' src={IconoEditar} />
-					</Link>
+				<td className='TablaTextoCentrado'>
+					<div className='TablaContenidoAcciones'>
+						<Link to={`/terms/${term._id}`}>
+							<img className='IconosTabla' src={IconoVer} />
+						</Link>
+						<Link to={`/terms/edit/${term._id}`}>
+							<img className='IconosTabla' src={IconoEditar} />
+						</Link>
+					</div>
 				</td>
 			</tr>
 			{isExpanded && printSortedDescriptors(term.meanings)}

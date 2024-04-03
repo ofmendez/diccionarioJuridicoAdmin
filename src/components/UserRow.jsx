@@ -8,13 +8,15 @@ const UserRow = ({ user }) => {
 			<td>{user.name}</td>
 			<td>{user.role}</td>
 			<td>{user.lastLogin}</td>
-			<td className='TablaTextoCentrado TablaContenidoAcciones'>
-				<Link to={`/users/${user._id}`}>
-					<img className='IconosTabla' src={IconoVer} />
-				</Link>
-				<Link to={`/users/edit/${user._id}`}>
-					<img className='IconosTabla' src={IconoEditar} />
-				</Link>
+			<td className='TablaTextoCentrado'>
+				<div className='TablaContenidoAcciones'>
+					<Link to={`/users/${user._id}`}>
+						<img className='IconosTabla' src={IconoVer} />
+					</Link>
+					<Link to={`/users/edit/${user._id}`}>
+						<img className='IconosTabla' src={IconoEditar} />
+					</Link>
+				</div>
 			</td>
 		</tr>
 	);
