@@ -36,7 +36,9 @@ const Menu = () => {
 			<div id='ContenedorMenuLateral'>
 				<div className='MenuLateral' id='MenuLateral'>
 					<div className='MenuLateralSeccion'>
-						<img className='LogoMenuLateral' src={LogoBlanco} />
+						<a href="/">
+							<img className='LogoMenuLateral' src={LogoBlanco} />
+						</a>
 						<ul className='MenuLateralLista'>
 							<MenuItem to='/' icon={IcoInicio} text='Inicio' />
 							{
