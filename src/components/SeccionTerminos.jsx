@@ -57,9 +57,7 @@ const SeccionTerminos = (props, ref) => {
 						<Skeletons on={loadingTerms} msg='Cargando'>
 
 							<div className='SeccionContenidoSubpagina'>
-								<MainsSeparator />
 								<h3>Términos</h3>
-								<MainsSeparator />
 								<div className='ContenedorTablaUsuarios ScrollVerde table-container'>
 									<TermsTable tableClass='TablaUsuarios' showBy terms={terms} rowsState={props.rowsState} order={order} />
 								</div>
