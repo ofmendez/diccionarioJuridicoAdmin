@@ -810,6 +810,10 @@
 .BotonAgregarTermino::after{
     content: var(--TextoAgregarTermino);
 }
+.NombreTermino{
+    display: flex;
+    align-items: center;
+}
 /* Editar Terminos */
  .SeccionInputTitulo{
      width:100%;

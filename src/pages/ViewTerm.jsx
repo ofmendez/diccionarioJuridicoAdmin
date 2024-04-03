@@ -30,7 +30,7 @@ const ViewTerm = () => {
 		<ContentFrame>
 			<div className='SeccionSuperiorHerramientas'>
 				<Skeletons on={loadingTerm} msg='Cargando'>
-					<div className='SeccionBuscador'>
+					<div className='SeccionBuscador NombreTermino'>
 						<h1>{term.term}</h1>
 					</div>
 					<div className='SeccionDerechaBotones'>
