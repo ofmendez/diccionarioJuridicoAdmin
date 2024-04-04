@@ -36,7 +36,7 @@ const Menu = () => {
 			<div id='ContenedorMenuLateral'>
 				<div className='MenuLateral' id='MenuLateral'>
 					<div className='MenuLateralSeccion'>
-						<a href="/">
+						<a href='/'>
 							<img className='LogoMenuLateral' src={LogoBlanco} />
 						</a>
 						<ul className='MenuLateralLista'>

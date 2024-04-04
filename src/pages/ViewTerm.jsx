@@ -11,7 +11,7 @@ import { deleteTerm } from '@src/hooks/PostData.jsx';
 
 const ViewTerm = () => {
 	const { id } = useParams();
-	const [searchParams, setSearchParams] = useSearchParams();
+	const [searchParams] = useSearchParams();
 	const [term, setTerm] = useState({});
 	const [loadingTerm, setLoadingTerm] = useState('init');
 	const navigate = useNavigate();

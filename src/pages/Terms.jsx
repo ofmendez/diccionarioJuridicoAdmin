@@ -43,8 +43,8 @@ const Terms = () => {
 					</form>
 				</div>
 				<div className='SeccionSuperiorHerramientas'>
-					<Button onClick={expandAllRows}><span className="BotonExpandir">+</span></Button>
-					<Button onClick={collapseAllRows}><span className="BotonContraer">-</span></Button>
+					<Button onClick={expandAllRows}><span className='BotonExpandir'>+</span></Button>
+					<Button onClick={collapseAllRows}><span className='BotonContraer'>-</span></Button>
 					<Link to='./new' className='BotonAgregar'>
 						<img className='IconoMenu' src={IconoAgTermino} />
 						<span className='BotonAgregarTermino'>Agregar</span>

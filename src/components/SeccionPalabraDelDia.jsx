@@ -1,5 +1,4 @@
 import React from 'react';
-import MainsSeparator from '@components/MainSeparator.jsx';
 
 const SeccionPalabraDelDia = ({ randomTerm }) => {
 	console.log('SeccionPalabraDelDia', randomTerm);

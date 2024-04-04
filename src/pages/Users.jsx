@@ -1,13 +1,12 @@
 import React from 'react';
 
-import { IconoAgUsuario, IconoLupa } from '@components/icons.js';
-import MainsSeparator from '@components/MainSeparator.jsx';
+import { IconoAgUsuario } from '@components/icons.js';
 import ContentFrame from '@components/ContentFrame.jsx';
 import { Link } from 'react-router-dom';
 import SeccionUsuarios from '@src/components/SeccionUsuarios';
 
 const Users = () => {
-	const options = ['Filtrar', 'Administrador', 'Editor', 'Lector', 'Activo', 'Inactivo'];
+	// const options = ['Filtrar', 'Administrador', 'Editor', 'Lector', 'Activo', 'Inactivo'];
 
 	return (
 		<ContentFrame>
