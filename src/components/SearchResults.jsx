@@ -14,7 +14,6 @@ const SearchResults = ({ results, query }) => {
 			<br />
 			{results.map((r, i) =>
 				<div key={i}>
-
 					<Link to={`/terms/${r._id}?q=${query}`} className='ResultadoBusqueda'>
 						<div className='ResultadoBusqueda hovered'>
 							<p className='ResultadoBusquedaTermino'>
@@ -36,11 +35,9 @@ const SearchResults = ({ results, query }) => {
 								}
 							</p>
 						</div>
-
 					</Link>
 					<hr className='ResultadoBusquedaSeparador' />
 				</div>
-
 			)}
 		</div>
 	);

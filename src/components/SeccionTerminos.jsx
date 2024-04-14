@@ -1,5 +1,5 @@
-import React, { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import React, { forwardRef, useEffect, useImperativeHandle, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import { Skeletons } from '@components/Skeletons.jsx';
 import MainsSeparator from '@components/MainSeparator.jsx';
