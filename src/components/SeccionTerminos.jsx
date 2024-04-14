@@ -1,15 +1,27 @@
-import React, { forwardRef, useEffect, useImperativeHandle, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 
 import { Skeletons } from '@components/Skeletons.jsx';
 import MainsSeparator from '@components/MainSeparator.jsx';
 import TermsTable from '@components/TermsTable.jsx';
 import { loadTerms } from '@src/hooks/LoaderData.jsx';
+import TermsFilters from '@components/TermsFilters.jsx';
 
 const SeccionTerminos = (props, ref) => {
 	const [terms, setTerms] = useState([]);
 	const [loadingTerms, setLoadingTerms] = useState('init');
 	const [order, setOrder] = useState('asc');
+	const [avSubjects, setAvSubjects] = useState({ Jurisprudencia: true, Doctrina: true, Norma: true });
+
+	// const hasSubject = (attr) => decodeURIComponent(searchParams.get('subject')).split(',').includes(attr);
+
+	// const [searchParams] = useSearchParams();
+	// const subjects = useRef({
+	// 	Jurisprudencia: true,
+	// 	Doctrina: true,
+	// 	Norma: true
+	// });
+
 	useEffect(() => loadTerms({ loadingTerms, setLoadingTerms, setTerms }), []);
 	useEffect(() => {
 		if (props.home) {
@@ -20,7 +32,7 @@ const SeccionTerminos = (props, ref) => {
 
 	useImperativeHandle(ref, () => ({ getTerms: () => terms }));
 	return (
-		props.home
+		props.home/* Vista de Home */
 			? (
 				<Skeletons on={loadingTerms} msg='Cargando'>
 					<div className='SeccionInferiorColumnaIzquierdaHome'>
@@ -34,14 +46,7 @@ const SeccionTerminos = (props, ref) => {
 					</div>
 				</Skeletons>
 			)
-			// : props.dayTerm
-			// 	? (
-			// 		<></>
-			// 		// <Skeletons on={loadingTerms} msg='Cargando'>
-			// 		// 	<SeccionPalabraDelDia terms={terms} />
-			// 		// </Skeletons>
-			// 	)
-			:	(
+			:	(/* Vista de Términos */
 				<>
 					<MainsSeparator />
 					<div className='SelectOrdenarPor'>
@@ -54,12 +59,20 @@ const SeccionTerminos = (props, ref) => {
 						</select>
 					</div>
 					<div className='SeccionContenidoHome' id='SeccionContenidoHome'>
+						{/* Conectar <TermsFilters> con <TermsTable> */}
+						<TermsFilters setAvSubjects={setAvSubjects} avSubjects={avSubjects} />
 						<Skeletons on={loadingTerms} msg='Cargando'>
 
 							<div className='SeccionContenidoSubpagina'>
 								<h3>Términos</h3>
 								<div className='ContenedorTablaUsuarios ScrollVerde table-container'>
-									<TermsTable tableClass='TablaUsuarios' showBy terms={terms} rowsState={props.rowsState} order={order} />
+									<TermsTable
+										tableClass='TablaUsuarios' showBy
+										terms={terms}
+										rowsState={props.rowsState}
+										order={order}
+										avSubjects={avSubjects}
+									/>
 								</div>
 							</div>
 						</Skeletons>

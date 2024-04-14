@@ -2,8 +2,9 @@ import { Link } from 'react-router-dom';
 
 import { IconoEditar, IconoVer } from '@components/icons.js';
 import TermInnerRow from '@components/TermInnerRow.jsx';
+import React from 'react';
 
-const TermRow = ({ term, showBy, isExpanded, onExpand, onCollapse, home }) => {
+const TermRow = ({ term, showBy, isExpanded, onExpand, onCollapse, home, avSubjects }) => {
 	const clicled = (e) => {
 		if (e.target.hasAttribute('open'))
 			onExpand();
@@ -12,9 +13,12 @@ const TermRow = ({ term, showBy, isExpanded, onExpand, onCollapse, home }) => {
 	};
 	const printSortedDescriptors = (meanings) => {
 		const sortedMean = meanings.sort((a, b) => a.descriptor.localeCompare(b.descriptor));
-		return sortedMean.map((m, i) =>
-			<TermInnerRow key={i} descriptor={m.descriptor} />
-		);
+		return sortedMean.map((m, i) => {
+			if (avSubjects && avSubjects[m.subject])
+				return <TermInnerRow key={i} descriptor={m.descriptor} />;
+			else
+				return <React.Fragment key={i} />;
+		});
 	};
 	return (
 		<>

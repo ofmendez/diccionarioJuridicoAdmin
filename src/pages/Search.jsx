@@ -8,11 +8,12 @@ import TermsSearchForm from '@src/components/TermsSearchForm';
 import useSearchTerm from '@src/hooks/useSearchTerm';
 
 const Search = () => {
-	const [searchParams] = useSearchParams();
 	const [loadingTerm, setLoadingTerm] = useState('init');
 
 	const hasContent = (attr) => decodeURIComponent(searchParams.get('content')).split(',').includes(attr);
 	const hasSubject = (attr) => decodeURIComponent(searchParams.get('subject')).split(',').includes(attr);
+
+	const [searchParams] = useSearchParams();
 	const subjects = useRef({
 		Doctrina: hasSubject('Doctrina'),
 		Norma: hasSubject('Norma'),

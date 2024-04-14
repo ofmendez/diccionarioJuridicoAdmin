@@ -1,7 +1,8 @@
 import TermRow from '@components/TermRow.jsx';
 import '@styles/Loading.css';
+import { useEffect } from 'react';
 
-const TermsTable = ({ tableClass, terms, showBy, rowsState, home, order }) => {
+const TermsTable = ({ tableClass, terms, showBy, rowsState, home, order, avSubjects }) => {
 	const aviableOrders = {
 		asc: (a, b) => a.term.localeCompare(b.term),
 		desc: (a, b) => b.term.localeCompare(a.term),
@@ -17,9 +18,12 @@ const TermsTable = ({ tableClass, terms, showBy, rowsState, home, order }) => {
 				isExpanded={isExpanded(term._id)}
 				onExpand={() => rowsState?.setExpandedRows([...rowsState?.expandedRows, term._id])}
 				onCollapse={() => rowsState?.setExpandedRows(rowsState?.expandedRows.filter((id) => id !== term._id))}
+				avSubjects={avSubjects}
 			/>
 		);
 	};
+	useEffect(() => {
+	}, [avSubjects]);
 	return (
 		<table className={tableClass}>
 			<thead>
