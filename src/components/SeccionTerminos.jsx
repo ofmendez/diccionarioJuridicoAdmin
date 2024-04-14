@@ -54,8 +54,10 @@ const SeccionTerminos = (props, ref) => {
 						<select className='SelectOrdenarPor' onChange={(e) => setOrder(e.target.value)}>
 							<option value='asc'> De la A a la Z</option>
 							<option value='desc'> De la Z a la A</option>
-							<option value='recent'> Agregado más reciente</option>
-							<option value='oldest'> Agregado más antiguo</option>
+							<option value='recent'> Fecha publicación más reciente </option>
+							<option value='oldest'> Fecha publicación más antigua </option>
+							<option value='recentMod'> Fecha modificación más reciente </option>
+							<option value='oldestMod'> Fecha modificación más antigua </option>
 						</select>
 					</div>
 					<div className='SeccionContenidoHome' id='SeccionContenidoHome'>
