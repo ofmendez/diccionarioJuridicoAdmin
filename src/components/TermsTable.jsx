@@ -4,8 +4,8 @@ import { useEffect } from 'react';
 
 const TermsTable = ({ tableClass, terms, showBy, rowsState, home, order, avSubjects }) => {
 	const aviableOrders = {
-		asc: (a, b) => a.term.localeCompare(b.term),
-		desc: (a, b) => b.term.localeCompare(a.term),
+		asc: (a, b) => a.term.localeCompare(b.term, undefined, { numeric: true, sensitivity: 'base' }),
+		desc: (a, b) => b.term.localeCompare(a.term, undefined, { numeric: true, sensitivity: 'base' }),
 		recent: (a, b) => new Date(b.created_at) - new Date(a.created_at),
 		oldest: (a, b) => new Date(a.created_at) - new Date(b.created_at),
 		recentMod: (a, b) => new Date(b.updated_at) - new Date(a.updated_at),
