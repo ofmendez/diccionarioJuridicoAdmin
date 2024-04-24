@@ -12,14 +12,26 @@ const TermRow = ({ term, showBy, isExpanded, onExpand, onCollapse, home, avSubje
 			onCollapse();
 	};
 	const printSortedDescriptors = (meanings) => {
-		const sortedMean = meanings.sort((a, b) => a.descriptor.localeCompare(b.descriptor));
-		return sortedMean.map((m, i) => {
-			if (avSubjects && avSubjects[m.subject])
-				return <TermInnerRow key={i} descriptor={m.descriptor} />;
-			else
-				return <React.Fragment key={i} />;
-		});
+		let result = [];
+		const subjectOrder = ['Norma', 'Jurisprudencia', 'Doctrina'];
+		for (let i = 0; i < subjectOrder.length; i++) {
+			const sortedMean = meanings.filter((m) => m.subject === subjectOrder[i]).sort((a, b) => {
+				if (a.year === b.year)
+					return a.descriptor.localeCompare(b.descriptor);
+				return b.year - a.year;
+			});
+			result = result.concat(printMeanings(sortedMean, i));
+		}
+		return result;
 	};
+	function printMeanings (sortedMean, index) {
+		return sortedMean.map((m, j) => {
+			if (avSubjects && avSubjects[m.subject])
+				return <TermInnerRow key={`0${index}-${j}`} descriptor={m.descriptor} />;
+			else
+				return <React.Fragment key={`0${index}-${j}`} />;
+		});
+	}
 	return (
 		<>
 			<tr>
