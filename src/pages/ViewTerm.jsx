@@ -15,6 +15,27 @@ const ViewTerm = () => {
 	const [term, setTerm] = useState({});
 	const [loadingTerm, setLoadingTerm] = useState('init');
 	const navigate = useNavigate();
+	const subjectOrder = ['Norma', 'Jurisprudencia', 'Doctrina'];
+
+	const printSortedDescriptors = (meanings, index) => {
+		console.log('meanings:', meanings);
+		let result = [];
+
+		for (let i = 0; i < subjectOrder.length; i++) {
+			const sortedMean = meanings?.filter((m) => m.subject === subjectOrder[i]).sort((a, b) => {
+				if (a.year === b.year)
+					return a.descriptor.localeCompare(b.descriptor);
+				return b.year - a.year;
+			});
+			result = result.concat(printMeanings(sortedMean, i));
+		}
+		return result;
+	};
+
+	function printMeanings (sortedMean, index) {
+		return sortedMean?.map((m, j) => <ViewMeaning meaning={m} key={`0${index}-${j}`} query={searchParams.get('q')} />);
+	}
+
 	useEffect(() => { loadTerm({ id, loadingTerm, setLoadingTerm, setTerm }); }, []);
 
 	const doneDelete = () => {
@@ -45,7 +66,8 @@ const ViewTerm = () => {
 			<div className='SeccionContenidoDefiniciones'>
 				<Skeletons on={loadingTerm}>
 					{
-						term.meanings?.map((el, i) => (<ViewMeaning meaning={el} key={i} query={searchParams.get('q')} />))
+						printSortedDescriptors(term.meanings, 0)
+						// term.meanings?.map((el, i) => (<ViewMeaning meaning={el} key={i} query={searchParams.get('q')} />))
 					}
 				</Skeletons>
 			</div>
