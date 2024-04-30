@@ -79,7 +79,7 @@ const EditUser = () => {
 					</>
 				)
 				: (
-					<OverlayLoading word='En construcción' />
+					<OverlayLoading word='Cargando' />
 				)
 		}
 		</ContentFrame>
