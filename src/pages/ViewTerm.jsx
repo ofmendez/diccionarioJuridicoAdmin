@@ -17,10 +17,9 @@ const ViewTerm = () => {
 	const navigate = useNavigate();
 	const subjectOrder = ['Norma', 'Jurisprudencia', 'Doctrina'];
 
-	const printSortedDescriptors = (meanings, index) => {
+	const printSortedDescriptors = (meanings, _) => {
 		console.log('meanings:', meanings);
 		let result = [];
-
 		for (let i = 0; i < subjectOrder.length; i++) {
 			const sortedMean = meanings?.filter((m) => m.subject === subjectOrder[i]).sort((a, b) => {
 				if (a.year === b.year)
