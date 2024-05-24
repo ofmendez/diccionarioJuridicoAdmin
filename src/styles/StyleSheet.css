@@ -256,6 +256,7 @@
      cursor: pointer;
 	  border: none;
 	  color: var(--ColorTextoAcento);
+      background-color: var(--ColorAcento);
 }
  .LogoMenuLateral{
      height:var(--AlturaLogoPrincipal);
