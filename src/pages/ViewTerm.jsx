@@ -15,7 +15,7 @@ const ViewTerm = () => {
 	const [term, setTerm] = useState({});
 	const [loadingTerm, setLoadingTerm] = useState('init');
 	const navigate = useNavigate();
-	const subjectOrder = ['Norma', 'Jurisprudencia', 'Doctrina'];
+	const subjectOrder = ['Norma', 'Jurisprudencia', 'Doctrina', 'MATERIA'];
 
 	const printSortedDescriptors = (meanings, _) => {
 		console.log('meanings:', meanings);

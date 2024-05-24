@@ -18,7 +18,7 @@ const EditTerm = () => {
 	const { id } = useParams();
 
 	const homologateTerm = (term) => {
-		const hMeanings = term.meanings.map((el) => (new Meaning()).createFromData(el));
+		const hMeanings = term.meanings?.map((el) => (new Meaning()).createFromData(el));
 		setTerm({ ...term, meanings: hMeanings });
 	};
 
@@ -54,7 +54,7 @@ const EditTerm = () => {
 						<TermTopToolsEdit term={term.term} handleUpdate={handleUpdate} handleDelete={handleDelete} onTermChange={(e) => setTerm({ ...term, term: e.target.value })} />
 						<div className='SeccionContenidoDefiniciones'>
 							{
-								term.meanings.map((el, i) =>
+								term.meanings?.map((el, i) =>
 									<FormMeaning edit index={i} key={i} meaning={el} setMeanings={setTerm} />
 								)
 							}
