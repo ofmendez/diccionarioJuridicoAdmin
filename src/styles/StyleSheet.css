@@ -650,9 +650,8 @@
      flex-direction: row;
      column-gap: 16px;
 }
- .BotonAgregar{
+ .BotonAgregar .BotonAgregarFixed{
      background-color: var(--ColorAcento);
-     border-radius: var(--RadioEsquinas);
      color:var(--ColorSecundario);
      padding: var(--PaddingBotonesBarraHerramientas);
      font-size: var(--TamanoFuenteParrafos);
@@ -663,10 +662,17 @@
      cursor: pointer;
 	  border-width: 0px;
 }
- .BotonAgregar:hover, .BotonEliminar:hover{
+
+.BotonAgregar{
+    border-radius: var(--RadioEsquinas);
+}
+.BotonAgregarFixed{
+    border-radius: 200px;
+}
+ .BotonAgregar:hover, .BotonAgregarFixed:hover, .BotonEliminar:hover{
      background-color: var(--ColorAcentoHover);
 }
- .BotonAgregar img, .BotonEliminar img{
+ .BotonAgregar img, .BotonAgregarFixed img, .BotonEliminar img{
      filter: brightness(100);
 }
  .BotonEliminar{
@@ -816,6 +822,12 @@
     align-items: center;
 }
 /* Editar Terminos */
+
+.BotonGuardarFixed{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
  .SeccionInputTitulo{
      width:100%;
 }
