@@ -650,7 +650,7 @@
      flex-direction: row;
      column-gap: 16px;
 }
- .BotonAgregar .BotonAgregarFixed{
+ .BotonAgregar, .BotonAgregarFixed{
      background-color: var(--ColorAcento);
      color:var(--ColorSecundario);
      padding: var(--PaddingBotonesBarraHerramientas);
