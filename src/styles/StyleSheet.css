@@ -675,6 +675,9 @@
  .BotonAgregar:hover, .BotonAgregarFixed:hover, .BotonEliminar:hover{
      background-color: var(--ColorAcentoHover);
 }
+.BotonAgregar:visited{
+	color: var(--ColorTextoAcento);
+}
  .BotonAgregar img, .BotonAgregarFixed img, .BotonEliminar img{
      filter: brightness(100);
 }
@@ -737,6 +740,9 @@
 }
  .SubmitBusqueda:hover{
      background-color: var(--ColorAcentoHover);
+}
+.SubmitBusqueda:visited{
+	color: var(--ColorTextoAcento);
 }
  .ContenedorTablaUsuarios{
      overflow-y: auto;
@@ -859,30 +865,32 @@
      border: 0 solid transparent;
      padding: 10px;
 }
- .FormaEditarTerminos input:focus{
-     border: 2px solid var(--ColorAcento) !important;
+
+.FormaEditarTerminos input:focus{
+	border: 2px solid var(--ColorAcento) !important;
 }
- .InputDefinicion{
-     height:200px;
+
+.InputDefinicion{
+	height:200px;
 }
- .AgregarDefinicion{
-     padding: calc(var(--PaddingContenidosHome)/2);
-     display: flex;
-     justify-content: center;
-	  cursor: pointer;
-	  border-width: 0px;
+
+.AgregarDefinicion{
+	padding: calc(var(--PaddingContenidosHome)/2);
+	display: flex;
+	justify-content: center;
+	cursor: pointer;
+	border-width: 0px;
 }
- .IconoAgregarDefinicion{
-     height: var(--AlturaIconoAgregarDefinicion);
-     text-align: center;
-     display:block;
+.IconoAgregarDefinicion{
+	height: var(--AlturaIconoAgregarDefinicion);
+	text-align: center;
+	display:block;
 }
-a:visited{
-	color: var(--ColorTextoAcento);
-}
+
 .disabledCursor { 
 	cursor: default;
 }
+
 .ButtonDisabled{
 	background-color: var(--ColorPlaceholder);
 	border-radius: var(--RadioEsquinas);
@@ -948,8 +956,13 @@ a:visited{
 	font-size: 12px;
 }
 
+a.descriptor_row {
+	padding-left: 30px;
+	display: inline-block;
+}
+
 .descriptor_row{
-	padding-left:25px;
+	color: var(--ColorTexto);
 }
 /* .table-container {
 	padding-left: 10px;
@@ -1080,6 +1093,9 @@ mark{
 	width: var(--AnchoCategoriaBuscadorFiltros);
 }
 
+.SubmitBusquedaFiltros:visited{
+	color: var(--ColorTextoAcento);
+}
 .SubmitBusquedaFiltros{
 	display: block;
 	text-align: center;
@@ -1134,4 +1150,10 @@ mark{
 }
 .SelectOrdenarPor select{
 	cursor: pointer;
+}
+
+.snippet {
+	opacity: 1;
+	color: #979797;
+	font-size: 14px;
 }

@@ -11,23 +11,29 @@ const TermRow = ({ term, showBy, isExpanded, onExpand, onCollapse, home, avSubje
 		else
 			onCollapse();
 	};
-	const printSortedDescriptors = (meanings) => {
+	const printSortedDescriptors = (meanings, idTerm) => {
 		let result = [];
 		const subjectOrder = ['Norma', 'Jurisprudencia', 'Doctrina'];
 		for (let i = 0; i < subjectOrder.length; i++) {
 			const sortedMean = meanings.filter((m) => m.subject === subjectOrder[i]).sort((a, b) => {
 				if (a.year === b.year)
-					return a.descriptor.localeCompare(b.descriptor);
+					return a.descriptor.localeCompare(b.descriptor, undefined, { numeric: true, sensitivity: 'base' });
 				return b.year - a.year;
 			});
-			result = result.concat(printMeanings(sortedMean, i));
+			result = result.concat(printMeanings(sortedMean, i, idTerm));
 		}
 		return result;
 	};
-	function printMeanings (sortedMean, index) {
+	function printMeanings (sortedMean, index, idTerm) {
 		return sortedMean.map((m, j) => {
 			if (avSubjects && avSubjects[m.subject])
-				return <TermInnerRow key={`0${index}-${j}`} descriptor={m.descriptor} />;
+				return (
+					<TermInnerRow
+						key={`${m._id}`}
+						idTerm={idTerm}
+						meaning={m}
+					/>
+				);
 			else
 				return <React.Fragment key={`0${index}-${j}`} />;
 		});
@@ -61,7 +67,7 @@ const TermRow = ({ term, showBy, isExpanded, onExpand, onCollapse, home, avSubje
 					</div>
 				</td>
 			</tr>
-			{isExpanded && printSortedDescriptors(term.meanings)}
+			{isExpanded && printSortedDescriptors(term.meanings, term._id)}
 		</>
 	);
 };
