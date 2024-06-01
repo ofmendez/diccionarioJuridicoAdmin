@@ -11,7 +11,7 @@ const FormNewUser = ({ ...props }) => {
 	const currProfession = props.userData.profession;
 	const optionsRole = ['Selecciona un Rol', 'Administrador', 'Editor', 'Lector'];
 	const optionsState = ['Selecciona un Estado', 'Activo', 'Inactivo'];
-	const optionsExpiration = ['Selecciona un Vencimiento', 'Activo', 'Inactivo'];
+	const optionsExpiration = ['Selecciona un Vencimiento', '1 mes', '6 meses', ' 1 año', 'ilimitado'];
 	const setRandomPassword = (e) => {
 		e.preventDefault();
 		const randomPassword = Math.random().toString(36).slice(2, 17);
@@ -57,7 +57,7 @@ const FormNewUser = ({ ...props }) => {
 						<>
 							<input
 								value={props.userData.password || ''}
-								className='InputPassword ' type='text' disabled placeholder='Contraseña' name='password' id='dePass' onChange={handleChange}
+								className='InputPassword ' type='text' placeholder='Contraseña' name='password' id='dePass' onChange={handleChange}
 							/>
 							<div className='SeparadorSecciones' />
 							<ButtonRound onClick={setRandomPassword}>
