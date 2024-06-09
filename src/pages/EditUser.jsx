@@ -24,7 +24,7 @@ const EditUser = () => {
 
 	const update = () => {
 		setLoadingUser('loading');
-		const allowed = ['_id', 'email', 'name', 'role'];
+		const allowed = ['_id', 'email', 'name', 'role', 'profession', 'suscription', 'initSuscription', 'timeToExpire'];
 		const newUser = Object.keys(userData).filter(key => allowed.includes(key)).reduce((obj, key) => {
 			obj[key] = userData[key];
 			return obj;
@@ -35,6 +35,10 @@ const EditUser = () => {
 	const validations = () => {
 		if (!userData.name || userData.name === '' || !userData.email || userData.email === '' || !userData.role || userData.role === '') {
 			window.alert('El nombre, el correo y el rol no pueden estar vacíos');
+			return false;
+		}
+		if (userData.suscription === 'Activo' && (!userData.timeToExpire || !userData.initSuscription)) {
+			window.alert('El campo de Expiración ni la fecha de inicio de suscripción pueden estar vacíos');
 			return false;
 		}
 		return true;

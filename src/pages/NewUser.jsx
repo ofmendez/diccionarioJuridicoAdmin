@@ -30,10 +30,14 @@ const NewUser = () => {
 			window.alert('La contraseña no puede estar vacía');
 			return false;
 		}
-		// if (userData.password !== userData.password2) {
-		// 	window.alert('Las contraseñas no coinciden');
-		// 	return false;
-		// }
+		if (userData.suscription === 'Activo' && (!userData.timeToExpire || !userData.initSuscription)) {
+			window.alert('El campo de Expiración ni la fecha de inicio de suscripción pueden estar vacíos');
+			return false;
+		}
+		if (userData.password.length < 8) {
+			window.alert('La contraseña debe tener al menos 8 caracteres');
+			return false;
+		}
 		if (!userData.role || userData.role === '') {
 			window.alert('El Rol no puede estar vacío');
 			return false;
