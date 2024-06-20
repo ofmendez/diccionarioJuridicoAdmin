@@ -25,7 +25,7 @@ const TermRow = ({ term, showBy, isExpanded, onExpand, onCollapse, home, avSubje
 		return result;
 	};
 	function printMeanings (sortedMean, index, idTerm) {
-		return sortedMean.map((m, j) => {
+		return sortedMean.map((m, _) => {
 			if (avSubjects && avSubjects[m.subject])
 				return (
 					<TermInnerRow
@@ -35,7 +35,8 @@ const TermRow = ({ term, showBy, isExpanded, onExpand, onCollapse, home, avSubje
 					/>
 				);
 			else
-				return <React.Fragment key={`0${index}-${j}`} />;
+				return <React.Fragment key={`${m._id}`} />;
+			// return <React.Fragment key={`0${index}-${j}`} />;
 		});
 	}
 	return (

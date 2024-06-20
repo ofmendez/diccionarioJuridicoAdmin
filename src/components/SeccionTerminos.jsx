@@ -64,7 +64,6 @@ const SeccionTerminos = (props, ref) => {
 						{/* Conectar <TermsFilters> con <TermsTable> */}
 						<TermsFilters setAvSubjects={setAvSubjects} avSubjects={avSubjects} />
 						<Skeletons on={loadingTerms} msg='Cargando'>
-
 							<div className='SeccionContenidoSubpagina'>
 								<h3>Términos</h3>
 								<div className='ContenedorTablaUsuarios ScrollVerde table-container'>

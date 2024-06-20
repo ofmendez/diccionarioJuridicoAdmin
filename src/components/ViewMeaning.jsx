@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ViewMeaning = ({ meaning, query }) => {
+const ViewMeaning = ({ meaning, query, id }) => {
 	const getHLText = (text) => {
 		if (!query || query === '') return text;
 		let parts = '';
@@ -23,7 +23,7 @@ const ViewMeaning = ({ meaning, query }) => {
 		);
 	};
 	return (
-		<div className='ContenidoDefinicion'>
+		<div className='ContenidoDefinicion' id={id}>
 			<div className='ContenedorSuperiorDefinicion'>
 				<div>
 					<p className='InformacionDefinicion'>DESCRIPTOR: {getHLText(meaning.descriptor)}</p>

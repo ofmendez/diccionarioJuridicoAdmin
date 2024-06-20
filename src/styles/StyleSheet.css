@@ -86,7 +86,7 @@
      font-family: var(--FuenteTipografia);
      box-sizing: border-box;
      transition: background-color 0.5s, color 0.05s, filter 0.5s, border 0.5s;
-     -webkit-tap-highlight-color: transparent;
+     -webkit-tap-dwq-color: transparent;
      /* user-select: none;
      -moz-user-select: none;
      -khtml-user-select: none;
@@ -1146,7 +1146,7 @@ mark{
 	font-size: var(--TamanoFuenteParrafos);
 	display: flex;
 	gap: 10px;
-    outline: none;
+   outline: none;
 }
 .SelectOrdenarPor select{
 	cursor: pointer;
@@ -1156,4 +1156,20 @@ mark{
 	opacity: 1;
 	color: #979797;
 	font-size: 14px;
+}
+.highlight{
+	animation: highlight 0.3s 2 ease-in-out;
+}
+
+@keyframes highlight {
+	0% {
+		background-color: var(--ColorSecundario)
+	}
+	/* with --ColorAcento but half opacity */
+	50% {
+		background-color: rgba(23, 198, 79, 0.5);
+	}
+	100% {
+		background-color: var(--ColorSecundario)
+	}
 }

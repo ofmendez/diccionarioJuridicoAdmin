@@ -17,6 +17,25 @@ const ViewTerm = () => {
 	const navigate = useNavigate();
 	const subjectOrder = ['Norma', 'Jurisprudencia', 'Doctrina', 'MATERIA'];
 
+	useEffect(() => { loadTerm({ id, loadingTerm, setLoadingTerm, setTerm }); }, []);
+
+	function scrollIntoViewAndWait (element) {
+		return new Promise(resolve => {
+			const elementContainer = document.getElementById('scrolleable');
+			console.log('elementContainer:', elementContainer);
+			if ('onscrollend' in elementContainer) {
+				console.log('Scrolling with event SII');
+				elementContainer.addEventListener('scrollend', resolve, { once: true });
+				element.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+				resolve();
+			} else {
+				console.log('Scrolling with event NOO');
+				element.scrollIntoView({ block: 'center', inline: 'center' });
+				resolve();
+			}
+		});
+	}
+
 	const printSortedDescriptors = (meanings, _) => {
 		console.log('meanings:', meanings);
 		let result = [];
@@ -31,11 +50,15 @@ const ViewTerm = () => {
 		return result;
 	};
 
-	function printMeanings (sortedMean, index) {
-		return sortedMean?.map((m, j) => <ViewMeaning meaning={m} key={`0${index}-${j}`} query={searchParams.get('q')} />);
+	function printMeanings (sortedMean, _) {
+		return sortedMean?.map((m, _) =>
+			<ViewMeaning
+				meaning={m}
+				key={`${m._id}`}
+				id={`${m._id}`}
+				query={searchParams.get('q')}
+			/>);
 	}
-
-	useEffect(() => { loadTerm({ id, loadingTerm, setLoadingTerm, setTerm }); }, []);
 
 	const doneDelete = () => {
 		navigate('/terms');
@@ -46,6 +69,18 @@ const ViewTerm = () => {
 		deleteTerm({ id, setLoadingTerm, handleDonePost: doneDelete });
 	};
 
+	useEffect(() => {
+		const targetId = window.location.hash.slice(1);
+		const targetParagraph = document.getElementById(targetId);
+		// Check if a target ID exists and the ref is available
+		if (targetParagraph && loadingTerm === 'ok') {
+			console.log('Scrolling to target');
+			scrollIntoViewAndWait(targetParagraph).then(() => {
+				console.log('Scroll end');
+				targetParagraph.classList.add('highlight');
+			});
+		}
+	}, [loadingTerm]);
 	return (
 		<ContentFrame>
 			<div className='SeccionSuperiorHerramientas'>
@@ -62,7 +97,7 @@ const ViewTerm = () => {
 					</div>
 				</Skeletons>
 			</div>
-			<div className='SeccionContenidoDefiniciones'>
+			<div className='SeccionContenidoDefiniciones' id='scrolleable'>
 				<Skeletons on={loadingTerm}>
 					{
 						printSortedDescriptors(term.meanings, 0)

@@ -24,8 +24,7 @@ const TermsTable = ({ tableClass, terms, showBy, rowsState, home, order, avSubje
 			/>
 		);
 	};
-	useEffect(() => {
-	}, [avSubjects]);
+	useEffect(() => {}, [avSubjects]);
 	return (
 		<table className={tableClass}>
 			<thead>
