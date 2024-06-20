@@ -53,8 +53,8 @@ const TermRow = ({ term, showBy, isExpanded, onExpand, onCollapse, home, avSubje
 							</details>
 						</td>
 					)}
-				<td className='ColumnaFechaPublicacion'>{new Date(term.created_at).toLocaleDateString('en-US')}</td>
-				<td>{new Date(term.updated_at).toLocaleDateString('en-US')}</td>
+				<td className='ColumnaFechaPublicacion'>{new Date(term.created_at).toLocaleDateString('es-CO')}</td>
+				<td>{new Date(term.updated_at).toLocaleDateString('es-CO')}</td>
 				{showBy && <td>{term.created_by}</td>}
 				{showBy && <td>{term.updated_by}</td>}
 				<td className='TablaTextoCentrado'>
