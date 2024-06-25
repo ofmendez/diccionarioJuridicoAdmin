@@ -30,16 +30,18 @@ const TermsFilters = ({ avSubjects, setAvSubjects }) => {
 					<div className='CategoriasBuscador'>
 						<h4>Materia</h4>
 					</div>
-					<input type='checkbox' id='MateriaJurisprudencia' name='Jurisprudencia' value='MateriaJurisprudencia' defaultChecked={avSubjects.Jurisprudencia} />
-					<label className='LabelBuscadorFiltros'> Jurisprudencia</label>
-					<br />
-					<input type='checkbox' id='MateriaDoctrina' name='Doctrina' value='MateriaDoctrina' defaultChecked={avSubjects.Doctrina} />
-					<label className='LabelBuscadorFiltros'> Doctrina</label>
-					<br />
-					<input type='checkbox' id='MateriaNorma' name='Norma' value='MateriaNorma' defaultChecked={avSubjects.Norma} />
-					<label className='LabelBuscadorFiltros'> Norma</label>
-					<br />
-					<br />
+					<div>
+						<input type='checkbox' id='MateriaJurisprudencia' name='Jurisprudencia' value='MateriaJurisprudencia' defaultChecked={avSubjects.Jurisprudencia} />
+						<label className='LabelBuscadorFiltros'> Jurisprudencia</label>
+					</div>
+					<div>
+						<input type='checkbox' id='MateriaDoctrina' name='Doctrina' value='MateriaDoctrina' defaultChecked={avSubjects.Doctrina} />
+						<label className='LabelBuscadorFiltros'> Doctrina</label>
+					</div>
+					<div>
+						<input type='checkbox' id='MateriaNorma' name='Norma' value='MateriaNorma' defaultChecked={avSubjects.Norma} />
+						<label className='LabelBuscadorFiltros'> Norma</label>
+					</div>
 				</form>
 			</div>
 		</>
