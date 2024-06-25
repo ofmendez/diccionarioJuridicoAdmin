@@ -61,9 +61,9 @@
 
 	:root {
 		/*Buscador página*/
-		 --AnchoSeccionFiltros:32%;
+		 --AnchoSeccionFiltros:100%;
 		 --AnchoSeccionResultados: calc(100% - var(--AnchoSeccionFiltros));
-		 --OrientacionBusqueda: row;
+		 --OrientacionBusqueda: column;
 		 --DisplaySeccionFiltros: flex;
 		 --DisplayBotonSeccionFiltros: none;
 		 --DireccionFlexCategoriasBuscador: column;

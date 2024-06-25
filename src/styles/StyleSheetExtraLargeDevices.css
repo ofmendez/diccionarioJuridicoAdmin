@@ -26,6 +26,8 @@
        --TextoContraer:' Contraer';
        --TextoAgregarTermino: ' Término';
        --DireccionFlexSeccionContenidoHome: row;
+       --AnchoSeccionFiltros:32%;
+       --OrientacionBusqueda: row;
    }
 
    /* --------------- INICIO ESTILO PÁGINA BUSCADOR --------------- */
