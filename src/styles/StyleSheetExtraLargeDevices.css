@@ -27,6 +27,7 @@
        --TextoAgregarTermino: ' Término';
        --DireccionFlexSeccionContenidoHome: row;
        --AnchoSeccionFiltros:32%;
+       --DireccionFlexFiltros: column;
        --OrientacionBusqueda: row;
    }
 

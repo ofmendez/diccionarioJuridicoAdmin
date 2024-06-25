@@ -77,6 +77,7 @@
      --TextoContraer: '';
      --TextoAgregarTermino: '';
      --DireccionFlexSeccionContenidoHome: column;
+     --DireccionFlexFiltros: row;
     /* Editar Terminos */
      --AlturaIconoAgregarDefinicion: 25px;
 }
@@ -1056,6 +1057,13 @@ mark{
 	display: var(--DisplaySeccionFiltros);
 	flex-direction: column;
 	min-height: 0;
+}
+
+.ContenedorFiltrosFlex {
+    display: flex;
+    flex-direction: var(--DireccionFlexFiltros);
+    column-gap: 20px;
+    flex-wrap: wrap;
 }
 
 .SeccionContenidoBuscadorResultados{
