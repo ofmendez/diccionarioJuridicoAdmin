@@ -76,6 +76,7 @@
      --TextoExpandir: '';
      --TextoContraer: '';
      --TextoAgregarTermino: '';
+     --DireccionFlexSeccionContenidoHome: column;
     /* Editar Terminos */
      --AlturaIconoAgregarDefinicion: 25px;
 }
@@ -524,7 +525,7 @@
 /* Seccion Contenido Home */
  .SeccionContenidoHome{
      display: flex;
-     flex-direction: row;
+     flex-direction: var(--DireccionFlexSeccionContenidoHome);
      padding-top: 30px;
      column-gap: 20px;
 }
@@ -1147,6 +1148,7 @@ mark{
 	display: flex;
 	gap: 10px;
    outline: none;
+   background-color: transparent;
 }
 .SelectOrdenarPor select{
 	cursor: pointer;
