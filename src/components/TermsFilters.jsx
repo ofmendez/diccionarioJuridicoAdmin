@@ -30,7 +30,7 @@ const TermsFilters = ({ avSubjects, setAvSubjects }) => {
 					<div className='CategoriasBuscador'>
 						<h4>Materia</h4>
 					</div>
-					<div>
+					<div className="ContenedorFiltrosFlex">
 						<div>
 							<input type='checkbox' id='MateriaJurisprudencia' name='Jurisprudencia' value='MateriaJurisprudencia' defaultChecked={avSubjects.Jurisprudencia} />
 							<label className='LabelBuscadorFiltros'> Jurisprudencia</label>

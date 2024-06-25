@@ -52,7 +52,7 @@ const SearchFilters = ({ contents, subjects, searchParams }) => {
 					<div className='CategoriasBuscador'>
 						<h4>Materia</h4>
 					</div>
-					<div>
+					<div className="ContenedorFiltrosFlex">
 						<div>
 							<input type='checkbox' id='MateriaJurisprudencia' name='Jurisprudencia' value='MateriaJurisprudencia' defaultChecked={subjects.current.Jurisprudencia} />
 							<label className='LabelBuscadorFiltros'> Jurisprudencia</label>
@@ -71,7 +71,7 @@ const SearchFilters = ({ contents, subjects, searchParams }) => {
 					<h4>Sección contenido</h4>
 				</div>
 				<form className='FormaBuscadorFiltros' onChange={handleChangeContents}>
-						<div>
+						<div className="ContenedorFiltrosFlex">
 							<div>
 								<input type='checkbox' id='SeccionTermino' name='term' value='SeccionTermino' defaultChecked={contents.current.term} />
 								<label className='LabelBuscadorFiltros'> Término</label>
