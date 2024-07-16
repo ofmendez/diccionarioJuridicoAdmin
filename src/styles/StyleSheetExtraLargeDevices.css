@@ -25,6 +25,8 @@
        --TextoExpandir:' Expandir';
        --TextoContraer:' Contraer';
        --TextoAgregarTermino: ' Término';
+        /*Seccion Resultados Busqueda*/
+     --DireccionSeccionesFiltros:row;
    }
 }
 

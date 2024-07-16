@@ -78,6 +78,8 @@
      --TextoAgregarTermino: '';
      --DireccionFlexSeccionContenidoHome: column;
      --DireccionFlexFiltros: row;
+     /*Seccion Resultados Busqueda*/
+     --DireccionSeccionesFiltros:column;
     /* Editar Terminos */
      --AlturaIconoAgregarDefinicion: 25px;
 }
@@ -1057,6 +1059,12 @@ mark{
 	display: var(--DisplaySeccionFiltros);
 	flex-direction: column;
 	min-height: 0;
+}
+
+.FiltrosDisponibles {
+    display: flex;
+    flex-direction: var(--DireccionSeccionesFiltros);
+    column-gap: 80px;
 }
 
 .ContenedorFiltrosFlex {
