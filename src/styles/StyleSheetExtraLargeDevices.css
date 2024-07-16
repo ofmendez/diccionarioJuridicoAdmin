@@ -27,20 +27,6 @@
        --TextoAgregarTermino: ' Término';
        --OrientacionBusqueda: row;
    }
-
-   /* --------------- INICIO ESTILO PÁGINA BUSCADOR --------------- */
-    :root {
-       /*Buscador página*/
-        --AnchoSeccionResultados: calc(100% - var(--AnchoSeccionFiltros));
-   }
-}
-
-@media only screen and (min-width: 1500px) {
-    :root {
-       /*Buscador página*/
-        --AnchoSeccionFiltros:20%;
-        --AnchoSeccionResultados: calc(100% - var(--AnchoSeccionFiltros));
-   }
 }
 
 /* ------------------------- MAX MENU SIZE ------------------------- */
