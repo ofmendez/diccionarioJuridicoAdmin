@@ -1065,6 +1065,8 @@ mark{
     display: flex;
     flex-direction: var(--DireccionSeccionesFiltros);
     column-gap: 80px;
+    row-gap: 15px;
+    padding-bottom: 10px;
 }
 
 .ContenedorFiltrosFlex {
