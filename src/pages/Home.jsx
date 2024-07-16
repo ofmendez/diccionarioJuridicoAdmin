@@ -14,7 +14,7 @@ const Home = () => {
 	return (
 		<ContentFrame>
 			<SeccionEstadisticas numberUsers={numberUsers} numberTerms={numberTerms} />
-			<div className='SeccionContenidoHome' id='SeccionContenidoHome'>
+			<div className='SeccionContenidoPaginaInicial' id='SeccionContenidoHome'>
 				<div className='ColumnaIzquierdaHome'>
 					{
 						window.localStorage.user && JSON.parse(window.localStorage.user).role === 'Administrador' &&

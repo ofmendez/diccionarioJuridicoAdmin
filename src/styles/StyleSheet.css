@@ -48,6 +48,7 @@
      --AlturaIconosMenuLateral:20px;
      --AlturaLogoPrincipal: 40px;
     /* Página Home */
+     --DireccionFlexSeccionContenidoPaginaInicio:column;
      --OcultarHeaderMovil: block;
      --AlturaImagenMiniaturaPerfil: 50px;
      --PaddingContenidosHome: 20px;
@@ -521,6 +522,14 @@
      font-size: var(--TamanoFuenteTitulosH3);
 }
 /* Seccion Contenido Home */
+
+.SeccionContenidoPaginaInicial{
+    display: flex;
+    flex-direction: var(--DireccionFlexSeccionContenidoPaginaInicio);
+    padding-top: 30px;
+    column-gap: 20px;
+    row-gap:20px;
+}
  .SeccionContenidoHome{
      display: flex;
      flex-direction: var(--DireccionFlexSeccionContenidoHome);
