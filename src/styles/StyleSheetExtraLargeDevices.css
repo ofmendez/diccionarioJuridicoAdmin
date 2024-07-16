@@ -31,7 +31,6 @@
    /* --------------- INICIO ESTILO PÁGINA BUSCADOR --------------- */
     :root {
        /*Buscador página*/
-        --AnchoSeccionFiltros:25%;
         --AnchoSeccionResultados: calc(100% - var(--AnchoSeccionFiltros));
    }
 }
