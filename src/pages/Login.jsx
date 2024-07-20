@@ -31,9 +31,6 @@ const Login = () => {
 
 	useEffect(() => {
 		const listener = (event) => {
-			console.log('MESSAGE ARRIVE!! : ', event);
-			console.log('M origin : ', event.origin);
-			console.log('M data   : ', event.data);
 			if (event.origin === 'https://consulta.diccionarioexplore.com' && event.data === 'requestToken') {
 				const token = window.localStorage.getItem('token');
 				if (token)

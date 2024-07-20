@@ -58,6 +58,10 @@ const FormMeaning = ({ ...props }) => {
 					className='InputFuente' type='text' placeholder='FUENTE' name='source'
 					value={currMeaning.source || ''} onChange={handleChange}
 				/>
+				<input
+					className='InputFuente' type='text' placeholder='ARCHIVO' name='file'
+					value={currMeaning.file || ''} onChange={handleChange}
+				/>
 			</form>
 		</div>
 	);
