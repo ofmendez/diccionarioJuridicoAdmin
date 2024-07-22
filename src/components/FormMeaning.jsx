@@ -60,7 +60,7 @@ const FormMeaning = ({ ...props }) => {
 				/>
 				<div className='SeparadorSecciones' />
 				<input
-					className='InputFuente' type='text' placeholder='ARCHIVO' name='file'
+					className='InputFuente' type='text' placeholder='ENLACE FUENTE' name='file'
 					value={currMeaning.file || ''} onChange={handleChange}
 				/>
 			</form>
