@@ -58,6 +58,7 @@ const FormMeaning = ({ ...props }) => {
 					className='InputFuente' type='text' placeholder='FUENTE' name='source'
 					value={currMeaning.source || ''} onChange={handleChange}
 				/>
+				<div className='SeparadorSecciones' />
 				<input
 					className='InputFuente' type='text' placeholder='ARCHIVO' name='file'
 					value={currMeaning.file || ''} onChange={handleChange}
