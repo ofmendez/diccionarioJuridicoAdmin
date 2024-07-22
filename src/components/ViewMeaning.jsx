@@ -39,7 +39,7 @@ const ViewMeaning = ({ meaning, query, id }) => {
 			</div>
 			<div className='SeparadorSecciones' />
 			<p className='InformacionDefinicion'>FUENTE: {getHLText(meaning.source)}</p>
-			<a href={meaning.file ? meaning.file : 'https://diccionarioexplore.com/'} target='_blank' rel='noreferrer'>
+			<a className='EnlaceFuente' href={meaning.file ? meaning.file : 'https://diccionarioexplore.com/'} target='_blank' rel='noreferrer'>
 				{meaning.file ? meaning.file : 'https://diccionarioexplore.com/'}
 			</a>
 		</div>

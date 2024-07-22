@@ -839,6 +839,11 @@
     display: flex;
     align-items: center;
 }
+.EnlaceFuente {
+    color: var(--ColorAcento) !important;
+    font-size: var(--TamanoFuenteParrafos);
+}
+
 /* Editar Terminos */
 
 .BotonGuardarFixed{
