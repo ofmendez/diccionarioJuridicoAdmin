@@ -15,6 +15,8 @@ class Meaning {
 		const name = event.target.name;
 		const value = name === 'year' ? event.target.valueAsNumber : event.target.value;
 		Object.assign(this.inputs, { [name]: value });
+		if ((!event.target.value || event.target.value === '') && name === 'file')
+			delete this.inputs[name];
 	}
 }
 
