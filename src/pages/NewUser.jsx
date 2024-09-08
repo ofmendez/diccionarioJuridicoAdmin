@@ -46,7 +46,8 @@ const NewUser = () => {
 	};
 
 	const saveTerm = () => {
-		const body = { ...userData };
+		const modules = [parseInt(import.meta.env.VITE_DICTIONARY_MODULE)];
+		const body = { ...userData, modules: JSON.stringify(modules) };
 		createUser({ loadingUser, setLoadingUser, body, handleDonePost });
 	};
 

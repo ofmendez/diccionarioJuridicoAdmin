@@ -9,11 +9,19 @@ import { loadUsers } from '@src/hooks/LoaderData.jsx';
 const SeccionUsuarios = (props) => {
 	const [users, setUsers] = useState([]);
 	const [loadingUsrs, setLoadingUsrs] = useState('init');
-	useEffect(() => loadUsers({ loadingUsrs, setLoadingUsrs, setUsers }), []);
+	useEffect(() => loadUsers({ loadingUsrs, setLoadingUsrs, setUsers: setData }), []);
 	useEffect(() => {
 		if (props.home)
 			props.setNumberUsers(users.length);
 	}, [users]);
+
+	const setData = (data) => {
+		const mod = parseInt(import.meta.env.VITE_DICTIONARY_MODULE);
+		setUsers(data.filter(user => {
+			const modules = user.modules ? JSON.parse(user.modules) : [0];
+			return modules.includes(mod);
+		}));
+	};
 
 	return (
 		props.home
