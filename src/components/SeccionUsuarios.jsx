@@ -22,7 +22,6 @@ const SeccionUsuarios = (props) => {
 			return modules.includes(mod);
 		}));
 	};
-
 	return (
 		props.home
 			? (
@@ -33,7 +32,10 @@ const SeccionUsuarios = (props) => {
 							<Link to='/users'><p>Ver todos</p></Link>
 						</div>
 						<div className='ContenedorTablaRecientes ScrollVerde'>
-							<UsersTable tableClass='TablaRecientes' users={users} />
+							<UsersTable
+								tableClass='TablaRecientes'
+								users={users.slice(0, 10)}
+							/>
 						</div>
 					</div>
 				</Skeletons>

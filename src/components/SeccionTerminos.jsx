@@ -41,7 +41,11 @@ const SeccionTerminos = (props, ref) => {
 							<Link to='/terms'><p>Ver todos</p></Link>
 						</div>
 						<div className='ContenedorTablaRecientes ScrollVerde'>
-							<TermsTable tableClass='TablaRecientes' terms={terms} home />
+							<TermsTable
+								tableClass='TablaRecientes'
+								terms={terms.sort((a, b) => new Date(b.created_at) - new Date(a.created_at)).slice(0, 10)}
+								home
+							/>
 						</div>
 					</div>
 				</Skeletons>

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { IconoEditar, IconoVer } from '@components/icons.js';
 
 const UserRow = ({ user }) => {
-	const getLastLogin = () => {
+	const getLastLogin = () => { // Repetida en SeccionUsuarios.jsx
 		if (user.lastLogin)
 			return new Date(user.lastLogin).toLocaleDateString('es-CO');
 		if (user.initSuscription)
