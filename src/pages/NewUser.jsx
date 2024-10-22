@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-
 import { createUser } from '@src/hooks/PostData.jsx';
 import OverlayLoading from '@components/OverlayLoading.jsx';
 import ContentFrame from '@components/ContentFrame.jsx';
@@ -45,14 +44,14 @@ const NewUser = () => {
 		return true;
 	};
 
-	const saveTerm = () => {
+	const saveUser = () => {
 		const modules = [parseInt(import.meta.env.VITE_DICTIONARY_MODULE)];
 		const body = { ...userData, modules: JSON.stringify(modules) };
 		createUser({ loadingUser, setLoadingUser, body, handleDonePost });
 	};
 
 	const trySave = () => {
-		validations() && saveTerm();
+		validations() && saveUser();
 	};
 	const handleCancel = () => {
 		window.confirm('¿Estás seguro de cancelar?') && window.history.back();

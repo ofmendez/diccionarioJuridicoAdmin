@@ -12,6 +12,11 @@ const Login = () => {
 	const { isAuthenticated, login } = useContext(AuthContext);
 
 	const handleDoneFetch = (d) => {
+		const mod = parseInt(import.meta.env.VITE_DICTIONARY_MODULE);
+		if (!d.user.modules.includes(mod)) {
+			setLoadingFetch('init');
+			return window.alert('No tienes permisos para acceder a esta aplicación, confirma la URL.');
+		}
 		window.localStorage.setItem('token', d.token);
 		window.localStorage.setItem('user', JSON.stringify(d.user));
 		window.localStorage.setItem('expire', Date.now() + 6 * 24 * 60 * 60 * 1000);
