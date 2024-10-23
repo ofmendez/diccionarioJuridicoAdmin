@@ -25,7 +25,8 @@ const SeccionTerminos = (props, ref) => {
 	useEffect(() => loadTerms({ loadingTerms, setLoadingTerms, setTerms }), []);
 	useEffect(() => {
 		if (props.home) {
-			props.setNumberTerms(terms.length);
+			const acc = terms.reduce((acc, term) => acc + term.meanings.length, 0);
+			props.setNumberTerms(acc);
 			props.setRandomTerm(terms[Math.floor(Math.random() * terms.length)]);
 		}
 	}, [terms]);
