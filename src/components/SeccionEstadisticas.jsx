@@ -1,7 +1,7 @@
 import React from 'react';
 import { IcoCronologia, IcoTerminos, IcoUsrRegistrados, IconoNoPerfil } from '@components/icons.js';
 
-const SeccionEstadisticas = ({ numberUsers, numberTerms }) => {
+const SeccionEstadisticas = ({ numberUsers, numberTerms, lastModified }) => {
 	console.log(numberUsers);
 	return (
 		<div className='SeccionMensajeEstadisticas' id='SeccionMensajeEstadisticas'>
@@ -36,7 +36,7 @@ const SeccionEstadisticas = ({ numberUsers, numberTerms }) => {
 						<div className='ModuloEstadistica ModuloEstadisticaLargeScreen'>
 							<div><img className='ImagenIconoEstadisticas' src={IcoCronologia} /></div>
 							<div className='ContenidosEstadisticas'>
-								<p className='IndicadorEstadisticas'>--/--/----</p>
+								<p className='IndicadorEstadisticas'>{lastModified}</p>
 								<p>Última modificación</p>
 							</div>
 						</div>

@@ -1,6 +1,5 @@
 import React, { forwardRef, useEffect, useImperativeHandle, useState } from 'react';
 import { Link } from 'react-router-dom';
-
 import { Skeletons } from '@components/Skeletons.jsx';
 import MainsSeparator from '@components/MainSeparator.jsx';
 import TermsTable from '@components/TermsTable.jsx';
@@ -26,8 +25,13 @@ const SeccionTerminos = (props, ref) => {
 	useEffect(() => {
 		if (props.home) {
 			const acc = terms.reduce((acc, term) => acc + term.meanings.length, 0);
+			const lmDate = terms.reduce((acc, term) => {
+				const date = new Date(term.updated_at);
+				return date > acc ? date : acc;
+			}, new Date(0));
 			props.setNumberTerms(acc);
 			props.setRandomTerm(terms[Math.floor(Math.random() * terms.length)]);
+			props.setLastModified(lmDate.toLocaleDateString('es-CO'));
 		}
 	}, [terms]);
 

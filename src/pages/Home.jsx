@@ -8,19 +8,25 @@ import { useEffect, useState } from 'react';
 const Home = () => {
 	const [numberUsers, setNumberUsers] = useState('---');
 	const [numberTerms, setNumberTerms] = useState('---');
+	const [lastModified, setLastModified] = useState('---');
 	const [randomTerm, setRandomTerm] = useState(null);
 	useEffect(() => {}, [numberUsers]);
 
 	return (
 		<ContentFrame>
-			<SeccionEstadisticas numberUsers={numberUsers} numberTerms={numberTerms} />
+			<SeccionEstadisticas numberUsers={numberUsers} numberTerms={numberTerms} lastModified={lastModified} />
 			<div className='SeccionContenidoPaginaInicial' id='SeccionContenidoHome'>
 				<div className='ColumnaIzquierdaHome'>
 					{
 						window.localStorage.user && JSON.parse(window.localStorage.user).role === 'Administrador' &&
 						<SeccionUsuarios home setNumberUsers={setNumberUsers} />
 					}
-					<SeccionTerminos home setNumberTerms={setNumberTerms} setRandomTerm={setRandomTerm} />
+					<SeccionTerminos
+						home
+						setNumberTerms={setNumberTerms}
+						setRandomTerm={setRandomTerm}
+						setLastModified={setLastModified}
+					/>
 				</div>
 				<div className='ColumnaDerechaHome'>
 					{randomTerm && <SeccionPalabraDelDia dayTerm randomTerm={randomTerm} />}
