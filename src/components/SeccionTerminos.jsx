@@ -30,8 +30,9 @@ const SeccionTerminos = (props, ref) => {
 				return date > acc ? date : acc;
 			}, new Date(0));
 			props.setNumberTerms(acc);
-			props.setRandomTerm(terms[Math.floor(Math.random() * terms.length)]);
-			props.setLastModified(lmDate.toLocaleDateString('es-CO'));
+			const last10terms = terms.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at)).slice(0, 10);
+			props.setRandomTerm(last10terms[Math.floor(Math.random() * last10terms.length)]);
+			props.setLastModified(lmDate.getFullYear() === new Date(0).getFullYear() ? '--/--/----' : lmDate.toLocaleDateString('es-CO'));
 		}
 	}, [terms]);
 
