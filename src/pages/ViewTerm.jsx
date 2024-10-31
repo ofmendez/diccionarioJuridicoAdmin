@@ -81,6 +81,7 @@ const ViewTerm = () => {
 			});
 		}
 	}, [loadingTerm]);
+
 	return (
 		<ContentFrame>
 			<div className='SeccionSuperiorHerramientas'>
