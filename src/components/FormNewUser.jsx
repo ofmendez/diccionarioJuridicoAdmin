@@ -10,18 +10,18 @@ const FormNewUser = ({ ...props }) => {
 	const currInitSubscrip = props.userData.initSuscription?.split('T')[0];
 	const optionsRole = ['Selecciona un Rol', 'Administrador', 'Editor', 'Lector'];
 	const optionsSuscription = ['Selecciona un estado de suscripción', 'Activo', 'Inactivo'];
-	const optionsExpiration = ['Selecciona un Vencimiento', '5 días', '1 mes', '6 meses', '1 año', 'ILIMITADO'];
+	const optionsExpiration = ['Selecciona un Vencimiento', '5 días', '1 mes', '6 meses', '1 año', 'Ilimiatado'];
 	const dictTimeToExpire = {
 		'5 días': '5',
 		'1 mes': '31',
 		'6 meses': '182',
 		'1 año': '365',
-		ILIMITADO: '-1'
+		Ilimiatado: '-1'
 	};
 	const getEndSuscription = () => {
 		if (!props.userData.timeToExpire || !currInitSubscrip) return '';
 		const date = new Date(currInitSubscrip);
-		if ('' + props.userData.timeToExpire === '-1') return 'ILIMITADO';
+		if ('' + props.userData.timeToExpire === '-1') return 'Ilimiatado';
 		date.setDate(date.getDate() + parseInt(props.userData.timeToExpire));
 		return date.toISOString().split('T')[0];
 	};
@@ -79,8 +79,8 @@ const FormNewUser = ({ ...props }) => {
 				<div className='SeparadorSecciones' />
 				<span>Fin de suscripción</span>
 				{
-					getEndSuscription() === 'ILIMITADO'
-						? <span className='FiltrosBusqueda'>ILIMITADO</span>
+					getEndSuscription() === 'Ilimiatado'
+						? <span className='FiltrosBusqueda'>Ilimiatado</span>
 						: (
 							<input
 								className='FiltrosBusqueda' type='date' placeholder='Fin suscripción' disabled
