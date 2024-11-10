@@ -96,6 +96,11 @@ const ViewTerm = () => {
 							Editar
 						</Link>
 					</div>
+					<div className='BotonGuardarFixed'>
+						<Link className='BotonAgregarFixed' to={'../edit/' + id}>
+							<img className='IconoMenu' src={IconoEditar} />
+						</Link>
+					</div>
 				</Skeletons>
 			</div>
 			<div className='SeccionContenidoDefiniciones' id='scrolleable'>
