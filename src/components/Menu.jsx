@@ -70,7 +70,7 @@ const Menu = () => {
 						</ul>
 					</div>
 					<div class="IntruccionesAplicativo">
-						En cada uno de los términos de este diccionario Usted encontrará Primero: las normas sobre la materia, organizadas de lo más reciente a lo más antiguo; Segundo: la jurisprudencia sobre el tema de la más reciente a la más antigua; y Tercero la doctrina de las autoridades (Ministerio de Minas y Energía, Agencia Nacional de Minería, Ministerio de Ambiente y Desarrollo Sostenible) sobre la materia
+						En cada uno de los términos de este diccionario Usted encontrará Primero: las normas sobre la materia, organizadas de lo más reciente a lo más antiguo; Segundo: la jurisprudencia sobre el tema de la más reciente a la más antigua; y Tercero la doctrina de las autoridades (Ministerio de Minas y Energía, Agencia Nacional de Minería, Ministerio de Ambiente y Desarrollo Sostenible) sobre la materia.
 					</div>
 					<div className='MenuLateralSeccion InformacionPropiedadAplicativo'>
 						© 2025 Explore Diccionario Jurídico Minero-Energético.

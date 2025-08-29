@@ -291,8 +291,9 @@
      filter: brightness(100);
 }
 .IntruccionesAplicativo{
-    font-size: calc(var(--TamanoFuenteParrafos) - 2px);
+    font-size: calc(var(--TamanoFuenteParrafos) - 3px);
      margin-top:20%;
+     line-height: 1.1em;
 }
  .InformacionPropiedadAplicativo{
      font-size: calc(var(--TamanoFuenteParrafos) - 2px);
