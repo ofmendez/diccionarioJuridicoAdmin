@@ -53,6 +53,9 @@ const EditTerm = () => {
 					<>
 						<TermTopToolsEdit term={term.term} handleUpdate={handleUpdate} handleDelete={handleDelete} onTermChange={(e) => setTerm({ ...term, term: e.target.value })} />
 						<div className='SeccionContenidoDefiniciones'>
+							<button className='ContenidoDefinicion AgregarDefinicion' onClick={() => setTerm({ ...term, meanings: [...term.meanings, new Meaning()] })}>
+								<img className='IconoAgregarDefinicion' src={IconoAgregar} />
+							</button>
 							{
 								term.meanings?.map((el, i) =>
 									<FormMeaning edit index={i} key={i} meaning={el} setMeanings={setTerm} />
