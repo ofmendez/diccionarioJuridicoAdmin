@@ -16,8 +16,8 @@ const TermTopToolsEdit = ({ term, onTermChange, handleUpdate, handleDelete }) =>
 					<img className='IconoMenu' src={IconoGuardar} /> Guardar
 				</button>
 			</div>
-			<div className="BotonGuardarFixed">
-			<button className='BotonAgregarFixed' onClick={handleUpdate}>
+			<div className='BotonGuardarFixed'>
+				<button className='BotonAgregarFixed' onClick={handleUpdate}>
 					<img className='IconoMenu' src={IconoGuardar} />
 				</button>
 			</div>

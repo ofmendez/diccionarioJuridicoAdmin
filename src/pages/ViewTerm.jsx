@@ -81,6 +81,7 @@ const ViewTerm = () => {
 			});
 		}
 	}, [loadingTerm]);
+
 	return (
 		<ContentFrame>
 			<div className='SeccionSuperiorHerramientas'>
@@ -93,6 +94,11 @@ const ViewTerm = () => {
 						<Link className='BotonAgregar' to={'../edit/' + id}>
 							<img className='IconoMenu' src={IconoEditar} />
 							Editar
+						</Link>
+					</div>
+					<div className='BotonGuardarFixed'>
+						<Link className='BotonAgregarFixed' to={'../edit/' + id}>
+							<img className='IconoMenu' src={IconoEditar} />
 						</Link>
 					</div>
 				</Skeletons>

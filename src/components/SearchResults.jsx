@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import SearchResultElement from './SearchResultElement.jsx';
 
 const SearchResults = ({ results, query }) => {
 	console.log('SearchResults', results);
@@ -14,7 +14,8 @@ const SearchResults = ({ results, query }) => {
 			<br />
 			{results.map((r, i) =>
 				<div key={i}>
-					<Link to={`/terms/${r._id}?q=${query}`} className='ResultadoBusqueda'>
+					<SearchResultElement r={r} />
+					{/* <Link to={`/terms/${r._id}?q=${query}`} className='ResultadoBusqueda'>
 						<div className='ResultadoBusqueda hovered'>
 							<p className='ResultadoBusquedaTermino'>
 								TERMINO: {r.term}
@@ -35,7 +36,7 @@ const SearchResults = ({ results, query }) => {
 								}
 							</p>
 						</div>
-					</Link>
+					</Link> */}
 					<hr className='ResultadoBusquedaSeparador' />
 				</div>
 			)}

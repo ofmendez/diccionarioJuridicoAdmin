@@ -19,7 +19,7 @@ const Login = () => {
 		}
 		window.localStorage.setItem('token', d.token);
 		window.localStorage.setItem('user', JSON.stringify(d.user));
-		window.localStorage.setItem('expire', Date.now() + 6 * 24 * 60 * 60 * 1000);
+		window.localStorage.setItem('expire', Date.now() + 1 * 24 * 60 * 60 * 1000);
 		console.log('today: ', Date.now(), 'name: ', JSON.parse(window.localStorage.user).name);
 		login();
 	};

@@ -50,7 +50,7 @@ const FormMeaning = ({ ...props }) => {
 				<div className='SeparadorSecciones' />
 				{/* ------------------- DEFINITION ------------------------- */}
 				<textarea
-					className='InputDefinicion ScrollVerde' type='text' placeholder='DEFINICIÓN' name='definition'
+					className='InputDefinicion ScrollVerde' type='text' placeholder='DEFINICIÓN' name='definition' spellcheck='true'
 					value={currMeaning.definition || ''} onChange={handleChange}
 				/>
 				{/* ------------------- SOURCE ------------------------- */}
