@@ -1071,8 +1071,9 @@ mark{
 	padding: var(--PaddingContenidosHome);
 	border-radius: var(--RadioEsquinas);
 	display: var(--DisplaySeccionFiltros);
-	flex-direction: column;
+	flex-direction: row;
 	min-height: 0;
+    column-gap: 15px;
 }
 
 .FiltrosDisponibles {
